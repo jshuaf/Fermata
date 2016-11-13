@@ -1,0 +1,545 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FE6BCE3D1DD9205100EB9724 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6BCE3C1DD9205100EB9724 /* AppDelegate.swift */; };
+		FE6BCE3F1DD9205100EB9724 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6BCE3E1DD9205100EB9724 /* ViewController.swift */; };
+		FE6BCE421DD9205100EB9724 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE6BCE401DD9205100EB9724 /* Main.storyboard */; };
+		FE6BCE451DD9205100EB9724 /* Fermata.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE6BCE431DD9205100EB9724 /* Fermata.xcdatamodeld */; };
+		FE6BCE471DD9205100EB9724 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE6BCE461DD9205100EB9724 /* Assets.xcassets */; };
+		FE6BCE4A1DD9205100EB9724 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE6BCE481DD9205100EB9724 /* LaunchScreen.storyboard */; };
+		FE6BCE551DD9205100EB9724 /* FermataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6BCE541DD9205100EB9724 /* FermataTests.swift */; };
+		FE6BCE601DD9205100EB9724 /* FermataUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6BCE5F1DD9205100EB9724 /* FermataUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FE6BCE511DD9205100EB9724 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE6BCE311DD9205100EB9724 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FE6BCE381DD9205100EB9724;
+			remoteInfo = Fermata;
+		};
+		FE6BCE5C1DD9205100EB9724 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE6BCE311DD9205100EB9724 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FE6BCE381DD9205100EB9724;
+			remoteInfo = Fermata;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FE6BCE391DD9205100EB9724 /* Fermata.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fermata.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE6BCE3C1DD9205100EB9724 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FE6BCE3E1DD9205100EB9724 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FE6BCE411DD9205100EB9724 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FE6BCE441DD9205100EB9724 /* Fermata.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Fermata.xcdatamodel; sourceTree = "<group>"; };
+		FE6BCE461DD9205100EB9724 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FE6BCE491DD9205100EB9724 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FE6BCE4B1DD9205100EB9724 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE6BCE501DD9205100EB9724 /* FermataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FermataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE6BCE541DD9205100EB9724 /* FermataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FermataTests.swift; sourceTree = "<group>"; };
+		FE6BCE561DD9205100EB9724 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE6BCE5B1DD9205100EB9724 /* FermataUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FermataUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE6BCE5F1DD9205100EB9724 /* FermataUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FermataUITests.swift; sourceTree = "<group>"; };
+		FE6BCE611DD9205100EB9724 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FE6BCE361DD9205100EB9724 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE6BCE4D1DD9205100EB9724 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE6BCE581DD9205100EB9724 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FE6BCE301DD9205100EB9724 = {
+			isa = PBXGroup;
+			children = (
+				FE6BCE3B1DD9205100EB9724 /* Fermata */,
+				FE6BCE531DD9205100EB9724 /* FermataTests */,
+				FE6BCE5E1DD9205100EB9724 /* FermataUITests */,
+				FE6BCE3A1DD9205100EB9724 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FE6BCE3A1DD9205100EB9724 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FE6BCE391DD9205100EB9724 /* Fermata.app */,
+				FE6BCE501DD9205100EB9724 /* FermataTests.xctest */,
+				FE6BCE5B1DD9205100EB9724 /* FermataUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FE6BCE3B1DD9205100EB9724 /* Fermata */ = {
+			isa = PBXGroup;
+			children = (
+				FE6BCE3C1DD9205100EB9724 /* AppDelegate.swift */,
+				FE6BCE3E1DD9205100EB9724 /* ViewController.swift */,
+				FE6BCE401DD9205100EB9724 /* Main.storyboard */,
+				FE6BCE461DD9205100EB9724 /* Assets.xcassets */,
+				FE6BCE481DD9205100EB9724 /* LaunchScreen.storyboard */,
+				FE6BCE4B1DD9205100EB9724 /* Info.plist */,
+				FE6BCE431DD9205100EB9724 /* Fermata.xcdatamodeld */,
+			);
+			path = Fermata;
+			sourceTree = "<group>";
+		};
+		FE6BCE531DD9205100EB9724 /* FermataTests */ = {
+			isa = PBXGroup;
+			children = (
+				FE6BCE541DD9205100EB9724 /* FermataTests.swift */,
+				FE6BCE561DD9205100EB9724 /* Info.plist */,
+			);
+			path = FermataTests;
+			sourceTree = "<group>";
+		};
+		FE6BCE5E1DD9205100EB9724 /* FermataUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FE6BCE5F1DD9205100EB9724 /* FermataUITests.swift */,
+				FE6BCE611DD9205100EB9724 /* Info.plist */,
+			);
+			path = FermataUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FE6BCE381DD9205100EB9724 /* Fermata */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE6BCE641DD9205100EB9724 /* Build configuration list for PBXNativeTarget "Fermata" */;
+			buildPhases = (
+				FE6BCE351DD9205100EB9724 /* Sources */,
+				FE6BCE361DD9205100EB9724 /* Frameworks */,
+				FE6BCE371DD9205100EB9724 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Fermata;
+			productName = Fermata;
+			productReference = FE6BCE391DD9205100EB9724 /* Fermata.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FE6BCE4F1DD9205100EB9724 /* FermataTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE6BCE671DD9205100EB9724 /* Build configuration list for PBXNativeTarget "FermataTests" */;
+			buildPhases = (
+				FE6BCE4C1DD9205100EB9724 /* Sources */,
+				FE6BCE4D1DD9205100EB9724 /* Frameworks */,
+				FE6BCE4E1DD9205100EB9724 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FE6BCE521DD9205100EB9724 /* PBXTargetDependency */,
+			);
+			name = FermataTests;
+			productName = FermataTests;
+			productReference = FE6BCE501DD9205100EB9724 /* FermataTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FE6BCE5A1DD9205100EB9724 /* FermataUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE6BCE6A1DD9205100EB9724 /* Build configuration list for PBXNativeTarget "FermataUITests" */;
+			buildPhases = (
+				FE6BCE571DD9205100EB9724 /* Sources */,
+				FE6BCE581DD9205100EB9724 /* Frameworks */,
+				FE6BCE591DD9205100EB9724 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FE6BCE5D1DD9205100EB9724 /* PBXTargetDependency */,
+			);
+			name = FermataUITests;
+			productName = FermataUITests;
+			productReference = FE6BCE5B1DD9205100EB9724 /* FermataUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FE6BCE311DD9205100EB9724 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = joshuafang;
+				TargetAttributes = {
+					FE6BCE381DD9205100EB9724 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+					};
+					FE6BCE4F1DD9205100EB9724 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = FE6BCE381DD9205100EB9724;
+					};
+					FE6BCE5A1DD9205100EB9724 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = FE6BCE381DD9205100EB9724;
+					};
+				};
+			};
+			buildConfigurationList = FE6BCE341DD9205100EB9724 /* Build configuration list for PBXProject "Fermata" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FE6BCE301DD9205100EB9724;
+			productRefGroup = FE6BCE3A1DD9205100EB9724 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FE6BCE381DD9205100EB9724 /* Fermata */,
+				FE6BCE4F1DD9205100EB9724 /* FermataTests */,
+				FE6BCE5A1DD9205100EB9724 /* FermataUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FE6BCE371DD9205100EB9724 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE6BCE4A1DD9205100EB9724 /* LaunchScreen.storyboard in Resources */,
+				FE6BCE471DD9205100EB9724 /* Assets.xcassets in Resources */,
+				FE6BCE421DD9205100EB9724 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE6BCE4E1DD9205100EB9724 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE6BCE591DD9205100EB9724 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FE6BCE351DD9205100EB9724 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE6BCE3F1DD9205100EB9724 /* ViewController.swift in Sources */,
+				FE6BCE451DD9205100EB9724 /* Fermata.xcdatamodeld in Sources */,
+				FE6BCE3D1DD9205100EB9724 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE6BCE4C1DD9205100EB9724 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE6BCE551DD9205100EB9724 /* FermataTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE6BCE571DD9205100EB9724 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE6BCE601DD9205100EB9724 /* FermataUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FE6BCE521DD9205100EB9724 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FE6BCE381DD9205100EB9724 /* Fermata */;
+			targetProxy = FE6BCE511DD9205100EB9724 /* PBXContainerItemProxy */;
+		};
+		FE6BCE5D1DD9205100EB9724 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FE6BCE381DD9205100EB9724 /* Fermata */;
+			targetProxy = FE6BCE5C1DD9205100EB9724 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FE6BCE401DD9205100EB9724 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE6BCE411DD9205100EB9724 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FE6BCE481DD9205100EB9724 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE6BCE491DD9205100EB9724 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FE6BCE621DD9205100EB9724 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FE6BCE631DD9205100EB9724 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FE6BCE651DD9205100EB9724 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Fermata/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.joshuafang.Fermata;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		FE6BCE661DD9205100EB9724 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Fermata/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.joshuafang.Fermata;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		FE6BCE681DD9205100EB9724 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = FermataTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.joshuafang.FermataTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fermata.app/Fermata";
+			};
+			name = Debug;
+		};
+		FE6BCE691DD9205100EB9724 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = FermataTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.joshuafang.FermataTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fermata.app/Fermata";
+			};
+			name = Release;
+		};
+		FE6BCE6B1DD9205100EB9724 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = FermataUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.joshuafang.FermataUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Fermata;
+			};
+			name = Debug;
+		};
+		FE6BCE6C1DD9205100EB9724 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = FermataUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.joshuafang.FermataUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Fermata;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FE6BCE341DD9205100EB9724 /* Build configuration list for PBXProject "Fermata" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE6BCE621DD9205100EB9724 /* Debug */,
+				FE6BCE631DD9205100EB9724 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE6BCE641DD9205100EB9724 /* Build configuration list for PBXNativeTarget "Fermata" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE6BCE651DD9205100EB9724 /* Debug */,
+				FE6BCE661DD9205100EB9724 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FE6BCE671DD9205100EB9724 /* Build configuration list for PBXNativeTarget "FermataTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE6BCE681DD9205100EB9724 /* Debug */,
+				FE6BCE691DD9205100EB9724 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FE6BCE6A1DD9205100EB9724 /* Build configuration list for PBXNativeTarget "FermataUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE6BCE6B1DD9205100EB9724 /* Debug */,
+				FE6BCE6C1DD9205100EB9724 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FE6BCE431DD9205100EB9724 /* Fermata.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FE6BCE441DD9205100EB9724 /* Fermata.xcdatamodel */,
+			);
+			currentVersion = FE6BCE441DD9205100EB9724 /* Fermata.xcdatamodel */;
+			path = Fermata.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = FE6BCE311DD9205100EB9724 /* Project object */;
+}
