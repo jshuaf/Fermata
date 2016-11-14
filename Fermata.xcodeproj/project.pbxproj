@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		FE6BCE3D1DD9205100EB9724 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6BCE3C1DD9205100EB9724 /* AppDelegate.swift */; };
-		FE6BCE3F1DD9205100EB9724 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6BCE3E1DD9205100EB9724 /* ViewController.swift */; };
+		FE6BCE3F1DD9205100EB9724 /* LessonRecorderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6BCE3E1DD9205100EB9724 /* LessonRecorderViewController.swift */; };
 		FE6BCE421DD9205100EB9724 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE6BCE401DD9205100EB9724 /* Main.storyboard */; };
 		FE6BCE451DD9205100EB9724 /* Fermata.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE6BCE431DD9205100EB9724 /* Fermata.xcdatamodeld */; };
 		FE6BCE471DD9205100EB9724 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE6BCE461DD9205100EB9724 /* Assets.xcassets */; };
 		FE6BCE4A1DD9205100EB9724 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE6BCE481DD9205100EB9724 /* LaunchScreen.storyboard */; };
 		FE6BCE551DD9205100EB9724 /* FermataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6BCE541DD9205100EB9724 /* FermataTests.swift */; };
 		FE6BCE601DD9205100EB9724 /* FermataUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6BCE5F1DD9205100EB9724 /* FermataUITests.swift */; };
+		FEB5A6E61DDA63A500B02327 /* audioFile.m4a in Resources */ = {isa = PBXBuildFile; fileRef = FEB5A6E51DDA63A500B02327 /* audioFile.m4a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +38,7 @@
 /* Begin PBXFileReference section */
 		FE6BCE391DD9205100EB9724 /* Fermata.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fermata.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE6BCE3C1DD9205100EB9724 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FE6BCE3E1DD9205100EB9724 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FE6BCE3E1DD9205100EB9724 /* LessonRecorderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonRecorderViewController.swift; sourceTree = "<group>"; };
 		FE6BCE411DD9205100EB9724 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FE6BCE441DD9205100EB9724 /* Fermata.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Fermata.xcdatamodel; sourceTree = "<group>"; };
 		FE6BCE461DD9205100EB9724 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +50,7 @@
 		FE6BCE5B1DD9205100EB9724 /* FermataUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FermataUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE6BCE5F1DD9205100EB9724 /* FermataUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FermataUITests.swift; sourceTree = "<group>"; };
 		FE6BCE611DD9205100EB9724 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FEB5A6E51DDA63A500B02327 /* audioFile.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = audioFile.m4a; path = ../../Downloads/audioFile.m4a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		FE6BCE301DD9205100EB9724 = {
 			isa = PBXGroup;
 			children = (
+				FEB5A6E51DDA63A500B02327 /* audioFile.m4a */,
 				FE6BCE3B1DD9205100EB9724 /* Fermata */,
 				FE6BCE531DD9205100EB9724 /* FermataTests */,
 				FE6BCE5E1DD9205100EB9724 /* FermataUITests */,
@@ -100,7 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				FE6BCE3C1DD9205100EB9724 /* AppDelegate.swift */,
-				FE6BCE3E1DD9205100EB9724 /* ViewController.swift */,
+				FE6BCE3E1DD9205100EB9724 /* LessonRecorderViewController.swift */,
 				FE6BCE401DD9205100EB9724 /* Main.storyboard */,
 				FE6BCE461DD9205100EB9724 /* Assets.xcassets */,
 				FE6BCE481DD9205100EB9724 /* LaunchScreen.storyboard */,
@@ -238,6 +241,7 @@
 				FE6BCE4A1DD9205100EB9724 /* LaunchScreen.storyboard in Resources */,
 				FE6BCE471DD9205100EB9724 /* Assets.xcassets in Resources */,
 				FE6BCE421DD9205100EB9724 /* Main.storyboard in Resources */,
+				FEB5A6E61DDA63A500B02327 /* audioFile.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,7 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE6BCE3F1DD9205100EB9724 /* ViewController.swift in Sources */,
+				FE6BCE3F1DD9205100EB9724 /* LessonRecorderViewController.swift in Sources */,
 				FE6BCE451DD9205100EB9724 /* Fermata.xcdatamodeld in Sources */,
 				FE6BCE3D1DD9205100EB9724 /* AppDelegate.swift in Sources */,
 			);
@@ -509,6 +513,7 @@
 				FE6BCE661DD9205100EB9724 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FE6BCE671DD9205100EB9724 /* Build configuration list for PBXNativeTarget "FermataTests" */ = {
 			isa = XCConfigurationList;
@@ -517,6 +522,7 @@
 				FE6BCE691DD9205100EB9724 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FE6BCE6A1DD9205100EB9724 /* Build configuration list for PBXNativeTarget "FermataUITests" */ = {
 			isa = XCConfigurationList;
@@ -525,6 +531,7 @@
 				FE6BCE6C1DD9205100EB9724 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
