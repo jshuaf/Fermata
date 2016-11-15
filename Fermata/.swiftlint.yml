@@ -1,0 +1,6 @@
+included: # paths to include during linting. `--path` is ignored if present.
+- Source
+
+line_length:
+- 150
+- 200

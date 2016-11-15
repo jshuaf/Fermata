@@ -16,6 +16,9 @@
 		FE6BCE551DD9205100EB9724 /* FermataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6BCE541DD9205100EB9724 /* FermataTests.swift */; };
 		FE6BCE601DD9205100EB9724 /* FermataUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6BCE5F1DD9205100EB9724 /* FermataUITests.swift */; };
 		FEB5A6E61DDA63A500B02327 /* audioFile.m4a in Resources */ = {isa = PBXBuildFile; fileRef = FEB5A6E51DDA63A500B02327 /* audioFile.m4a */; };
+		FEB5A6E81DDA6A5500B02327 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB5A6E71DDA6A5500B02327 /* Extensions.swift */; };
+		FEB5A6EA1DDA73D100B02327 /* RecordingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB5A6E91DDA73D100B02327 /* RecordingTableViewCell.swift */; };
+		FEB5A6ED1DDAA67700B02327 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = FEB5A6EC1DDAA67700B02327 /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		FE6BCE5F1DD9205100EB9724 /* FermataUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FermataUITests.swift; sourceTree = "<group>"; };
 		FE6BCE611DD9205100EB9724 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FEB5A6E51DDA63A500B02327 /* audioFile.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = audioFile.m4a; path = ../../Downloads/audioFile.m4a; sourceTree = "<group>"; };
+		FEB5A6E71DDA6A5500B02327 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		FEB5A6E91DDA73D100B02327 /* RecordingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingTableViewCell.swift; sourceTree = "<group>"; };
+		FEB5A6EC1DDAA67700B02327 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,11 +110,14 @@
 			children = (
 				FE6BCE3C1DD9205100EB9724 /* AppDelegate.swift */,
 				FE6BCE3E1DD9205100EB9724 /* LessonRecorderViewController.swift */,
+				FEB5A6EC1DDAA67700B02327 /* .swiftlint.yml */,
+				FEB5A6E91DDA73D100B02327 /* RecordingTableViewCell.swift */,
 				FE6BCE401DD9205100EB9724 /* Main.storyboard */,
 				FE6BCE461DD9205100EB9724 /* Assets.xcassets */,
 				FE6BCE481DD9205100EB9724 /* LaunchScreen.storyboard */,
 				FE6BCE4B1DD9205100EB9724 /* Info.plist */,
 				FE6BCE431DD9205100EB9724 /* Fermata.xcdatamodeld */,
+				FEB5A6E71DDA6A5500B02327 /* Extensions.swift */,
 			);
 			path = Fermata;
 			sourceTree = "<group>";
@@ -141,6 +150,7 @@
 				FE6BCE351DD9205100EB9724 /* Sources */,
 				FE6BCE361DD9205100EB9724 /* Frameworks */,
 				FE6BCE371DD9205100EB9724 /* Resources */,
+				FEB5A6EB1DDAA47E00B02327 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -238,6 +248,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEB5A6ED1DDAA67700B02327 /* .swiftlint.yml in Resources */,
 				FE6BCE4A1DD9205100EB9724 /* LaunchScreen.storyboard in Resources */,
 				FE6BCE471DD9205100EB9724 /* Assets.xcassets in Resources */,
 				FE6BCE421DD9205100EB9724 /* Main.storyboard in Resources */,
@@ -261,14 +272,32 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		FEB5A6EB1DDAA47E00B02327 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint autocorrect\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FE6BCE351DD9205100EB9724 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				FE6BCE3F1DD9205100EB9724 /* LessonRecorderViewController.swift in Sources */,
+				FEB5A6EA1DDA73D100B02327 /* RecordingTableViewCell.swift in Sources */,
 				FE6BCE451DD9205100EB9724 /* Fermata.xcdatamodeld in Sources */,
 				FE6BCE3D1DD9205100EB9724 /* AppDelegate.swift in Sources */,
+				FEB5A6E81DDA6A5500B02327 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
