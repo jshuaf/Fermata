@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zFW-sL-u1x">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Lesson Recorder View Controller-->
+        <!--Record-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="LessonRecorderViewController" customModule="Fermata" customModuleProvider="target" sceneMemberID="viewController">
@@ -30,7 +30,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="peT-xY-a3c">
-                                <rect key="frame" x="171" y="158" width="32" height="30"/>
+                                <rect key="frame" x="171" y="127" width="32" height="30"/>
                                 <state key="normal" title="Stop"/>
                                 <connections>
                                     <action selector="stopRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o7u-7L-FZw"/>
@@ -43,41 +43,95 @@
                                     <action selector="playRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vSz-Y7-O0q"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Wuq-kK-7px">
-                                <rect key="frame" x="67" y="269" width="240" height="128"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Byz-Ta-wgF">
+                                <rect key="frame" x="68" y="420" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="UXw-VK-879" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.4" constant="-24.5" id="48Q-l6-4hd"/>
+                            <constraint firstItem="peT-xY-a3c" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="P0h-ul-jnp"/>
+                            <constraint firstItem="peT-xY-a3c" firstAttribute="top" secondItem="UXw-VK-879" secondAttribute="bottom" constant="3" id="U6B-TU-Ejn"/>
+                            <constraint firstItem="daD-qL-vow" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="0.5" id="gKf-36-ryO"/>
+                            <constraint firstItem="UXw-VK-879" firstAttribute="top" secondItem="daD-qL-vow" secondAttribute="bottom" constant="8" id="lEP-Xw-FR6"/>
+                            <constraint firstItem="Byz-Ta-wgF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mci-kS-6B7"/>
+                            <constraint firstItem="UXw-VK-879" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zuB-Nq-u5m"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Record" image="Record Icon" selectedImage="Record Icon" id="VfV-ht-SAb"/>
+                    <connections>
+                        <outlet property="playRecordingButton" destination="daD-qL-vow" id="gGs-jD-AMo"/>
+                        <outlet property="startRecordingButton" destination="UXw-VK-879" id="CJU-Bw-QuN"/>
+                        <outlet property="stopRecordingButton" destination="peT-xY-a3c" id="4bE-MW-sN6"/>
+                        <outlet property="waveformView" destination="Byz-Ta-wgF" id="GeX-nd-kkS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1934" y="861"/>
+        </scene>
+        <!--Journal-->
+        <scene sceneID="Jbj-mj-k53">
+            <objects>
+                <viewController id="XzQ-hF-SIQ" customClass="RecordingsListViewController" customModule="Fermata" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tSq-0M-TsX"/>
+                        <viewControllerLayoutGuide type="bottom" id="Lkx-xR-bes"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kWV-Sa-JKN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lje-uJ-X6q">
+                                <rect key="frame" x="77" y="207" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="recording" id="fMl-kZ-tHa" customClass="RecordingTableViewCell" customModule="Fermata" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="recording" id="Eaf-eS-A0I" customClass="RecordingTableViewCell" customModule="Fermata" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="240" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fMl-kZ-tHa" id="pFf-07-Y3C">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="44"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Eaf-eS-A0I" id="qbK-Kc-Wkg">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="UXw-VK-879" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.4" constant="-24.5" id="48Q-l6-4hd"/>
-                            <constraint firstItem="peT-xY-a3c" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="P0h-ul-jnp"/>
-                            <constraint firstItem="peT-xY-a3c" firstAttribute="top" secondItem="UXw-VK-879" secondAttribute="bottom" constant="34" id="U6B-TU-Ejn"/>
-                            <constraint firstItem="daD-qL-vow" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="0.5" id="gKf-36-ryO"/>
-                            <constraint firstItem="UXw-VK-879" firstAttribute="top" secondItem="daD-qL-vow" secondAttribute="bottom" constant="8" id="lEP-Xw-FR6"/>
-                            <constraint firstItem="UXw-VK-879" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zuB-Nq-u5m"/>
-                        </constraints>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Journal" image="Journal Icon" selectedImage="Journal Icon" id="j3K-Nf-E5p"/>
                     <connections>
-                        <outlet property="playRecordingButton" destination="daD-qL-vow" id="gGs-jD-AMo"/>
-                        <outlet property="recordingsTableView" destination="Wuq-kK-7px" id="Tsi-rY-pgy"/>
-                        <outlet property="startRecordingButton" destination="UXw-VK-879" id="CJU-Bw-QuN"/>
-                        <outlet property="stopRecordingButton" destination="peT-xY-a3c" id="4bE-MW-sN6"/>
+                        <outlet property="recordingsTableView" destination="lje-uJ-X6q" id="eyM-rv-JuP"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gAh-wP-suX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1934" y="149"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="tuP-ie-7th">
+            <objects>
+                <tabBarController id="zFW-sL-u1x" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="isa-ch-CJ7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="1" green="0.67450980392156867" blue="0.3529411764705882" alpha="1" colorSpace="calibratedRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="XzQ-hF-SIQ" kind="relationship" relationship="viewControllers" id="v1q-qz-WPd"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="ZNe-4A-vLV"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DfB-JF-ael" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="873" y="862"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Journal Icon" width="27" height="27"/>
+        <image name="Record Icon" width="28" height="27"/>
+    </resources>
 </document>

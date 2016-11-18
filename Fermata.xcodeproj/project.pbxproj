@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE641F7B1DDCE61F00ED944B /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = FE641F7A1DDCE61F00ED944B /* .swiftlint.yml */; };
+		FE641F801DDCE77A00ED944B /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE641F781DDCE4AD00ED944B /* Cartography.framework */; };
 		FE6BCE3D1DD9205100EB9724 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6BCE3C1DD9205100EB9724 /* AppDelegate.swift */; };
 		FE6BCE3F1DD9205100EB9724 /* LessonRecorderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6BCE3E1DD9205100EB9724 /* LessonRecorderViewController.swift */; };
 		FE6BCE421DD9205100EB9724 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE6BCE401DD9205100EB9724 /* Main.storyboard */; };
@@ -15,10 +17,22 @@
 		FE6BCE4A1DD9205100EB9724 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE6BCE481DD9205100EB9724 /* LaunchScreen.storyboard */; };
 		FE6BCE551DD9205100EB9724 /* FermataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6BCE541DD9205100EB9724 /* FermataTests.swift */; };
 		FE6BCE601DD9205100EB9724 /* FermataUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6BCE5F1DD9205100EB9724 /* FermataUITests.swift */; };
-		FEB5A6E61DDA63A500B02327 /* audioFile.m4a in Resources */ = {isa = PBXBuildFile; fileRef = FEB5A6E51DDA63A500B02327 /* audioFile.m4a */; };
 		FEB5A6E81DDA6A5500B02327 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB5A6E71DDA6A5500B02327 /* Extensions.swift */; };
 		FEB5A6EA1DDA73D100B02327 /* RecordingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB5A6E91DDA73D100B02327 /* RecordingTableViewCell.swift */; };
-		FEB5A6ED1DDAA67700B02327 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = FEB5A6EC1DDAA67700B02327 /* .swiftlint.yml */; };
+		FECBCAF11DDBDEA1001E1FE0 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = FECBCAF01DDBDEA1001E1FE0 /* Cartfile */; };
+		FECBCAF51DDBDF39001E1FE0 /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FECBCAF41DDBDF39001E1FE0 /* AudioKit.framework */; };
+		FEEBB55E1DDE1BC900CA5651 /* Hue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEEBB55D1DDE1BC900CA5651 /* Hue.framework */; };
+		FEEBB56A1DDE6A1800CA5651 /* Rubik-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FEEBB5601DDE6A1800CA5651 /* Rubik-Black.ttf */; };
+		FEEBB56B1DDE6A1800CA5651 /* Rubik-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FEEBB5611DDE6A1800CA5651 /* Rubik-BlackItalic.ttf */; };
+		FEEBB56C1DDE6A1800CA5651 /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FEEBB5621DDE6A1800CA5651 /* Rubik-Bold.ttf */; };
+		FEEBB56D1DDE6A1800CA5651 /* Rubik-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FEEBB5631DDE6A1800CA5651 /* Rubik-BoldItalic.ttf */; };
+		FEEBB56E1DDE6A1900CA5651 /* Rubik-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FEEBB5641DDE6A1800CA5651 /* Rubik-Italic.ttf */; };
+		FEEBB56F1DDE6A1900CA5651 /* Rubik-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FEEBB5651DDE6A1800CA5651 /* Rubik-Light.ttf */; };
+		FEEBB5701DDE6A1900CA5651 /* Rubik-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FEEBB5661DDE6A1800CA5651 /* Rubik-LightItalic.ttf */; };
+		FEEBB5711DDE6A1900CA5651 /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FEEBB5671DDE6A1800CA5651 /* Rubik-Medium.ttf */; };
+		FEEBB5721DDE6A1900CA5651 /* Rubik-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FEEBB5681DDE6A1800CA5651 /* Rubik-MediumItalic.ttf */; };
+		FEEBB5731DDE6A1900CA5651 /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FEEBB5691DDE6A1800CA5651 /* Rubik-Regular.ttf */; };
+		FEEBB5751DDEB08C00CA5651 /* RecordingsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEBB5741DDEB08C00CA5651 /* RecordingsListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +53,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FE641F781DDCE4AD00ED944B /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cartography.framework; path = Carthage/Build/iOS/Cartography.framework; sourceTree = "<group>"; };
+		FE641F7A1DDCE61F00ED944B /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
+		FE641F7C1DDCE76400ED944B /* Cartography */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Cartography; path = Carthage/Checkouts/Cartography; sourceTree = "<group>"; };
+		FE641F7E1DDCE77100ED944B /* Build */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Build; path = Carthage/Build; sourceTree = "<group>"; };
 		FE6BCE391DD9205100EB9724 /* Fermata.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fermata.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE6BCE3C1DD9205100EB9724 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE6BCE3E1DD9205100EB9724 /* LessonRecorderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonRecorderViewController.swift; sourceTree = "<group>"; };
@@ -53,10 +71,22 @@
 		FE6BCE5B1DD9205100EB9724 /* FermataUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FermataUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE6BCE5F1DD9205100EB9724 /* FermataUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FermataUITests.swift; sourceTree = "<group>"; };
 		FE6BCE611DD9205100EB9724 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FEB5A6E51DDA63A500B02327 /* audioFile.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = audioFile.m4a; path = ../../Downloads/audioFile.m4a; sourceTree = "<group>"; };
 		FEB5A6E71DDA6A5500B02327 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		FEB5A6E91DDA73D100B02327 /* RecordingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingTableViewCell.swift; sourceTree = "<group>"; };
-		FEB5A6EC1DDAA67700B02327 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
+		FECBCAF01DDBDEA1001E1FE0 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		FECBCAF41DDBDF39001E1FE0 /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKit.framework; path = Carthage/Build/iOS/AudioKit.framework; sourceTree = "<group>"; };
+		FEEBB55D1DDE1BC900CA5651 /* Hue.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Hue.framework; path = Carthage/Build/iOS/Hue.framework; sourceTree = "<group>"; };
+		FEEBB5601DDE6A1800CA5651 /* Rubik-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Black.ttf"; sourceTree = "<group>"; };
+		FEEBB5611DDE6A1800CA5651 /* Rubik-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-BlackItalic.ttf"; sourceTree = "<group>"; };
+		FEEBB5621DDE6A1800CA5651 /* Rubik-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Bold.ttf"; sourceTree = "<group>"; };
+		FEEBB5631DDE6A1800CA5651 /* Rubik-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-BoldItalic.ttf"; sourceTree = "<group>"; };
+		FEEBB5641DDE6A1800CA5651 /* Rubik-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Italic.ttf"; sourceTree = "<group>"; };
+		FEEBB5651DDE6A1800CA5651 /* Rubik-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Light.ttf"; sourceTree = "<group>"; };
+		FEEBB5661DDE6A1800CA5651 /* Rubik-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-LightItalic.ttf"; sourceTree = "<group>"; };
+		FEEBB5671DDE6A1800CA5651 /* Rubik-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Medium.ttf"; sourceTree = "<group>"; };
+		FEEBB5681DDE6A1800CA5651 /* Rubik-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-MediumItalic.ttf"; sourceTree = "<group>"; };
+		FEEBB5691DDE6A1800CA5651 /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
+		FEEBB5741DDEB08C00CA5651 /* RecordingsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingsListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +94,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEEBB55E1DDE1BC900CA5651 /* Hue.framework in Frameworks */,
+				FE641F801DDCE77A00ED944B /* Cartography.framework in Frameworks */,
+				FECBCAF51DDBDF39001E1FE0 /* AudioKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,11 +120,13 @@
 		FE6BCE301DD9205100EB9724 = {
 			isa = PBXGroup;
 			children = (
-				FEB5A6E51DDA63A500B02327 /* audioFile.m4a */,
+				FECBCAF01DDBDEA1001E1FE0 /* Cartfile */,
+				FE641F7A1DDCE61F00ED944B /* .swiftlint.yml */,
 				FE6BCE3B1DD9205100EB9724 /* Fermata */,
 				FE6BCE531DD9205100EB9724 /* FermataTests */,
 				FE6BCE5E1DD9205100EB9724 /* FermataUITests */,
 				FE6BCE3A1DD9205100EB9724 /* Products */,
+				FECBCAF31DDBDF35001E1FE0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,9 +143,10 @@
 		FE6BCE3B1DD9205100EB9724 /* Fermata */ = {
 			isa = PBXGroup;
 			children = (
+				FEEBB55F1DDE699900CA5651 /* Resources */,
 				FE6BCE3C1DD9205100EB9724 /* AppDelegate.swift */,
 				FE6BCE3E1DD9205100EB9724 /* LessonRecorderViewController.swift */,
-				FEB5A6EC1DDAA67700B02327 /* .swiftlint.yml */,
+				FEEBB5741DDEB08C00CA5651 /* RecordingsListViewController.swift */,
 				FEB5A6E91DDA73D100B02327 /* RecordingTableViewCell.swift */,
 				FE6BCE401DD9205100EB9724 /* Main.storyboard */,
 				FE6BCE461DD9205100EB9724 /* Assets.xcassets */,
@@ -140,6 +176,35 @@
 			path = FermataUITests;
 			sourceTree = "<group>";
 		};
+		FECBCAF31DDBDF35001E1FE0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FEEBB55D1DDE1BC900CA5651 /* Hue.framework */,
+				FE641F7E1DDCE77100ED944B /* Build */,
+				FE641F7C1DDCE76400ED944B /* Cartography */,
+				FE641F781DDCE4AD00ED944B /* Cartography.framework */,
+				FECBCAF41DDBDF39001E1FE0 /* AudioKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FEEBB55F1DDE699900CA5651 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FEEBB5601DDE6A1800CA5651 /* Rubik-Black.ttf */,
+				FEEBB5611DDE6A1800CA5651 /* Rubik-BlackItalic.ttf */,
+				FEEBB5621DDE6A1800CA5651 /* Rubik-Bold.ttf */,
+				FEEBB5631DDE6A1800CA5651 /* Rubik-BoldItalic.ttf */,
+				FEEBB5641DDE6A1800CA5651 /* Rubik-Italic.ttf */,
+				FEEBB5651DDE6A1800CA5651 /* Rubik-Light.ttf */,
+				FEEBB5661DDE6A1800CA5651 /* Rubik-LightItalic.ttf */,
+				FEEBB5671DDE6A1800CA5651 /* Rubik-Medium.ttf */,
+				FEEBB5681DDE6A1800CA5651 /* Rubik-MediumItalic.ttf */,
+				FEEBB5691DDE6A1800CA5651 /* Rubik-Regular.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -151,6 +216,7 @@
 				FE6BCE361DD9205100EB9724 /* Frameworks */,
 				FE6BCE371DD9205100EB9724 /* Resources */,
 				FEB5A6EB1DDAA47E00B02327 /* ShellScript */,
+				FECBCAF21DDBDEF1001E1FE0 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -248,11 +314,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FEB5A6ED1DDAA67700B02327 /* .swiftlint.yml in Resources */,
+				FEEBB56A1DDE6A1800CA5651 /* Rubik-Black.ttf in Resources */,
+				FE641F7B1DDCE61F00ED944B /* .swiftlint.yml in Resources */,
+				FECBCAF11DDBDEA1001E1FE0 /* Cartfile in Resources */,
 				FE6BCE4A1DD9205100EB9724 /* LaunchScreen.storyboard in Resources */,
+				FEEBB56B1DDE6A1800CA5651 /* Rubik-BlackItalic.ttf in Resources */,
+				FEEBB56C1DDE6A1800CA5651 /* Rubik-Bold.ttf in Resources */,
+				FEEBB56E1DDE6A1900CA5651 /* Rubik-Italic.ttf in Resources */,
 				FE6BCE471DD9205100EB9724 /* Assets.xcassets in Resources */,
+				FEEBB56D1DDE6A1800CA5651 /* Rubik-BoldItalic.ttf in Resources */,
+				FEEBB5711DDE6A1900CA5651 /* Rubik-Medium.ttf in Resources */,
+				FEEBB5701DDE6A1900CA5651 /* Rubik-LightItalic.ttf in Resources */,
+				FEEBB5721DDE6A1900CA5651 /* Rubik-MediumItalic.ttf in Resources */,
 				FE6BCE421DD9205100EB9724 /* Main.storyboard in Resources */,
-				FEB5A6E61DDA63A500B02327 /* audioFile.m4a in Resources */,
+				FEEBB5731DDE6A1900CA5651 /* Rubik-Regular.ttf in Resources */,
+				FEEBB56F1DDE6A1900CA5651 /* Rubik-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +362,22 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint autocorrect\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
+		FECBCAF21DDBDEF1001E1FE0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/AudioKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Cartography.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Hue.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -293,6 +385,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEEBB5751DDEB08C00CA5651 /* RecordingsListViewController.swift in Sources */,
 				FE6BCE3F1DD9205100EB9724 /* LessonRecorderViewController.swift in Sources */,
 				FEB5A6EA1DDA73D100B02327 /* RecordingTableViewCell.swift in Sources */,
 				FE6BCE451DD9205100EB9724 /* Fermata.xcdatamodeld in Sources */,
@@ -449,6 +542,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Fermata/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.joshuafang.Fermata;
@@ -461,6 +558,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Fermata/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.joshuafang.Fermata;
