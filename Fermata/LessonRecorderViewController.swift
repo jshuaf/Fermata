@@ -8,80 +8,53 @@
 
 import UIKit
 import AVFoundation
+import AudioKit
+import Cartography
+import Hue
 
-class LessonRecorderViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class LessonRecorderViewController: UIViewController {
 	var audioRecorder: AVAudioRecorder?
-	var audioPlayer: AVAudioPlayer?
+	var audioKitPlayer: AKAudioPlayer?
+
+	@IBOutlet weak var waveformView: UIView!
+  @IBOutlet weak var startRecordingButton: UIView!
+  @IBOutlet weak var stopRecordingButton: UIImageView!
+  @IBOutlet weak var pauseRecordingButton: UIImageView!
+  @IBOutlet weak var dateLabel: UILabel!
+  @IBOutlet weak var recordingInfoView: UIView!
+  @IBOutlet weak var recordingTimeElapsed: FMStopwatch!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		recordingsTableView.delegate = self
-		recordingsTableView.dataSource = self
-		recordingsTableView.register(RecordingTableViewCell.self, forCellReuseIdentifier: "recording")
+		let mic = AKMicrophone()
+		let mainMixer = AKMixer(mic)
+
+		let plot = AKNodeOutputPlot.init(mainMixer, frame: self.waveformView.bounds)
+		self.waveformView.addSubview(plot)
+		plot.color = UIColor(hue: 0, saturation: 0, brightness: 0.22, alpha: 1)
+    plot.waveformLayer.lineWidth = 2.0
+    plot.backgroundColor = UIColor.clear
+
+		AudioKit.output = AKBooster(mainMixer, gain: 0)
+		AudioKit.start()
+
+    let backgroundGradient = [UIColor.grapefruit, UIColor.cookie].gradient()
+    backgroundGradient.frame = self.view.bounds
+    self.view.layer.insertSublayer(backgroundGradient, at: 0)
+
+    let startRecordingClicked = UITapGestureRecognizer(target: self, action: #selector(self.startRecording))
+    self.startRecordingButton.addGestureRecognizer(startRecordingClicked)
+    let stopRecordingClicked = UITapGestureRecognizer(target: self, action: #selector(self.stopRecording))
+    self.stopRecordingButton.addGestureRecognizer(stopRecordingClicked)
+
+    self.dateLabel.font = self.dateLabel.font.smallCaps()
 	}
 
-	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = recordingsTableView.dequeueReusableCell(withIdentifier: "recording") as? RecordingTableViewCell
-		let recordingName = self.getRecordings()?[indexPath.row].lastPathComponent
-		let timestamp = Date(timeIntervalSince1970: TimeInterval(recordingName!)!)
-		let date = DateFormatter.localizedString(from: timestamp, dateStyle: DateFormatter.Style.short, timeStyle: DateFormatter.Style.short)
-		cell?.setup(title: "\(date)")
-		return cell!
-	}
-
-	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		let recordings = self.getRecordings()
-		return (recordings != nil ? recordings!.count : 0)
-	}
-
-	func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-		if editingStyle == UITableViewCellEditingStyle.delete {
-			let recordingToDelete = self.getRecordings()?[indexPath.row]
-			do {
-				try FileManager.default.removeItem(at: recordingToDelete!)
-				tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
-			} catch {
-				print("\(error)")
-			}
-		}
-	}
-
-	func numberOfSections(in tableView: UITableView) -> Int {
-		return 1
-	}
-
-	func getRecordingsDirectory() -> URL? {
-		let recordingsDirectory = Helper.getDocumentsDirectory().appendingPathComponent("Recordings")
-		do {
-			try FileManager.default.createDirectory(at: recordingsDirectory, withIntermediateDirectories: true, attributes: nil)
-			return recordingsDirectory
-		} catch {
-			print("\(error)")
-			return nil
-		}
-	}
-
-	func getRecordings() -> [URL]? {
-		let recordingsDirectory = self.getRecordingsDirectory()
-		do {
-			let recordings = try FileManager.default.contentsOfDirectory(at: recordingsDirectory!, includingPropertiesForKeys: nil, options: [])
-			return recordings
-		} catch {
-			print("\(error)")
-			return nil
-		}
-	}
-
-	@IBOutlet weak var startRecordingButton: UIButton!
-	@IBOutlet weak var stopRecordingButton: UIButton!
-	@IBOutlet weak var playRecordingButton: UIButton!
-	@IBOutlet weak var recordingsTableView: UITableView!
-
-	@IBAction func startRecording(_ sender: Any) {
+	func startRecording() {
 		let audioSession = AVAudioSession.sharedInstance()
 		audioSession.requestRecordPermission({(granted: Bool) -> Void in
-			let recordingsDirectory = self.getRecordingsDirectory()
+			let recordingsDirectory = Helper.getRecordingsDirectory()
 			let timestamp = NSDate().timeIntervalSince1970
 			let url = recordingsDirectory?.appendingPathComponent("\(timestamp)")
 			let settings: [String : Any] = [
@@ -96,22 +69,33 @@ class LessonRecorderViewController: UIViewController, UITableViewDataSource, UIT
 				try audioSession.setActive(true)
 				try self.audioRecorder = AVAudioRecorder(url: url!, settings: settings)
 				self.audioRecorder?.record()
+
+        self.recordingTimeElapsed.startTiming()
+
+        self.recordingInfoView.isHidden = false
+        self.startRecordingButton.isHidden = true
+        self.dateLabel.isHidden = true
 			} catch {
 				print("\(error)")
 			}
 		})
-
 	}
-	@IBAction func stopRecording(_ sender: Any) {
+
+	func stopRecording() {
 		let audioSession = AVAudioSession.sharedInstance()
 		if audioSession.category == AVAudioSessionCategoryPlayAndRecord {
 			self.audioRecorder?.stop()
-			self.recordingsTableView.reloadData()
-		} else if audioSession.category == AVAudioSessionCategoryPlayback {
-			self.audioPlayer?.stop()
 		}
 	}
-	@IBAction func playRecording(_ sender: Any) {
+
+  func pauseRecording() {
+    let audioSession = AVAudioSession.sharedInstance()
+    if audioSession.category == AVAudioSessionCategoryPlayAndRecord {
+      self.audioRecorder?.pause()
+    }
+  }
+
+	/*@IBAction func playRecording(_ sender: Any) {
 		let audioSession = AVAudioSession.sharedInstance()
 		let selectedRecording = recordingsTableView.indexPathForSelectedRow?.row
 		do {
@@ -120,11 +104,20 @@ class LessonRecorderViewController: UIViewController, UITableViewDataSource, UIT
 
 			let recordings = self.getRecordings()
 			let url = (selectedRecording != nil) ? recordings?[selectedRecording!] : recordings?.last
-			self.audioPlayer = try AVAudioPlayer(contentsOf: url!, fileTypeHint: "m4a")
-			self.audioPlayer?.play()
+
+			self.audioKitPlayer = try AKAudioPlayer(file: try AKAudioFile(forReading: url!))
+			AudioKit.output = self.audioKitPlayer
+
+			audioKitPlayer?.completionHandler = {
+				AudioKit.stop()
+			}
+
+			AudioKit.stop()
+			AudioKit.start()
+			self.audioKitPlayer?.play()
 		} catch {
 			print("\(error)")
 		}
 
-	}
+	}*/
 }

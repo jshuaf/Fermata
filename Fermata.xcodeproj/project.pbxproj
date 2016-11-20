@@ -7,11 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FE641F7B1DDCE61F00ED944B /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = FE641F7A1DDCE61F00ED944B /* .swiftlint.yml */; };
 		FE641F801DDCE77A00ED944B /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE641F781DDCE4AD00ED944B /* Cartography.framework */; };
 		FE6BCE3D1DD9205100EB9724 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6BCE3C1DD9205100EB9724 /* AppDelegate.swift */; };
-		FE6BCE3F1DD9205100EB9724 /* LessonRecorderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6BCE3E1DD9205100EB9724 /* LessonRecorderViewController.swift */; };
-		FE6BCE421DD9205100EB9724 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE6BCE401DD9205100EB9724 /* Main.storyboard */; };
 		FE6BCE451DD9205100EB9724 /* Fermata.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE6BCE431DD9205100EB9724 /* Fermata.xcdatamodeld */; };
 		FE6BCE471DD9205100EB9724 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE6BCE461DD9205100EB9724 /* Assets.xcassets */; };
 		FE6BCE4A1DD9205100EB9724 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE6BCE481DD9205100EB9724 /* LaunchScreen.storyboard */; };
@@ -33,6 +30,11 @@
 		FEEBB5721DDE6A1900CA5651 /* Rubik-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FEEBB5681DDE6A1800CA5651 /* Rubik-MediumItalic.ttf */; };
 		FEEBB5731DDE6A1900CA5651 /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FEEBB5691DDE6A1800CA5651 /* Rubik-Regular.ttf */; };
 		FEEBB5751DDEB08C00CA5651 /* RecordingsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEBB5741DDEB08C00CA5651 /* RecordingsListViewController.swift */; };
+		FEEBB5771DDF2FA200CA5651 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEBB5761DDF2FA200CA5651 /* Colors.swift */; };
+		FEEBB5791DDFD01300CA5651 /* FMTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEBB5781DDFD01300CA5651 /* FMTabBarController.swift */; };
+		FEEBB57A1DDFD0B600CA5651 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE6BCE401DD9205100EB9724 /* Main.storyboard */; };
+		FEEBB57C1DDFD18F00CA5651 /* LessonRecorderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEBB57B1DDFD18F00CA5651 /* LessonRecorderViewController.swift */; };
+		FEEBB57E1DE1360900CA5651 /* FMStopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEBB57D1DE1360900CA5651 /* FMStopwatch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +61,6 @@
 		FE641F7E1DDCE77100ED944B /* Build */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Build; path = Carthage/Build; sourceTree = "<group>"; };
 		FE6BCE391DD9205100EB9724 /* Fermata.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fermata.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE6BCE3C1DD9205100EB9724 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FE6BCE3E1DD9205100EB9724 /* LessonRecorderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonRecorderViewController.swift; sourceTree = "<group>"; };
 		FE6BCE411DD9205100EB9724 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FE6BCE441DD9205100EB9724 /* Fermata.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Fermata.xcdatamodel; sourceTree = "<group>"; };
 		FE6BCE461DD9205100EB9724 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -87,6 +88,10 @@
 		FEEBB5681DDE6A1800CA5651 /* Rubik-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-MediumItalic.ttf"; sourceTree = "<group>"; };
 		FEEBB5691DDE6A1800CA5651 /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
 		FEEBB5741DDEB08C00CA5651 /* RecordingsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingsListViewController.swift; sourceTree = "<group>"; };
+		FEEBB5761DDF2FA200CA5651 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		FEEBB5781DDFD01300CA5651 /* FMTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMTabBarController.swift; sourceTree = "<group>"; };
+		FEEBB57B1DDFD18F00CA5651 /* LessonRecorderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonRecorderViewController.swift; sourceTree = "<group>"; };
+		FEEBB57D1DE1360900CA5651 /* FMStopwatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMStopwatch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,14 +150,17 @@
 			children = (
 				FEEBB55F1DDE699900CA5651 /* Resources */,
 				FE6BCE3C1DD9205100EB9724 /* AppDelegate.swift */,
-				FE6BCE3E1DD9205100EB9724 /* LessonRecorderViewController.swift */,
+				FEEBB57B1DDFD18F00CA5651 /* LessonRecorderViewController.swift */,
 				FEEBB5741DDEB08C00CA5651 /* RecordingsListViewController.swift */,
 				FEB5A6E91DDA73D100B02327 /* RecordingTableViewCell.swift */,
+				FEEBB5781DDFD01300CA5651 /* FMTabBarController.swift */,
+				FEEBB57D1DE1360900CA5651 /* FMStopwatch.swift */,
 				FE6BCE401DD9205100EB9724 /* Main.storyboard */,
 				FE6BCE461DD9205100EB9724 /* Assets.xcassets */,
 				FE6BCE481DD9205100EB9724 /* LaunchScreen.storyboard */,
 				FE6BCE4B1DD9205100EB9724 /* Info.plist */,
 				FE6BCE431DD9205100EB9724 /* Fermata.xcdatamodeld */,
+				FEEBB5761DDF2FA200CA5651 /* Colors.swift */,
 				FEB5A6E71DDA6A5500B02327 /* Extensions.swift */,
 			);
 			path = Fermata;
@@ -314,8 +322,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEEBB57A1DDFD0B600CA5651 /* Main.storyboard in Resources */,
 				FEEBB56A1DDE6A1800CA5651 /* Rubik-Black.ttf in Resources */,
-				FE641F7B1DDCE61F00ED944B /* .swiftlint.yml in Resources */,
 				FECBCAF11DDBDEA1001E1FE0 /* Cartfile in Resources */,
 				FE6BCE4A1DD9205100EB9724 /* LaunchScreen.storyboard in Resources */,
 				FEEBB56B1DDE6A1800CA5651 /* Rubik-BlackItalic.ttf in Resources */,
@@ -326,7 +334,6 @@
 				FEEBB5711DDE6A1900CA5651 /* Rubik-Medium.ttf in Resources */,
 				FEEBB5701DDE6A1900CA5651 /* Rubik-LightItalic.ttf in Resources */,
 				FEEBB5721DDE6A1900CA5651 /* Rubik-MediumItalic.ttf in Resources */,
-				FE6BCE421DD9205100EB9724 /* Main.storyboard in Resources */,
 				FEEBB5731DDE6A1900CA5651 /* Rubik-Regular.ttf in Resources */,
 				FEEBB56F1DDE6A1900CA5651 /* Rubik-Light.ttf in Resources */,
 			);
@@ -385,11 +392,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEEBB5791DDFD01300CA5651 /* FMTabBarController.swift in Sources */,
 				FEEBB5751DDEB08C00CA5651 /* RecordingsListViewController.swift in Sources */,
-				FE6BCE3F1DD9205100EB9724 /* LessonRecorderViewController.swift in Sources */,
 				FEB5A6EA1DDA73D100B02327 /* RecordingTableViewCell.swift in Sources */,
+				FEEBB5771DDF2FA200CA5651 /* Colors.swift in Sources */,
 				FE6BCE451DD9205100EB9724 /* Fermata.xcdatamodeld in Sources */,
+				FEEBB57E1DE1360900CA5651 /* FMStopwatch.swift in Sources */,
 				FE6BCE3D1DD9205100EB9724 /* AppDelegate.swift in Sources */,
+				FEEBB57C1DDFD18F00CA5651 /* LessonRecorderViewController.swift in Sources */,
 				FEB5A6E81DDA6A5500B02327 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -551,6 +561,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.joshuafang.Fermata;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				WARNING_CFLAGS = (
+					"-Wall",
+					"-Wextra",
+					"-Weverything",
+				);
+				WARNING_LDFLAGS = "";
 			};
 			name = Debug;
 		};
@@ -567,6 +583,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.joshuafang.Fermata;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				WARNING_CFLAGS = (
+					"-Wall",
+					"-Wextra",
+					"-Weverything",
+				);
+				WARNING_LDFLAGS = "";
 			};
 			name = Release;
 		};

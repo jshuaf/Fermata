@@ -6,9 +6,18 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Rubik-Light.ttf">
+            <string>Rubik-Light</string>
+        </array>
+        <array key="Rubik-Regular.ttf">
+            <string>Rubik-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Record-->
         <scene sceneID="tne-QT-ifu">
@@ -22,54 +31,112 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UXw-VK-879">
-                                <rect key="frame" x="163" y="94" width="49" height="30"/>
-                                <state key="normal" title="Record"/>
-                                <connections>
-                                    <action selector="startRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qCi-X9-jGf"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="peT-xY-a3c">
-                                <rect key="frame" x="171" y="127" width="32" height="30"/>
-                                <state key="normal" title="Stop"/>
-                                <connections>
-                                    <action selector="stopRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o7u-7L-FZw"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="daD-qL-vow">
-                                <rect key="frame" x="173" y="56" width="30" height="30"/>
-                                <state key="normal" title="Play"/>
-                                <connections>
-                                    <action selector="playRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vSz-Y7-O0q"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Byz-Ta-wgF">
-                                <rect key="frame" x="68" y="420" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Byz-Ta-wgF">
+                                <rect key="frame" x="38" y="167" width="300" height="133"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZVc-Vu-j3v" userLabel="Start Recording Button">
+                                <rect key="frame" x="75" y="392" width="225" height="51"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start recording" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfy-hv-ic4">
+                                        <rect key="frame" x="38" y="13" width="149" height="25"/>
+                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="21"/>
+                                        <color key="textColor" red="0.22" green="0.22" blue="0.22" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="bfy-hv-ic4" firstAttribute="centerY" secondItem="ZVc-Vu-j3v" secondAttribute="centerY" id="5xE-T2-bc1"/>
+                                    <constraint firstItem="bfy-hv-ic4" firstAttribute="centerX" secondItem="ZVc-Vu-j3v" secondAttribute="centerX" id="hm1-ih-PGn"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.16651067137718201" green="0.16650569438934326" blue="0.16650852560997009" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sun Jan 1, 12:00 AM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2V7-g8-LPm" userLabel="Date Label">
+                                <rect key="frame" x="111" y="357" width="154" height="21"/>
+                                <fontDescription key="fontDescription" name="Rubik-Light" family="Rubik" pointSize="17"/>
+                                <color key="textColor" red="0.16651067137718201" green="0.16650569438934326" blue="0.16650852560997009" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UFt-6R-h1C" userLabel="Recording Info">
+                                <rect key="frame" x="28" y="50" width="319" height="100"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Stop Icon" translatesAutoresizingMaskIntoConstraints="NO" id="AwL-3R-is8">
+                                        <rect key="frame" x="248" y="34" width="32" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="AwL-3R-is8" secondAttribute="height" multiplier="1:1" id="rlS-ak-7y9"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pause Icon" translatesAutoresizingMaskIntoConstraints="NO" id="3dY-5u-tDT">
+                                        <rect key="frame" x="39" y="32.5" width="35" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="3dY-5u-tDT" secondAttribute="height" multiplier="1:1" id="8Uz-O4-VcP"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1:30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x0A-lo-Xlo" customClass="FMStopwatch" customModule="Fermata" customModuleProvider="target">
+                                        <rect key="frame" x="48.5" y="25" width="223" height="40"/>
+                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="49"/>
+                                        <color key="textColor" red="0.12479320168495178" green="0.12478572130203247" blue="0.12479007244110107" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="AwL-3R-is8" firstAttribute="centerY" secondItem="3dY-5u-tDT" secondAttribute="centerY" id="4dm-f2-Zfv"/>
+                                    <constraint firstItem="x0A-lo-Xlo" firstAttribute="centerY" secondItem="UFt-6R-h1C" secondAttribute="centerY" multiplier="0.9" id="7ds-a4-ncB"/>
+                                    <constraint firstItem="x0A-lo-Xlo" firstAttribute="width" secondItem="UFt-6R-h1C" secondAttribute="width" multiplier="0.7" id="9vH-gX-yN9"/>
+                                    <constraint firstItem="AwL-3R-is8" firstAttribute="centerY" secondItem="UFt-6R-h1C" secondAttribute="centerY" id="CI5-Hq-Y0f"/>
+                                    <constraint firstItem="x0A-lo-Xlo" firstAttribute="centerX" secondItem="UFt-6R-h1C" secondAttribute="centerX" id="Lpd-O4-X0o"/>
+                                    <constraint firstItem="AwL-3R-is8" firstAttribute="centerX" secondItem="UFt-6R-h1C" secondAttribute="centerX" multiplier="1.65" id="M7U-Tu-iNc"/>
+                                    <constraint firstItem="x0A-lo-Xlo" firstAttribute="height" secondItem="UFt-6R-h1C" secondAttribute="height" multiplier="0.4" id="OK6-sQ-jlI"/>
+                                    <constraint firstItem="3dY-5u-tDT" firstAttribute="centerX" secondItem="UFt-6R-h1C" secondAttribute="centerX" multiplier="0.35" id="Sf0-hf-dMQ"/>
+                                    <constraint firstItem="AwL-3R-is8" firstAttribute="width" secondItem="UFt-6R-h1C" secondAttribute="width" multiplier="0.1" id="YKU-dp-4Pk"/>
+                                    <constraint firstItem="3dY-5u-tDT" firstAttribute="width" secondItem="UFt-6R-h1C" secondAttribute="width" multiplier="0.11" id="qg3-cQ-UDJ"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="UXw-VK-879" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.4" constant="-24.5" id="48Q-l6-4hd"/>
-                            <constraint firstItem="peT-xY-a3c" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="P0h-ul-jnp"/>
-                            <constraint firstItem="peT-xY-a3c" firstAttribute="top" secondItem="UXw-VK-879" secondAttribute="bottom" constant="3" id="U6B-TU-Ejn"/>
-                            <constraint firstItem="daD-qL-vow" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="0.5" id="gKf-36-ryO"/>
-                            <constraint firstItem="UXw-VK-879" firstAttribute="top" secondItem="daD-qL-vow" secondAttribute="bottom" constant="8" id="lEP-Xw-FR6"/>
+                            <constraint firstItem="ZVc-Vu-j3v" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.075" id="0gr-NO-vca"/>
+                            <constraint firstItem="ZVc-Vu-j3v" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5Er-eG-3oI"/>
+                            <constraint firstItem="UFt-6R-h1C" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.15" id="6MC-GP-882"/>
+                            <constraint firstItem="Byz-Ta-wgF" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="7sM-rt-kPo"/>
+                            <constraint firstItem="ZVc-Vu-j3v" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.25" id="9bE-vq-xTT"/>
+                            <constraint firstItem="ZVc-Vu-j3v" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.6" id="KKD-BM-05W"/>
+                            <constraint firstItem="UFt-6R-h1C" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Knb-j5-RZw"/>
+                            <constraint firstItem="2V7-g8-LPm" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.1" id="NSi-k3-MXb"/>
+                            <constraint firstItem="2V7-g8-LPm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RuE-Da-Z8K"/>
+                            <constraint firstItem="UFt-6R-h1C" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.85" id="ldO-4o-uHp"/>
                             <constraint firstItem="Byz-Ta-wgF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mci-kS-6B7"/>
-                            <constraint firstItem="UXw-VK-879" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zuB-Nq-u5m"/>
+                            <constraint firstItem="UFt-6R-h1C" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.3" id="uBN-kA-seY"/>
+                            <constraint firstItem="Byz-Ta-wgF" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.2" id="y4j-IZ-h30"/>
+                            <constraint firstItem="Byz-Ta-wgF" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.7" id="zGL-mE-Eqe"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Record" image="Record Icon" selectedImage="Record Icon" id="VfV-ht-SAb"/>
                     <connections>
-                        <outlet property="playRecordingButton" destination="daD-qL-vow" id="gGs-jD-AMo"/>
-                        <outlet property="startRecordingButton" destination="UXw-VK-879" id="CJU-Bw-QuN"/>
-                        <outlet property="stopRecordingButton" destination="peT-xY-a3c" id="4bE-MW-sN6"/>
+                        <outlet property="dateLabel" destination="2V7-g8-LPm" id="ivo-Gg-SXs"/>
+                        <outlet property="pauseRecordingButton" destination="3dY-5u-tDT" id="NjJ-BG-2KD"/>
+                        <outlet property="recordingInfoView" destination="UFt-6R-h1C" id="Q2e-5n-GYu"/>
+                        <outlet property="recordingTimeElapsed" destination="x0A-lo-Xlo" id="0f7-zf-e8I"/>
+                        <outlet property="startRecordingButton" destination="ZVc-Vu-j3v" id="g9z-QS-Yxc"/>
+                        <outlet property="stopRecordingButton" destination="AwL-3R-is8" id="Zcj-a8-9C2"/>
                         <outlet property="waveformView" destination="Byz-Ta-wgF" id="GeX-nd-kkS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1934" y="861"/>
+            <point key="canvasLocation" x="1933.5999999999999" y="859.52023988005999"/>
         </scene>
         <!--Journal-->
         <scene sceneID="Jbj-mj-k53">
@@ -92,7 +159,7 @@
                                         <rect key="frame" x="0.0" y="28" width="240" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Eaf-eS-A0I" id="qbK-Kc-Wkg">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -113,13 +180,23 @@
         <!--Tab Bar Controller-->
         <scene sceneID="tuP-ie-7th">
             <objects>
-                <tabBarController id="zFW-sL-u1x" sceneMemberID="viewController">
+                <tabBarController id="zFW-sL-u1x" customClass="FMTabBarController" customModule="Fermata" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="isa-ch-CJ7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="tintColor" red="1" green="0.67450980392156867" blue="0.3529411764705882" alpha="1" colorSpace="calibratedRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.9922487735748291" green="0.61687427759170532" blue="0.2912030816078186" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="defaultIndex">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="XzQ-hF-SIQ" kind="relationship" relationship="viewControllers" id="v1q-qz-WPd"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="ZNe-4A-vLV"/>
@@ -132,6 +209,8 @@
     </scenes>
     <resources>
         <image name="Journal Icon" width="27" height="27"/>
+        <image name="Pause Icon" width="98" height="125"/>
         <image name="Record Icon" width="28" height="27"/>
+        <image name="Stop Icon" width="100" height="100"/>
     </resources>
 </document>
