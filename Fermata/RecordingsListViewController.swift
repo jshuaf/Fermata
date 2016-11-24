@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class RecordingsListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -27,11 +28,13 @@ class RecordingsListViewController: UIViewController, UITableViewDataSource, UIT
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = recordingsTableView.dequeueReusableCell(withIdentifier: "recording") as? RecordingTableViewCell
-		let recordingName = self.getRecordings()?[indexPath.row].lastPathComponent
-		let timestamp = Date(timeIntervalSince1970: TimeInterval(recordingName!)!)
-		let date = DateFormatter.localizedString(from: timestamp, dateStyle: DateFormatter.Style.short, timeStyle: DateFormatter.Style.short)
-		cell?.setup(title: "\(date)")
-		return cell!
+		let recording = self.getRecordings()?[indexPath.row]
+    guard (recording != nil) else {
+      print("Recording not found.")
+      return cell!
+    }
+    cell?.setup(recording: recording!)
+    return cell!
 	}
 
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -43,7 +46,7 @@ class RecordingsListViewController: UIViewController, UITableViewDataSource, UIT
 		if editingStyle == UITableViewCellEditingStyle.delete {
 			let recordingToDelete = self.getRecordings()?[indexPath.row]
 			do {
-				try FileManager.default.removeItem(at: recordingToDelete!)
+				try FileManager.default.removeItem(at: URL(fileURLWithPath: recordingToDelete!.url))
 				tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
 			} catch {
 				print("\(error)")
@@ -55,15 +58,14 @@ class RecordingsListViewController: UIViewController, UITableViewDataSource, UIT
 		return 1
 	}
 
-	func getRecordings() -> [URL]? {
-		let recordingsDirectory = Helper.getRecordingsDirectory()
-		do {
-			let recordings = try FileManager.default.contentsOfDirectory(at: recordingsDirectory!, includingPropertiesForKeys: nil, options: [])
-			return recordings
-		} catch {
-			print("\(error)")
-			return nil
-		}
+	func getRecordings() -> [Recording]? {
+    do {
+      let realm = try Realm()
+      return Array(realm.objects(Recording.self).sorted(byProperty: "dateCreated"))
+    } catch {
+      print("\(error)")
+      return nil
+    }
 	}
 
 }

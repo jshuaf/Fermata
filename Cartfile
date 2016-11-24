@@ -1,3 +1,4 @@
 github "audiokit/AudioKit"
 github "robb/Cartography"
 github "hyperoslo/Hue"
+github "realm/realm-cocoa.git" "master"

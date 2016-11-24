@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE5ADED21DE65648004774CE /* Recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5ADED11DE65648004774CE /* Recording.swift */; };
+		FE5ADEDA1DE753BE004774CE /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE5ADED41DE65672004774CE /* Realm.framework */; };
+		FE5ADEDB1DE753BE004774CE /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE5ADED61DE6567A004774CE /* RealmSwift.framework */; };
 		FE641F801DDCE77A00ED944B /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE641F781DDCE4AD00ED944B /* Cartography.framework */; };
 		FE6BCE3D1DD9205100EB9724 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6BCE3C1DD9205100EB9724 /* AppDelegate.swift */; };
 		FE6BCE451DD9205100EB9724 /* Fermata.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE6BCE431DD9205100EB9724 /* Fermata.xcdatamodeld */; };
@@ -55,6 +58,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FE5ADED11DE65648004774CE /* Recording.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recording.swift; sourceTree = "<group>"; };
+		FE5ADED41DE65672004774CE /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		FE5ADED61DE6567A004774CE /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		FE641F781DDCE4AD00ED944B /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cartography.framework; path = Carthage/Build/iOS/Cartography.framework; sourceTree = "<group>"; };
 		FE641F7A1DDCE61F00ED944B /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		FE641F7C1DDCE76400ED944B /* Cartography */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Cartography; path = Carthage/Checkouts/Cartography; sourceTree = "<group>"; };
@@ -99,6 +105,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE5ADEDA1DE753BE004774CE /* Realm.framework in Frameworks */,
+				FE5ADEDB1DE753BE004774CE /* RealmSwift.framework in Frameworks */,
 				FEEBB55E1DDE1BC900CA5651 /* Hue.framework in Frameworks */,
 				FE641F801DDCE77A00ED944B /* Cartography.framework in Frameworks */,
 				FECBCAF51DDBDF39001E1FE0 /* AudioKit.framework in Frameworks */,
@@ -122,6 +130,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FE5ADED31DE6564D004774CE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FE5ADED11DE65648004774CE /* Recording.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		FE6BCE301DD9205100EB9724 = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +164,7 @@
 		FE6BCE3B1DD9205100EB9724 /* Fermata */ = {
 			isa = PBXGroup;
 			children = (
+				FE5ADED31DE6564D004774CE /* Models */,
 				FEEBB55F1DDE699900CA5651 /* Resources */,
 				FE6BCE3C1DD9205100EB9724 /* AppDelegate.swift */,
 				FEEBB57B1DDFD18F00CA5651 /* LessonRecorderViewController.swift */,
@@ -187,6 +204,8 @@
 		FECBCAF31DDBDF35001E1FE0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FE5ADED61DE6567A004774CE /* RealmSwift.framework */,
+				FE5ADED41DE65672004774CE /* Realm.framework */,
 				FEEBB55D1DDE1BC900CA5651 /* Hue.framework */,
 				FE641F7E1DDCE77100ED944B /* Build */,
 				FE641F7C1DDCE76400ED944B /* Cartography */,
@@ -378,6 +397,8 @@
 				"$(SRCROOT)/Carthage/Build/iOS/AudioKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Cartography.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Hue.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 			);
 			outputPaths = (
 			);
@@ -401,6 +422,7 @@
 				FE6BCE3D1DD9205100EB9724 /* AppDelegate.swift in Sources */,
 				FEEBB57C1DDFD18F00CA5651 /* LessonRecorderViewController.swift in Sources */,
 				FEB5A6E81DDA6A5500B02327 /* Extensions.swift in Sources */,
+				FE5ADED21DE65648004774CE /* Recording.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

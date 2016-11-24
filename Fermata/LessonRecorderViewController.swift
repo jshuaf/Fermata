@@ -11,11 +11,17 @@ import AVFoundation
 import AudioKit
 import Cartography
 import Hue
+import RealmSwift
 
 class LessonRecorderViewController: UIViewController {
+
+  // MARK: Instance Properties
 	var audioRecorder: AVAudioRecorder?
 	var audioKitPlayer: AKAudioPlayer?
+  var lastRecordingURL: URL?
+  var recording: Recording?
 
+  // MARK: Outlets
 	@IBOutlet weak var waveformView: UIView!
   @IBOutlet weak var startRecordingButton: UIView!
   @IBOutlet weak var stopRecordingButton: UIImageView!
@@ -24,39 +30,56 @@ class LessonRecorderViewController: UIViewController {
   @IBOutlet weak var recordingInfoView: UIView!
   @IBOutlet weak var recordingTimeElapsed: FMStopwatch!
 
+  // MARK: Lifecycle Methods
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		let mic = AKMicrophone()
-		let mainMixer = AKMixer(mic)
+    setupWaveformPlot()
+		AudioKit.start()
 
-		let plot = AKNodeOutputPlot.init(mainMixer, frame: self.waveformView.bounds)
-		self.waveformView.addSubview(plot)
-		plot.color = UIColor(hue: 0, saturation: 0, brightness: 0.22, alpha: 1)
+    setupBackground()
+
+    setupButtonGestures()
+	}
+
+  // MARK: Setup Methods
+  func setupWaveformPlot() {
+    let mic = AKMicrophone()
+    let mainMixer = AKMixer(mic)
+    AudioKit.output = AKBooster(mainMixer, gain: 0)
+
+    let plot = AKNodeOutputPlot.init(mainMixer, frame: waveformView.bounds)
+    waveformView.addSubview(plot)
+    plot.color = UIColor(hue: 0, saturation: 0, brightness: 0.22, alpha: 1)
     plot.waveformLayer.lineWidth = 2.0
     plot.backgroundColor = UIColor.clear
 
-		AudioKit.output = AKBooster(mainMixer, gain: 0)
-		AudioKit.start()
+  }
 
+  func setupBackground() {
     let backgroundGradient = [UIColor.grapefruit, UIColor.cookie].gradient()
-    backgroundGradient.frame = self.view.bounds
-    self.view.layer.insertSublayer(backgroundGradient, at: 0)
+    backgroundGradient.frame = view.bounds
+    view.layer.insertSublayer(backgroundGradient, at: 0)
+  }
 
-    let startRecordingClicked = UITapGestureRecognizer(target: self, action: #selector(self.startRecording))
-    self.startRecordingButton.addGestureRecognizer(startRecordingClicked)
-    let stopRecordingClicked = UITapGestureRecognizer(target: self, action: #selector(self.stopRecording))
-    self.stopRecordingButton.addGestureRecognizer(stopRecordingClicked)
+  func setupButtonGestures() {
+    let startRecordingClicked = UITapGestureRecognizer(target: self, action: #selector(startRecording))
+    startRecordingButton.addGestureRecognizer(startRecordingClicked)
+    let stopRecordingClicked = UITapGestureRecognizer(target: self, action: #selector(stopRecording))
+    stopRecordingButton.addGestureRecognizer(stopRecordingClicked)
+    let pauseRecordingClicked = UITapGestureRecognizer(target: self, action: #selector(togglePauseRecording))
+    pauseRecordingButton.addGestureRecognizer(pauseRecordingClicked)
+  }
 
-    self.dateLabel.font = self.dateLabel.font.smallCaps()
-	}
-
+  // MARK: Action Triggers
 	func startRecording() {
 		let audioSession = AVAudioSession.sharedInstance()
 		audioSession.requestRecordPermission({(granted: Bool) -> Void in
-			let recordingsDirectory = Helper.getRecordingsDirectory()
-			let timestamp = NSDate().timeIntervalSince1970
+			let recordingsDirectory = Helper.directory(atPath: "Recordings")
+			let timestamp = Int(Date().timeIntervalSince1970)
 			let url = recordingsDirectory?.appendingPathComponent("\(timestamp)")
+      self.lastRecordingURL = url
+
 			let settings: [String : Any] = [
 				AVFormatIDKey:Int(kAudioFormatMPEG4AAC),
 				AVSampleRateKey:44100.0,
@@ -84,15 +107,51 @@ class LessonRecorderViewController: UIViewController {
 	func stopRecording() {
 		let audioSession = AVAudioSession.sharedInstance()
 		if audioSession.category == AVAudioSessionCategoryPlayAndRecord {
-			self.audioRecorder?.stop()
+			audioRecorder?.stop()
+      recordingTimeElapsed?.stopTiming()
+      promptTitleEntry()
 		}
 	}
 
-  func pauseRecording() {
+  func togglePauseRecording() {
     let audioSession = AVAudioSession.sharedInstance()
     if audioSession.category == AVAudioSessionCategoryPlayAndRecord {
-      self.audioRecorder?.pause()
+      if (audioRecorder?.isRecording)! {
+        audioRecorder?.pause()
+        recordingTimeElapsed?.pauseTiming()
+        pauseRecordingButton?.image = UIImage(named: "Play Icon")
+      } else {
+        let audioSession = AVAudioSession.sharedInstance()
+        if audioSession.category == AVAudioSessionCategoryPlayAndRecord {
+          audioRecorder?.record()
+          recordingTimeElapsed?.resumeTiming()
+          pauseRecordingButton?.image = UIImage(named: "Pause Icon")
+        }
+      }
     }
+  }
+
+  func promptTitleEntry() {
+    let alert = UIAlertController(title: "Enter Recording Title", message: nil, preferredStyle: UIAlertControllerStyle.alert)
+    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {(alertAction: UIAlertAction) in
+      let titleText = alert.textFields?[0].text!
+      let currentDateText = Helper.formattedDate(timestamp: NSDate().timeIntervalSince1970)!
+      self.recording = Recording(value: ["title": titleText ?? currentDateText, "dateCreated": NSDate(), "url": self.lastRecordingURL!.path])
+      do {
+        let realm = try Realm()
+        try realm.write {
+          realm.add(self.recording!)
+        }
+      } catch {
+        print("\(error)")
+      }
+    }))
+    alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+    alert.addTextField(configurationHandler: {(textField: UITextField!) in
+      textField.placeholder = "Title"
+    })
+
+    self.present(alert, animated: true, completion: nil)
   }
 
 	/*@IBAction func playRecording(_ sender: Any) {

@@ -11,8 +11,8 @@ import UIKit
 class RecordingTableViewCell: UITableViewCell {
 	var cellLabel: UILabel!
 
-	func setup(title: String) {
-		cellLabel.text = title
+	func setup(recording: Recording) {
+		cellLabel.text = recording.title
 	}
 
 	required init?(coder aDecoder: NSCoder) {

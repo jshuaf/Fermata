@@ -18,6 +18,7 @@ class FMStopwatch: UILabel {
     updateTimer = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(self.updateTimeElapsed), userInfo: nil, repeats: true)
     lastTime = NSDate.timeIntervalSinceReferenceDate
     timeElapsed = 0
+
   }
 
   func pauseTiming() {
@@ -28,6 +29,11 @@ class FMStopwatch: UILabel {
     updateTimer?.invalidate()
     timeElapsed = nil
     lastTime = nil
+  }
+
+  func resumeTiming() {
+    updateTimer = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(self.updateTimeElapsed), userInfo: nil, repeats: true)
+    lastTime = NSDate.timeIntervalSinceReferenceDate
   }
 
   func updateTimeElapsed() {
