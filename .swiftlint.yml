@@ -2,8 +2,8 @@ excluded:
 - Carthage
 
 line_length:
-- 150
 - 200
+- 250
 
 variable_name:
   min_length: 1

@@ -1,4 +1,4 @@
 github "audiokit/AudioKit"
 github "robb/Cartography"
 github "hyperoslo/Hue"
-github "realm/realm-cocoa.git" "master"
+github "xmartlabs/Eureka" ~> 2.0.0

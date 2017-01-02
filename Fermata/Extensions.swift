@@ -74,13 +74,10 @@ extension UILabel {
   }
 }
 
-extension UIFont {
-
-  func smallCaps() -> UIFont {
-
-    let settings = [[UIFontFeatureTypeIdentifierKey: kLowerCaseType, UIFontFeatureSelectorIdentifierKey: kLowerCaseSmallCapsSelector]]
-    let attributes: [String: AnyObject] = [UIFontDescriptorFeatureSettingsAttribute: settings as AnyObject, UIFontDescriptorNameAttribute: fontName as AnyObject]
-
-    return UIFont(descriptor: UIFontDescriptor(fontAttributes: attributes), size: pointSize)
+extension Collection where Iterator.Element == Double, Index == Int {
+  //
+  Returns the average of all elements in the collection
+  var average: Double {
+    return isEmpty ? 0 : Double(reduce(0, +)) / Double(endIndex-startIndex)
   }
 }

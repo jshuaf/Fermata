@@ -20,6 +20,7 @@ class LessonRecorderViewController: UIViewController {
 	var audioKitPlayer: AKAudioPlayer?
   var lastRecordingURL: URL?
   var recording: Recording?
+  var plot: AKNodeOutputPlot?
 
   // MARK: Outlets
 	@IBOutlet weak var waveformView: UIView!
@@ -48,11 +49,12 @@ class LessonRecorderViewController: UIViewController {
     let mainMixer = AKMixer(mic)
     AudioKit.output = AKBooster(mainMixer, gain: 0)
 
-    let plot = AKNodeOutputPlot.init(mainMixer, frame: waveformView.bounds)
-    waveformView.addSubview(plot)
-    plot.color = UIColor(hue: 0, saturation: 0, brightness: 0.22, alpha: 1)
-    plot.waveformLayer.lineWidth = 2.0
-    plot.backgroundColor = UIColor.clear
+    self.plot = AKNodeOutputPlot.init(mainMixer, frame: waveformView.bounds)
+    plot?.shouldMirror = true
+    waveformView.addSubview(plot!)
+    plot?.color = UIColor(hue: 0, saturation: 0, brightness: 0.22, alpha: 1)
+    plot?.waveformLayer.lineWidth = 2.0
+    plot?.backgroundColor = UIColor.clear
 
   }
 
@@ -98,6 +100,7 @@ class LessonRecorderViewController: UIViewController {
         self.recordingInfoView.isHidden = false
         self.startRecordingButton.isHidden = true
         self.dateLabel.isHidden = true
+        self.plot?.plotType = .rolling
 			} catch {
 				print("\(error)")
 			}
@@ -109,6 +112,7 @@ class LessonRecorderViewController: UIViewController {
 		if audioSession.category == AVAudioSessionCategoryPlayAndRecord {
 			audioRecorder?.stop()
       recordingTimeElapsed?.stopTiming()
+      self.plot?.plotType = .buffer
       promptTitleEntry()
 		}
 	}
@@ -120,12 +124,14 @@ class LessonRecorderViewController: UIViewController {
         audioRecorder?.pause()
         recordingTimeElapsed?.pauseTiming()
         pauseRecordingButton?.image = UIImage(named: "Play Icon")
+        self.plot?.plotType = .buffer
       } else {
         let audioSession = AVAudioSession.sharedInstance()
         if audioSession.category == AVAudioSessionCategoryPlayAndRecord {
           audioRecorder?.record()
           recordingTimeElapsed?.resumeTiming()
           pauseRecordingButton?.image = UIImage(named: "Pause Icon")
+          self.plot?.plotType = .rolling
         }
       }
     }

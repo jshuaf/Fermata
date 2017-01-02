@@ -8,8 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		FE5ADED21DE65648004774CE /* Recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5ADED11DE65648004774CE /* Recording.swift */; };
-		FE5ADEDA1DE753BE004774CE /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE5ADED41DE65672004774CE /* Realm.framework */; };
-		FE5ADEDB1DE753BE004774CE /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE5ADED61DE6567A004774CE /* RealmSwift.framework */; };
+		FE5ADEDF1DE758F4004774CE /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE5ADEDD1DE758F4004774CE /* Realm.framework */; };
+		FE5ADEE01DE758F4004774CE /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FE5ADEDD1DE758F4004774CE /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FE5ADEE11DE758F4004774CE /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE5ADEDE1DE758F4004774CE /* RealmSwift.framework */; };
+		FE5ADEE21DE758F4004774CE /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FE5ADEDE1DE758F4004774CE /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FE621D191E175428009E61F6 /* OptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE621D181E175428009E61F6 /* OptionTableViewCell.swift */; };
+		FE621D1C1E1756DA009E61F6 /* ButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE621D1B1E1756DA009E61F6 /* ButtonTableViewCell.swift */; };
 		FE641F801DDCE77A00ED944B /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE641F781DDCE4AD00ED944B /* Cartography.framework */; };
 		FE6BCE3D1DD9205100EB9724 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6BCE3C1DD9205100EB9724 /* AppDelegate.swift */; };
 		FE6BCE451DD9205100EB9724 /* Fermata.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE6BCE431DD9205100EB9724 /* Fermata.xcdatamodeld */; };
@@ -17,10 +21,26 @@
 		FE6BCE4A1DD9205100EB9724 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE6BCE481DD9205100EB9724 /* LaunchScreen.storyboard */; };
 		FE6BCE551DD9205100EB9724 /* FermataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6BCE541DD9205100EB9724 /* FermataTests.swift */; };
 		FE6BCE601DD9205100EB9724 /* FermataUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6BCE5F1DD9205100EB9724 /* FermataUITests.swift */; };
-		FEB5A6E81DDA6A5500B02327 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB5A6E71DDA6A5500B02327 /* Extensions.swift */; };
+		FE95DC0A1E04D75100144A65 /* wooden.wav in Resources */ = {isa = PBXBuildFile; fileRef = FE95DC091E04D75100144A65 /* wooden.wav */; };
+		FE95DC0C1E04D7B600144A65 /* MetronomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE95DC0B1E04D7B600144A65 /* MetronomeViewController.swift */; };
+		FE95DC0E1E04D80800144A65 /* Metronome.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE95DC0D1E04D80800144A65 /* Metronome.swift */; };
+		FE95DC101E05DC3400144A65 /* MetronomePreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE95DC0F1E05DC3400144A65 /* MetronomePreset.swift */; };
+		FE95DC121E05DCCC00144A65 /* Piece.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE95DC111E05DCCC00144A65 /* Piece.swift */; };
+		FE95DC181E05FC5700144A65 /* PracticeSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE95DC171E05FC5700144A65 /* PracticeSession.swift */; };
+		FE95DC1A1E06144A00144A65 /* PiecePractice.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE95DC191E06144A00144A65 /* PiecePractice.swift */; };
+		FEB5A6E81DDA6A5500B02327 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB5A6E71DDA6A5500B02327 /* Helper.swift */; };
 		FEB5A6EA1DDA73D100B02327 /* RecordingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB5A6E91DDA73D100B02327 /* RecordingTableViewCell.swift */; };
 		FECBCAF11DDBDEA1001E1FE0 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = FECBCAF01DDBDEA1001E1FE0 /* Cartfile */; };
 		FECBCAF51DDBDF39001E1FE0 /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FECBCAF41DDBDF39001E1FE0 /* AudioKit.framework */; };
+		FEE905171E089B6E00FEFBDB /* SetupPracticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE905161E089B6E00FEFBDB /* SetupPracticeViewController.swift */; };
+		FEE9051A1E08A86000FEFBDB /* Typography.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE905191E08A86000FEFBDB /* Typography.swift */; };
+		FEE9051E1E0986E100FEFBDB /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE9051D1E0986E100FEFBDB /* Layout.swift */; };
+		FEE905221E09F04E00FEFBDB /* OptionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE905211E09F04E00FEFBDB /* OptionLabel.swift */; };
+		FEE905251E0A192100FEFBDB /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE905241E0A192100FEFBDB /* UIFont.swift */; };
+		FEE905271E0A194400FEFBDB /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE905261E0A194400FEFBDB /* UIView.swift */; };
+		FEE9052B1E0A27E200FEFBDB /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE9052A1E0A27E200FEFBDB /* Buttons.swift */; };
+		FEE905301E0AD81500FEFBDB /* PracticeSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE9052F1E0AD81500FEFBDB /* PracticeSessionViewController.swift */; };
+		FEE905321E0B132B00FEFBDB /* SelectPieceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE905311E0B132B00FEFBDB /* SelectPieceViewController.swift */; };
 		FEEBB55E1DDE1BC900CA5651 /* Hue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEEBB55D1DDE1BC900CA5651 /* Hue.framework */; };
 		FEEBB56A1DDE6A1800CA5651 /* Rubik-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FEEBB5601DDE6A1800CA5651 /* Rubik-Black.ttf */; };
 		FEEBB56B1DDE6A1800CA5651 /* Rubik-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FEEBB5611DDE6A1800CA5651 /* Rubik-BlackItalic.ttf */; };
@@ -57,10 +77,29 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		FE5ADEE31DE758F4004774CE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FE5ADEE21DE758F4004774CE /* RealmSwift.framework in Embed Frameworks */,
+				FE5ADEE01DE758F4004774CE /* Realm.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		FE5ADED11DE65648004774CE /* Recording.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recording.swift; sourceTree = "<group>"; };
 		FE5ADED41DE65672004774CE /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		FE5ADED61DE6567A004774CE /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		FE5ADEDD1DE758F4004774CE /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		FE5ADEDE1DE758F4004774CE /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
+		FE621D181E175428009E61F6 /* OptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionTableViewCell.swift; sourceTree = "<group>"; };
+		FE621D1B1E1756DA009E61F6 /* ButtonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonTableViewCell.swift; sourceTree = "<group>"; };
 		FE641F781DDCE4AD00ED944B /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cartography.framework; path = Carthage/Build/iOS/Cartography.framework; sourceTree = "<group>"; };
 		FE641F7A1DDCE61F00ED944B /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		FE641F7C1DDCE76400ED944B /* Cartography */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Cartography; path = Carthage/Checkouts/Cartography; sourceTree = "<group>"; };
@@ -78,10 +117,26 @@
 		FE6BCE5B1DD9205100EB9724 /* FermataUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FermataUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE6BCE5F1DD9205100EB9724 /* FermataUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FermataUITests.swift; sourceTree = "<group>"; };
 		FE6BCE611DD9205100EB9724 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FEB5A6E71DDA6A5500B02327 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		FE95DC091E04D75100144A65 /* wooden.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = wooden.wav; path = ../wooden.wav; sourceTree = "<group>"; };
+		FE95DC0B1E04D7B600144A65 /* MetronomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetronomeViewController.swift; sourceTree = "<group>"; };
+		FE95DC0D1E04D80800144A65 /* Metronome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Metronome.swift; sourceTree = "<group>"; };
+		FE95DC0F1E05DC3400144A65 /* MetronomePreset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetronomePreset.swift; sourceTree = "<group>"; };
+		FE95DC111E05DCCC00144A65 /* Piece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Piece.swift; sourceTree = "<group>"; };
+		FE95DC171E05FC5700144A65 /* PracticeSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PracticeSession.swift; sourceTree = "<group>"; };
+		FE95DC191E06144A00144A65 /* PiecePractice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PiecePractice.swift; sourceTree = "<group>"; };
+		FEB5A6E71DDA6A5500B02327 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		FEB5A6E91DDA73D100B02327 /* RecordingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingTableViewCell.swift; sourceTree = "<group>"; };
 		FECBCAF01DDBDEA1001E1FE0 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		FECBCAF41DDBDF39001E1FE0 /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKit.framework; path = Carthage/Build/iOS/AudioKit.framework; sourceTree = "<group>"; };
+		FEE905161E089B6E00FEFBDB /* SetupPracticeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupPracticeViewController.swift; sourceTree = "<group>"; };
+		FEE905191E08A86000FEFBDB /* Typography.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Typography.swift; sourceTree = "<group>"; };
+		FEE9051D1E0986E100FEFBDB /* Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
+		FEE905211E09F04E00FEFBDB /* OptionLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionLabel.swift; sourceTree = "<group>"; };
+		FEE905241E0A192100FEFBDB /* UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
+		FEE905261E0A194400FEFBDB /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		FEE9052A1E0A27E200FEFBDB /* Buttons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
+		FEE9052F1E0AD81500FEFBDB /* PracticeSessionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PracticeSessionViewController.swift; sourceTree = "<group>"; };
+		FEE905311E0B132B00FEFBDB /* SelectPieceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectPieceViewController.swift; sourceTree = "<group>"; };
 		FEEBB55D1DDE1BC900CA5651 /* Hue.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Hue.framework; path = Carthage/Build/iOS/Hue.framework; sourceTree = "<group>"; };
 		FEEBB5601DDE6A1800CA5651 /* Rubik-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Black.ttf"; sourceTree = "<group>"; };
 		FEEBB5611DDE6A1800CA5651 /* Rubik-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-BlackItalic.ttf"; sourceTree = "<group>"; };
@@ -105,8 +160,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE5ADEDA1DE753BE004774CE /* Realm.framework in Frameworks */,
-				FE5ADEDB1DE753BE004774CE /* RealmSwift.framework in Frameworks */,
+				FE5ADEDF1DE758F4004774CE /* Realm.framework in Frameworks */,
+				FE5ADEE11DE758F4004774CE /* RealmSwift.framework in Frameworks */,
 				FEEBB55E1DDE1BC900CA5651 /* Hue.framework in Frameworks */,
 				FE641F801DDCE77A00ED944B /* Cartography.framework in Frameworks */,
 				FECBCAF51DDBDF39001E1FE0 /* AudioKit.framework in Frameworks */,
@@ -133,14 +188,29 @@
 		FE5ADED31DE6564D004774CE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FE95DC171E05FC5700144A65 /* PracticeSession.swift */,
+				FE95DC191E06144A00144A65 /* PiecePractice.swift */,
 				FE5ADED11DE65648004774CE /* Recording.swift */,
+				FE95DC0F1E05DC3400144A65 /* MetronomePreset.swift */,
+				FE95DC111E05DCCC00144A65 /* Piece.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		FE621D1A1E17542D009E61F6 /* Table View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FE621D181E175428009E61F6 /* OptionTableViewCell.swift */,
+				FE621D1B1E1756DA009E61F6 /* ButtonTableViewCell.swift */,
+			);
+			name = "Table View Cells";
 			sourceTree = "<group>";
 		};
 		FE6BCE301DD9205100EB9724 = {
 			isa = PBXGroup;
 			children = (
+				FE5ADEDD1DE758F4004774CE /* Realm.framework */,
+				FE5ADEDE1DE758F4004774CE /* RealmSwift.framework */,
 				FECBCAF01DDBDEA1001E1FE0 /* Cartfile */,
 				FE641F7A1DDCE61F00ED944B /* .swiftlint.yml */,
 				FE6BCE3B1DD9205100EB9724 /* Fermata */,
@@ -164,21 +234,25 @@
 		FE6BCE3B1DD9205100EB9724 /* Fermata */ = {
 			isa = PBXGroup;
 			children = (
+				FE621D1A1E17542D009E61F6 /* Table View Cells */,
+				FEE905201E09F03500FEFBDB /* Labels */,
 				FE5ADED31DE6564D004774CE /* Models */,
 				FEEBB55F1DDE699900CA5651 /* Resources */,
-				FE6BCE3C1DD9205100EB9724 /* AppDelegate.swift */,
-				FEEBB57B1DDFD18F00CA5651 /* LessonRecorderViewController.swift */,
-				FEEBB5741DDEB08C00CA5651 /* RecordingsListViewController.swift */,
+				FEE905231E0A18CE00FEFBDB /* Extensions */,
+				FEE905181E089C1100FEFBDB /* View Controllers */,
 				FEB5A6E91DDA73D100B02327 /* RecordingTableViewCell.swift */,
-				FEEBB5781DDFD01300CA5651 /* FMTabBarController.swift */,
 				FEEBB57D1DE1360900CA5651 /* FMStopwatch.swift */,
 				FE6BCE401DD9205100EB9724 /* Main.storyboard */,
+				FE95DC0D1E04D80800144A65 /* Metronome.swift */,
 				FE6BCE461DD9205100EB9724 /* Assets.xcassets */,
 				FE6BCE481DD9205100EB9724 /* LaunchScreen.storyboard */,
 				FE6BCE4B1DD9205100EB9724 /* Info.plist */,
 				FE6BCE431DD9205100EB9724 /* Fermata.xcdatamodeld */,
+				FE6BCE3C1DD9205100EB9724 /* AppDelegate.swift */,
+				FEE9052A1E0A27E200FEFBDB /* Buttons.swift */,
 				FEEBB5761DDF2FA200CA5651 /* Colors.swift */,
-				FEB5A6E71DDA6A5500B02327 /* Extensions.swift */,
+				FEE905191E08A86000FEFBDB /* Typography.swift */,
+				FEE9051D1E0986E100FEFBDB /* Layout.swift */,
 			);
 			path = Fermata;
 			sourceTree = "<group>";
@@ -215,9 +289,50 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FEE905181E089C1100FEFBDB /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FEE9052E1E0AD7F600FEFBDB /* Practice */,
+				FEEBB57B1DDFD18F00CA5651 /* LessonRecorderViewController.swift */,
+				FEEBB5741DDEB08C00CA5651 /* RecordingsListViewController.swift */,
+				FEEBB5781DDFD01300CA5651 /* FMTabBarController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		FEE905201E09F03500FEFBDB /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				FEE905211E09F04E00FEFBDB /* OptionLabel.swift */,
+			);
+			name = Labels;
+			sourceTree = "<group>";
+		};
+		FEE905231E0A18CE00FEFBDB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FEB5A6E71DDA6A5500B02327 /* Helper.swift */,
+				FEE905241E0A192100FEFBDB /* UIFont.swift */,
+				FEE905261E0A194400FEFBDB /* UIView.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		FEE9052E1E0AD7F600FEFBDB /* Practice */ = {
+			isa = PBXGroup;
+			children = (
+				FEE905161E089B6E00FEFBDB /* SetupPracticeViewController.swift */,
+				FEE905311E0B132B00FEFBDB /* SelectPieceViewController.swift */,
+				FEE9052F1E0AD81500FEFBDB /* PracticeSessionViewController.swift */,
+				FE95DC0B1E04D7B600144A65 /* MetronomeViewController.swift */,
+			);
+			name = Practice;
+			sourceTree = "<group>";
+		};
 		FEEBB55F1DDE699900CA5651 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FE95DC091E04D75100144A65 /* wooden.wav */,
 				FEEBB5601DDE6A1800CA5651 /* Rubik-Black.ttf */,
 				FEEBB5611DDE6A1800CA5651 /* Rubik-BlackItalic.ttf */,
 				FEEBB5621DDE6A1800CA5651 /* Rubik-Bold.ttf */,
@@ -242,8 +357,10 @@
 				FE6BCE351DD9205100EB9724 /* Sources */,
 				FE6BCE361DD9205100EB9724 /* Frameworks */,
 				FE6BCE371DD9205100EB9724 /* Resources */,
-				FEB5A6EB1DDAA47E00B02327 /* ShellScript */,
+				FEB5A6EB1DDAA47E00B02327 /* Run Script */,
 				FECBCAF21DDBDEF1001E1FE0 /* ShellScript */,
+				FE5ADEE31DE758F4004774CE /* Embed Frameworks */,
+				FE5ADEE41DE75967004774CE /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -297,7 +414,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = joshuafang;
 				TargetAttributes = {
 					FE6BCE381DD9205100EB9724 = {
@@ -345,6 +462,7 @@
 				FEEBB56A1DDE6A1800CA5651 /* Rubik-Black.ttf in Resources */,
 				FECBCAF11DDBDEA1001E1FE0 /* Cartfile in Resources */,
 				FE6BCE4A1DD9205100EB9724 /* LaunchScreen.storyboard in Resources */,
+				FE95DC0A1E04D75100144A65 /* wooden.wav in Resources */,
 				FEEBB56B1DDE6A1800CA5651 /* Rubik-BlackItalic.ttf in Resources */,
 				FEEBB56C1DDE6A1800CA5651 /* Rubik-Bold.ttf in Resources */,
 				FEEBB56E1DDE6A1900CA5651 /* Rubik-Italic.ttf in Resources */,
@@ -375,13 +493,27 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		FEB5A6EB1DDAA47E00B02327 /* ShellScript */ = {
+		FE5ADEE41DE75967004774CE /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework/strip-frameworks.sh\"";
+		};
+		FEB5A6EB1DDAA47E00B02327 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -397,8 +529,6 @@
 				"$(SRCROOT)/Carthage/Build/iOS/AudioKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Cartography.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Hue.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 			);
 			outputPaths = (
 			);
@@ -413,16 +543,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE95DC0E1E04D80800144A65 /* Metronome.swift in Sources */,
 				FEEBB5791DDFD01300CA5651 /* FMTabBarController.swift in Sources */,
+				FEE905271E0A194400FEFBDB /* UIView.swift in Sources */,
 				FEEBB5751DDEB08C00CA5651 /* RecordingsListViewController.swift in Sources */,
+				FE621D191E175428009E61F6 /* OptionTableViewCell.swift in Sources */,
+				FE95DC181E05FC5700144A65 /* PracticeSession.swift in Sources */,
 				FEB5A6EA1DDA73D100B02327 /* RecordingTableViewCell.swift in Sources */,
 				FEEBB5771DDF2FA200CA5651 /* Colors.swift in Sources */,
 				FE6BCE451DD9205100EB9724 /* Fermata.xcdatamodeld in Sources */,
+				FE621D1C1E1756DA009E61F6 /* ButtonTableViewCell.swift in Sources */,
+				FE95DC0C1E04D7B600144A65 /* MetronomeViewController.swift in Sources */,
 				FEEBB57E1DE1360900CA5651 /* FMStopwatch.swift in Sources */,
+				FEE905171E089B6E00FEFBDB /* SetupPracticeViewController.swift in Sources */,
+				FE95DC121E05DCCC00144A65 /* Piece.swift in Sources */,
 				FE6BCE3D1DD9205100EB9724 /* AppDelegate.swift in Sources */,
 				FEEBB57C1DDFD18F00CA5651 /* LessonRecorderViewController.swift in Sources */,
-				FEB5A6E81DDA6A5500B02327 /* Extensions.swift in Sources */,
+				FEE9052B1E0A27E200FEFBDB /* Buttons.swift in Sources */,
+				FEE9051E1E0986E100FEFBDB /* Layout.swift in Sources */,
+				FEE905321E0B132B00FEFBDB /* SelectPieceViewController.swift in Sources */,
+				FE95DC101E05DC3400144A65 /* MetronomePreset.swift in Sources */,
+				FEB5A6E81DDA6A5500B02327 /* Helper.swift in Sources */,
 				FE5ADED21DE65648004774CE /* Recording.swift in Sources */,
+				FEE905251E0A192100FEFBDB /* UIFont.swift in Sources */,
+				FEE905301E0AD81500FEFBDB /* PracticeSessionViewController.swift in Sources */,
+				FEE905221E09F04E00FEFBDB /* OptionLabel.swift in Sources */,
+				FEE9051A1E08A86000FEFBDB /* Typography.swift in Sources */,
+				FE95DC1A1E06144A00144A65 /* PiecePractice.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,6 +642,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -545,6 +693,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -577,6 +726,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Fermata/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -599,6 +749,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Fermata/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

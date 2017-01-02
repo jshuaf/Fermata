@@ -29,7 +29,7 @@ class RecordingsListViewController: UIViewController, UITableViewDataSource, UIT
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = recordingsTableView.dequeueReusableCell(withIdentifier: "recording") as? RecordingTableViewCell
 		let recording = self.getRecordings()?[indexPath.row]
-    guard (recording != nil) else {
+    guard recording != nil else {
       print("Recording not found.")
       return cell!
     }
