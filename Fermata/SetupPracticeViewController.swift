@@ -20,6 +20,7 @@ class SetupPracticeViewController: UIViewController {
   }
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.title = "Start Practice"
     setupBackground()
     setupLabels()
   }

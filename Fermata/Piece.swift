@@ -20,15 +20,7 @@ enum PieceCategory: String {
 
 class Piece: Object {
   dynamic var name = ""
+  dynamic var category = ""
   dynamic var lastPracticed: NSDate?
   let metronomePresets = LinkingObjects(fromType: MetronomePreset.self, property: "piece")
-  private dynamic var categoryRaw: String?
-  var category: PieceCategory? {
-    get {
-      return PieceCategory(rawValue: categoryRaw!)
-    }
-    set {
-      categoryRaw = newValue?.rawValue
-    }
-  }
 }

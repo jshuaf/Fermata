@@ -89,3 +89,20 @@ extension UILabel {
     self.font = UIFont(name: "Rubik-\(weight)", size: CGFloat(size))
   }
 }
+
+extension UITextField {
+  func setTextFieldStyle(_ style: [String:Any]) {
+    guard let color = style["color"] as? UIColor else {
+      return
+    }
+    guard let weight = style["weight"] as? FontWeight else {
+      return
+    }
+
+    guard let size = style["size"] as? Int else {
+      return
+    }
+    self.textColor = color
+    self.font = UIFont(name: "Rubik-\(weight)", size: CGFloat(size))
+  }
+}

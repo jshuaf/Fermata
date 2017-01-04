@@ -40,7 +40,7 @@
                                 <rect key="frame" x="75" y="409.5" width="225" height="56"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start recording" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfy-hv-ic4">
-                                        <rect key="frame" x="39" y="15.5" width="148.5" height="25"/>
+                                        <rect key="frame" x="43.5" y="15.5" width="140" height="25"/>
                                         <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="21"/>
                                         <color key="textColor" red="0.22" green="0.22" blue="0.22" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -64,7 +64,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sun Jan 1, 12:00 AM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2V7-g8-LPm" userLabel="Date Label">
-                                <rect key="frame" x="111" y="357" width="153.5" height="20"/>
+                                <rect key="frame" x="108.5" y="357" width="159" height="20"/>
                                 <fontDescription key="fontDescription" name="Rubik-Light" family="Rubik" pointSize="17"/>
                                 <color key="textColor" red="0.16651067137718201" green="0.16650569438934326" blue="0.16650852560997009" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>

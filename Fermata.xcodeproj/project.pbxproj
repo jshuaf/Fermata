@@ -15,6 +15,9 @@
 		FE621D191E175428009E61F6 /* OptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE621D181E175428009E61F6 /* OptionTableViewCell.swift */; };
 		FE621D1C1E1756DA009E61F6 /* ButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE621D1B1E1756DA009E61F6 /* ButtonTableViewCell.swift */; };
 		FE641F801DDCE77A00ED944B /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE641F781DDCE4AD00ED944B /* Cartography.framework */; };
+		FE647E4D1E1C4FCE00D496C3 /* CheckmarkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE647E4C1E1C4FCE00D496C3 /* CheckmarkTableViewCell.swift */; };
+		FE647E4F1E1C935300D496C3 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FE647E4E1E1C935300D496C3 /* .gitignore */; };
+		FE647E511E1C93B900D496C3 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FE647E501E1C93B900D496C3 /* .gitignore */; };
 		FE6BCE3D1DD9205100EB9724 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6BCE3C1DD9205100EB9724 /* AppDelegate.swift */; };
 		FE6BCE451DD9205100EB9724 /* Fermata.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE6BCE431DD9205100EB9724 /* Fermata.xcdatamodeld */; };
 		FE6BCE471DD9205100EB9724 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE6BCE461DD9205100EB9724 /* Assets.xcassets */; };
@@ -30,6 +33,8 @@
 		FE95DC1A1E06144A00144A65 /* PiecePractice.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE95DC191E06144A00144A65 /* PiecePractice.swift */; };
 		FEB5A6E81DDA6A5500B02327 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB5A6E71DDA6A5500B02327 /* Helper.swift */; };
 		FEB5A6EA1DDA73D100B02327 /* RecordingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB5A6E91DDA73D100B02327 /* RecordingTableViewCell.swift */; };
+		FEC5C9E91E1B2A990018428E /* AddPieceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC5C9E81E1B2A990018428E /* AddPieceViewController.swift */; };
+		FEC5C9EB1E1B2C020018428E /* InputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC5C9EA1E1B2C020018428E /* InputTableViewCell.swift */; };
 		FECBCAF11DDBDEA1001E1FE0 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = FECBCAF01DDBDEA1001E1FE0 /* Cartfile */; };
 		FECBCAF51DDBDF39001E1FE0 /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FECBCAF41DDBDF39001E1FE0 /* AudioKit.framework */; };
 		FEE905171E089B6E00FEFBDB /* SetupPracticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE905161E089B6E00FEFBDB /* SetupPracticeViewController.swift */; };
@@ -104,6 +109,9 @@
 		FE641F7A1DDCE61F00ED944B /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		FE641F7C1DDCE76400ED944B /* Cartography */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Cartography; path = Carthage/Checkouts/Cartography; sourceTree = "<group>"; };
 		FE641F7E1DDCE77100ED944B /* Build */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Build; path = Carthage/Build; sourceTree = "<group>"; };
+		FE647E4C1E1C4FCE00D496C3 /* CheckmarkTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckmarkTableViewCell.swift; sourceTree = "<group>"; };
+		FE647E4E1E1C935300D496C3 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		FE647E501E1C93B900D496C3 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		FE6BCE391DD9205100EB9724 /* Fermata.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fermata.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE6BCE3C1DD9205100EB9724 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE6BCE411DD9205100EB9724 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -126,6 +134,8 @@
 		FE95DC191E06144A00144A65 /* PiecePractice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PiecePractice.swift; sourceTree = "<group>"; };
 		FEB5A6E71DDA6A5500B02327 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		FEB5A6E91DDA73D100B02327 /* RecordingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingTableViewCell.swift; sourceTree = "<group>"; };
+		FEC5C9E81E1B2A990018428E /* AddPieceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPieceViewController.swift; sourceTree = "<group>"; };
+		FEC5C9EA1E1B2C020018428E /* InputTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputTableViewCell.swift; sourceTree = "<group>"; };
 		FECBCAF01DDBDEA1001E1FE0 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		FECBCAF41DDBDF39001E1FE0 /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKit.framework; path = Carthage/Build/iOS/AudioKit.framework; sourceTree = "<group>"; };
 		FEE905161E089B6E00FEFBDB /* SetupPracticeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupPracticeViewController.swift; sourceTree = "<group>"; };
@@ -201,6 +211,8 @@
 			isa = PBXGroup;
 			children = (
 				FE621D181E175428009E61F6 /* OptionTableViewCell.swift */,
+				FEC5C9EA1E1B2C020018428E /* InputTableViewCell.swift */,
+				FE647E4C1E1C4FCE00D496C3 /* CheckmarkTableViewCell.swift */,
 				FE621D1B1E1756DA009E61F6 /* ButtonTableViewCell.swift */,
 			);
 			name = "Table View Cells";
@@ -213,6 +225,7 @@
 				FE5ADEDE1DE758F4004774CE /* RealmSwift.framework */,
 				FECBCAF01DDBDEA1001E1FE0 /* Cartfile */,
 				FE641F7A1DDCE61F00ED944B /* .swiftlint.yml */,
+				FE647E501E1C93B900D496C3 /* .gitignore */,
 				FE6BCE3B1DD9205100EB9724 /* Fermata */,
 				FE6BCE531DD9205100EB9724 /* FermataTests */,
 				FE6BCE5E1DD9205100EB9724 /* FermataUITests */,
@@ -323,6 +336,8 @@
 			children = (
 				FEE905161E089B6E00FEFBDB /* SetupPracticeViewController.swift */,
 				FEE905311E0B132B00FEFBDB /* SelectPieceViewController.swift */,
+				FEC5C9E81E1B2A990018428E /* AddPieceViewController.swift */,
+				FE647E4E1E1C935300D496C3 /* .gitignore */,
 				FEE9052F1E0AD81500FEFBDB /* PracticeSessionViewController.swift */,
 				FE95DC0B1E04D7B600144A65 /* MetronomeViewController.swift */,
 			);
@@ -458,9 +473,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE647E4F1E1C935300D496C3 /* .gitignore in Resources */,
 				FEEBB57A1DDFD0B600CA5651 /* Main.storyboard in Resources */,
 				FEEBB56A1DDE6A1800CA5651 /* Rubik-Black.ttf in Resources */,
 				FECBCAF11DDBDEA1001E1FE0 /* Cartfile in Resources */,
+				FE647E511E1C93B900D496C3 /* .gitignore in Resources */,
 				FE6BCE4A1DD9205100EB9724 /* LaunchScreen.storyboard in Resources */,
 				FE95DC0A1E04D75100144A65 /* wooden.wav in Resources */,
 				FEEBB56B1DDE6A1800CA5651 /* Rubik-BlackItalic.ttf in Resources */,
@@ -544,11 +561,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE95DC0E1E04D80800144A65 /* Metronome.swift in Sources */,
+				FEC5C9E91E1B2A990018428E /* AddPieceViewController.swift in Sources */,
 				FEEBB5791DDFD01300CA5651 /* FMTabBarController.swift in Sources */,
 				FEE905271E0A194400FEFBDB /* UIView.swift in Sources */,
 				FEEBB5751DDEB08C00CA5651 /* RecordingsListViewController.swift in Sources */,
 				FE621D191E175428009E61F6 /* OptionTableViewCell.swift in Sources */,
 				FE95DC181E05FC5700144A65 /* PracticeSession.swift in Sources */,
+				FEC5C9EB1E1B2C020018428E /* InputTableViewCell.swift in Sources */,
 				FEB5A6EA1DDA73D100B02327 /* RecordingTableViewCell.swift in Sources */,
 				FEEBB5771DDF2FA200CA5651 /* Colors.swift in Sources */,
 				FE6BCE451DD9205100EB9724 /* Fermata.xcdatamodeld in Sources */,
@@ -558,6 +577,7 @@
 				FEE905171E089B6E00FEFBDB /* SetupPracticeViewController.swift in Sources */,
 				FE95DC121E05DCCC00144A65 /* Piece.swift in Sources */,
 				FE6BCE3D1DD9205100EB9724 /* AppDelegate.swift in Sources */,
+				FE647E4D1E1C4FCE00D496C3 /* CheckmarkTableViewCell.swift in Sources */,
 				FEEBB57C1DDFD18F00CA5651 /* LessonRecorderViewController.swift in Sources */,
 				FEE9052B1E0A27E200FEFBDB /* Buttons.swift in Sources */,
 				FEE9051E1E0986E100FEFBDB /* Layout.swift in Sources */,

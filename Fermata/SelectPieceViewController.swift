@@ -17,14 +17,14 @@ class SelectPieceViewController: UIViewController, UITableViewDelegate, UITableV
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.title = "Select a Piece"
+
     allPieces = getAllPieces()
 
-    self.title = "Select a Piece"
     tableView = view.addTableView(x: 1, y: 1, w: 1, h: 1)
     tableView?.dataSource = self
     tableView?.delegate = self
     tableView?.estimatedRowHeight = 44
-    tableView?.rowHeight = UITableViewAutomaticDimension
 
     tableView?.register(OptionTableViewCell.self, forCellReuseIdentifier: "recentPiece")
     tableView?.register(ButtonTableViewCell.self, forCellReuseIdentifier: "pieceCategory")
@@ -64,7 +64,7 @@ class SelectPieceViewController: UIViewController, UITableViewDelegate, UITableV
       } else {
         return 0
       }
-    case 1: return 5
+    case 1: return recentPieces?.count == nil ? 0 : 5
     case 2: return 1
     default: return 0
     }
@@ -73,15 +73,35 @@ class SelectPieceViewController: UIViewController, UITableViewDelegate, UITableV
   func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
     switch section {
     case 0: return recentPieces?.count != nil ? "Recents" : nil
-    case 1: return "Browse by Category"
+    case 1: return recentPieces?.count != nil ? "Browse by Category" : nil
     case 2: return "Add a Piece"
     default: return nil
     }
   }
 
-   func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-    let cell = tableView.cellForRow(at: indexPath)
-    return indexPath
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    switch indexPath.section {
+    case 2:
+      let cancelItem = UIBarButtonItem()
+      cancelItem.title = "Cancel"
+      self.navigationItem.leftBarButtonItem = cancelItem
+      let nextViewController = AddPieceViewController()
+      self.navigationController?.pushViewController(nextViewController, animated: true)
+      return
+    default: return
+    }
+  }
+
+  func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    return 0.01
+  }
+
+  func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    if recentPieces?.count == nil {
+      return section != 2 ? 0.01 : 40
+    } else {
+      return section == 0 ? 40 : 20
+    }
   }
 
   func getAllPieces() -> Results<Piece>? {

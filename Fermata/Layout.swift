@@ -21,6 +21,16 @@ extension UIView {
     }
     return label
   }
+  @discardableResult func addTextField(style: [String:Any], x: CGFloat, y: CGFloat) -> UITextField {
+    let textField = UITextField()
+    textField.setTextFieldStyle(LabelStyle.Body.Primary)
+    self.addSubview(textField)
+    constrain(textField) { textField in
+      textField.centerX == textField.superview!.centerX * x
+      textField.centerY == textField.superview!.centerY * y
+    }
+    return textField
+  }
   @discardableResult func addLabel(style: [String:Any], alignLeft: UIView, y: CGFloat, text: String) -> UILabel {
     let label = UILabel.labelWithStyle(style)!
     label.text = text
