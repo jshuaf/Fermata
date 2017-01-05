@@ -14,44 +14,52 @@ class FMStopwatch: UILabel {
   var timeElapsed: TimeInterval?
   var lastTime: TimeInterval?
 
-  func startTiming() {
+  internal func startTiming() {
     updateTimer = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(self.updateTimeElapsed), userInfo: nil, repeats: true)
     lastTime = NSDate.timeIntervalSinceReferenceDate
     timeElapsed = 0
 
   }
 
-  func pauseTiming() {
+  internal func pauseTiming() {
     updateTimer?.invalidate()
   }
 
-  func stopTiming() {
+  internal func stopTiming() {
     updateTimer?.invalidate()
     timeElapsed = nil
     lastTime = nil
   }
 
-  func resumeTiming() {
+  internal func resumeTiming() {
     updateTimer = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(self.updateTimeElapsed), userInfo: nil, repeats: true)
     lastTime = NSDate.timeIntervalSinceReferenceDate
   }
 
-  func updateTimeElapsed() {
+  @objc private func updateTimeElapsed() {
     let currentTime = NSDate.timeIntervalSinceReferenceDate
 
     let timeSinceLast = currentTime - lastTime!
     lastTime = currentTime
     timeElapsed! += TimeInterval(timeSinceLast)
 
-    var currentTimeElapsed = timeElapsed!
+    self.text = FMStopwatch.stringFromTime(timeInterval: timeElapsed!)
+  }
 
-    let elapsedHours = floor(currentTimeElapsed / 3600)
-    currentTimeElapsed -= TimeInterval(elapsedHours * 3600)
-    let elapsedMinutes = floor(currentTimeElapsed / 60)
-    currentTimeElapsed -= TimeInterval(elapsedMinutes * 60)
-    let elapsedSeconds = floor(currentTimeElapsed)
+  internal static func stringFromTime(timeInterval: TimeInterval) -> String {
+    var currentTime = timeInterval
 
-    self.text = String(format: "%.0f:%.0f:%.0f", elapsedHours, elapsedMinutes, elapsedSeconds)
+    let hours = Int(floor(currentTime / 3600))
+    currentTime -= TimeInterval(hours * 3600)
+    let minutes = Int(floor(currentTime / 60))
+    currentTime -= TimeInterval(minutes * 60)
+    let seconds = Int(floor(currentTime))
+
+    if hours > 0 {
+      return String(format: "%01d:%02d:%02d", hours, minutes, seconds)
+    } else {
+      return String(format: "%02d:%02d", minutes, seconds)
+    }
   }
 
 }

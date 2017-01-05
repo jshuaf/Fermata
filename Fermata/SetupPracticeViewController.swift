@@ -11,8 +11,8 @@ import Cartography
 
 class SetupPracticeViewController: UIViewController {
 
-  var goalDurationLabels: [UILabel] = []
-  var selectedGoalDuration: String? {
+  private var goalDurationLabels: [UILabel] = []
+  private var selectedGoalDuration: String? {
     get {
       let selectedLabel = goalDurationLabels.filter {$0.fontWeight == .Medium}.first
       return selectedLabel?.text
@@ -25,17 +25,13 @@ class SetupPracticeViewController: UIViewController {
     setupLabels()
   }
 
-  func setupBackground() {
+  private func setupBackground() {
     let backgroundGradient = [UIColor.grapefruit, UIColor.cookie].gradient()
     backgroundGradient.frame = view.bounds
     view.layer.insertSublayer(backgroundGradient, at: 0)
   }
 
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-  }
-
-  func setupLabels() {
+  private func setupLabels() {
     view.addLabel(style: LabelStyle.HeaderOne.Primary, x: 1, y: 0.59, text: "Ready to practice?")
     view.addLabel(style: LabelStyle.Body.Primary, x: 1, y: 0.72, text: "Set a rough goal time for yourself.")
     let startSessionButton = view.addButton(style: ButtonStyle.Long, x: 1, y: 1.53, text: "Start Practice Session")
@@ -63,7 +59,7 @@ class SetupPracticeViewController: UIViewController {
     }
   }
 
-  func selectGoalDuration(sender: UIGestureRecognizer) {
+  @objc private func selectGoalDuration(sender: UIGestureRecognizer) {
     let goalSelected = sender.view as? UILabel
     for goalDurationLabel in goalDurationLabels {
       if goalDurationLabel.fontWeight == .Medium {
@@ -73,11 +69,19 @@ class SetupPracticeViewController: UIViewController {
     goalSelected?.setFontWeight(FontWeight.Medium)
   }
 
-  func startPracticeSession() {
+  private func timeDuration(forString stringDuration: String) -> TimeInterval {
+    let durationParts = Array(stringDuration.components(separatedBy: ":").reversed())
+    let minutes = durationParts[1]
+    let hours = durationParts[safe: 2] ?? "0"
+    return TimeInterval(Int(minutes)! * 60 + Int(hours)! * 3600)
+  }
+
+  @objc private func startPracticeSession() {
     guard selectedGoalDuration != nil else {
       return
     }
-    let nextViewController = SelectPieceViewController()
-    self.navigationController?.pushViewController(nextViewController, animated: true)
+    let timeDuration = self.timeDuration(forString: selectedGoalDuration!)
+    let practiceNavigationController = UINavigationController(rootViewController: PracticeSessionViewController(goalDuration: timeDuration))
+    self.present(practiceNavigationController, animated: true, completion: {})
   }
 }

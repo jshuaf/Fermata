@@ -40,3 +40,10 @@ import UIKit
     }
   }
 }
+
+extension UIView {
+  func addTapEvent(target: Any?, action: Selector) {
+    let gestureRecognizer = UITapGestureRecognizer(target: target, action: action)
+    self.addGestureRecognizer(gestureRecognizer)
+  }
+}

@@ -11,16 +11,6 @@ import Cartography
 import UIKit
 
 extension UIView {
-  @discardableResult func addLabel(style: [String:Any], x: CGFloat, y: CGFloat, text: String) -> UILabel {
-    let label = UILabel.labelWithStyle(style)!
-    label.text = text
-    self.addSubview(label)
-    constrain(label) { label in
-      label.centerX == label.superview!.centerX * x
-      label.centerY == label.superview!.centerY * y
-    }
-    return label
-  }
   @discardableResult func addTextField(style: [String:Any], x: CGFloat, y: CGFloat) -> UITextField {
     let textField = UITextField()
     textField.setTextFieldStyle(LabelStyle.Body.Primary)
@@ -31,7 +21,17 @@ extension UIView {
     }
     return textField
   }
-  @discardableResult func addLabel(style: [String:Any], alignLeft: UIView, y: CGFloat, text: String) -> UILabel {
+  @discardableResult func addLabel(style: [String:Any], x: CGFloat, y: CGFloat, text: String = "", initialLabel: UILabel? = nil) -> UILabel {
+    let label = UILabel.labelWithStyle(style, initialLabel: initialLabel)!
+    label.text = text
+    self.addSubview(label)
+    constrain(label) { label in
+      label.centerX == label.superview!.centerX * x
+      label.centerY == label.superview!.centerY * y
+    }
+    return label
+  }
+  @discardableResult func addLabel(style: [String:Any], alignLeft: UIView, y: CGFloat, text: String = "") -> UILabel {
     let label = UILabel.labelWithStyle(style)!
     label.text = text
     self.addSubview(label)
@@ -41,7 +41,7 @@ extension UIView {
     }
     return label
   }
-  @discardableResult func addLabel(style: [String:Any], alignRight: UIView, y: CGFloat, text: String) -> UILabel {
+  @discardableResult func addLabel(style: [String:Any], alignRight: UIView, y: CGFloat, text: String = "") -> UILabel {
     let label = UILabel.labelWithStyle(style)!
     label.text = text
     self.addSubview(label)
@@ -57,6 +57,16 @@ extension UIView {
     self.addSubview(label)
     constrain(label, rightOf) { label, rightOf in
       label.left == rightOf.right
+      label.centerY == label.superview!.centerY * y
+    }
+    return label
+  }
+  @discardableResult func addLabel(style: [String:Any], leftOf: UIView, y: CGFloat, text: String = "", initialLabel: UILabel? = nil) -> UILabel {
+    let label = UILabel.labelWithStyle(style, initialLabel: initialLabel)!
+    label.text = text
+    self.addSubview(label)
+    constrain(label, leftOf) { label, leftOf in
+      label.right == leftOf.left
       label.centerY == label.superview!.centerY * y
     }
     return label
@@ -116,5 +126,20 @@ extension UIView {
     }
     button.layer.cornerRadius = button.superview!.frame.height * CGFloat(h) * 0.5
     return button
+  }
+
+  @discardableResult func addImageView(x: CGFloat, y: CGFloat, w: CGFloat, h: CGFloat, name: String, isButton: Bool = false) -> UIImageView {
+    let imageView = UIImageView(image: UIImage(named: name))
+    if isButton {
+      imageView.isUserInteractionEnabled = true
+    }
+    self.addSubview(imageView)
+    constrain(imageView) { imageView in
+      imageView.centerX == imageView.superview!.centerX * x
+      imageView.centerY == imageView.superview!.centerY * y
+      imageView.width == imageView.superview!.width * w
+      imageView.height == imageView.superview!.height * h
+    }
+    return imageView
   }
 }

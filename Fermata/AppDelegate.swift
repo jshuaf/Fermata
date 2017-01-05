@@ -1,4 +1,3 @@
-
 //
 //  AppDelegate.swift
 //  Fermata
@@ -23,11 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func setupViewControllers() {
     let tabBarController = window?.rootViewController as? UITabBarController
-
-    let initialPracticeViewController = SetupPracticeViewController()
-    let practiceNavigationController = UINavigationController(rootViewController: initialPracticeViewController)
     var tabBarChildControllers = tabBarController?.childViewControllers
-    tabBarChildControllers?.append(practiceNavigationController)
+    tabBarChildControllers?.append(SetupPracticeViewController())
     tabBarController?.setViewControllers(tabBarChildControllers, animated: false)
   }
 

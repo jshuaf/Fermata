@@ -11,8 +11,8 @@ import RealmSwift
 
 class AddPieceViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-  var tableView: UITableView?
-  var selectedCategoryIndexPath = IndexPath(row: 0, section: 1)
+  private var tableView: UITableView?
+  private var selectedCategoryIndexPath = IndexPath(row: 0, section: 1)
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -95,6 +95,8 @@ class AddPieceViewController: UIViewController, UITableViewDelegate, UITableView
     } catch {
       print("\(error)")
     }
+    let numberOfControllers = self.navigationController?.viewControllers.count
+    _ = self.navigationController?.viewControllers[numberOfControllers! - 1] as? SelectPieceViewController
     _ = self.navigationController?.popViewController(animated: true)
 
   }
