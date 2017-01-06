@@ -14,7 +14,7 @@ class AddPieceViewController: UIViewController, UITableViewDelegate, UITableView
   private var tableView: UITableView?
   private var selectedCategoryIndexPath = IndexPath(row: 0, section: 1)
 
-  override func viewDidLoad() {
+  override internal func viewDidLoad() {
     super.viewDidLoad()
     self.title = "Add a Piece"
 
@@ -29,7 +29,7 @@ class AddPieceViewController: UIViewController, UITableViewDelegate, UITableView
     tableView?.register(CheckmarkTableViewCell.self, forCellReuseIdentifier: "pieceCategory")
   }
 
-  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+  internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     switch indexPath.section {
     case 0:
       let cell = tableView.dequeueReusableCell(withIdentifier: "pieceName") as? InputTableViewCell
@@ -45,7 +45,7 @@ class AddPieceViewController: UIViewController, UITableViewDelegate, UITableView
     }
   }
 
-  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+  internal func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     if indexPath.section == 1 {
       let cellToCheck = tableView.cellForRow(at: indexPath) as? CheckmarkTableViewCell
       let cellToUncheck = tableView.cellForRow(at: selectedCategoryIndexPath) as? CheckmarkTableViewCell
@@ -55,30 +55,30 @@ class AddPieceViewController: UIViewController, UITableViewDelegate, UITableView
     }
   }
 
-  func numberOfSections(in tableView: UITableView) -> Int {
+  internal func numberOfSections(in tableView: UITableView) -> Int {
     return 2
   }
 
-  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return section == 0 ? 1 : 5
   }
 
-  func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+  internal func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
     return section == 0 ? "Description" : "Category"
   }
 
-  func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+  internal func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
     return 0.01
   }
 
-  func setupNavigationBar() {
+  private func setupNavigationBar() {
     let doneItem = UIBarButtonItem()
     doneItem.title = "Done"
-    doneItem.action = #selector(self.addPiece)
+    doneItem.action = #selector(self.setPiece)
     self.navigationItem.rightBarButtonItem = doneItem
   }
 
-  func addPiece() {
+  func setPiece() {
     let pieceTitleCell = tableView?.cellForRow(at: IndexPath(row: 0, section: 0)) as? InputTableViewCell
     let pieceTitle = pieceTitleCell?.textField?.text
     let pieceCategory = PieceCategory.allCategories[selectedCategoryIndexPath.row]

@@ -22,13 +22,13 @@ class SelectPieceFromCategoryViewController: UIViewController, UITableViewDelega
     self.category = category
   }
 
-  override func viewDidAppear(_ animated: Bool) {
+  override internal func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     piecesInCategory = getPiecesInCategory()
     tableView?.reloadData()
   }
 
-  override func viewDidLoad() {
+  override internal func viewDidLoad() {
     super.viewDidLoad()
     self.title = category?.rawValue
 
@@ -42,32 +42,32 @@ class SelectPieceFromCategoryViewController: UIViewController, UITableViewDelega
     tableView?.register(OptionTableViewCell.self, forCellReuseIdentifier: "pieceInCategory")
   }
 
-  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+  internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "pieceInCategory") as? OptionTableViewCell
     let piece = piecesInCategory?[indexPath.row]
     cell?.setup(text: (piece?.name)!)
     return cell!
   }
 
-  func numberOfSections(in tableView: UITableView) -> Int {
+  internal func numberOfSections(in tableView: UITableView) -> Int {
     return 1
   }
 
-  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return piecesInCategory!.count
   }
 
-  func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+  internal func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
     return category?.rawValue
   }
 
-  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+  internal func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let selectedPiece = piecesInCategory?[indexPath.row]
-    delegate?.selectPiece(selectedPiece!)
+    delegate?.setPiece(selectedPiece!)
     _ = self.navigationController?.popToRootViewController(animated: true)
   }
 
-  func getPiecesInCategory() -> Results<Piece>? {
+  private func getPiecesInCategory() -> Results<Piece>? {
     do {
       let realm = try Realm()
       return realm.objects(Piece.self).filter("category == %@", category?.rawValue as Any)

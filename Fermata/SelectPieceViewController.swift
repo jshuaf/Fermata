@@ -17,16 +17,20 @@ class SelectPieceViewController: UIViewController, UITableViewDelegate, UITableV
 
   weak var delegate: PracticeSessionDelegate?
 
-  override func viewDidAppear(_ animated: Bool) {
+  convenience init(title: String) {
+    self.init()
+    self.title = title
+  }
+
+  override internal func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     allPieces = getAllPieces()
     recentPieces = getRecentPieces()
     tableView?.reloadData()
   }
 
-  override func viewDidLoad() {
+  override internal func viewDidLoad() {
     super.viewDidLoad()
-    self.title = "Select a Piece"
 
     allPieces = getAllPieces()
     recentPieces = getRecentPieces()
@@ -93,7 +97,7 @@ class SelectPieceViewController: UIViewController, UITableViewDelegate, UITableV
     switch indexPath.section {
     case 0:
       let selectedPiece = recentPieces?[indexPath.row]
-      delegate?.selectPiece(selectedPiece!)
+      delegate?.setPiece(selectedPiece!)
       _ = self.navigationController?.popViewController(animated: true)
     case 1:
       let selectedCategory = PieceCategory(rawValue: PieceCategory.allCategories[indexPath.row])

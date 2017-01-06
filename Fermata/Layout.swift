@@ -21,10 +21,13 @@ extension UIView {
     }
     return textField
   }
-  @discardableResult func addLabel(style: [String:Any], x: CGFloat, y: CGFloat, text: String = "", initialLabel: UILabel? = nil) -> UILabel {
+  @discardableResult func addLabel(style: [String:Any], x: CGFloat, y: CGFloat, text: String = "", initialLabel: UILabel? = nil, isButton: Bool = false) -> UILabel {
     let label = UILabel.labelWithStyle(style, initialLabel: initialLabel)!
     label.text = text
     self.addSubview(label)
+    if isButton {
+      label.isUserInteractionEnabled = true
+    }
     constrain(label) { label in
       label.centerX == label.superview!.centerX * x
       label.centerY == label.superview!.centerY * y
