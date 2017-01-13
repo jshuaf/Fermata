@@ -13,24 +13,28 @@ class FMStopwatch: UILabel {
   var updateTimer: Timer?
   var timeElapsed: TimeInterval?
   var lastTime: TimeInterval?
-  var isActive = false
+  var hasStarted = false
+  var isPaused = false
 
   internal func startTiming() {
     updateTimer = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(self.updateTimeElapsed), userInfo: nil, repeats: true)
     lastTime = NSDate.timeIntervalSinceReferenceDate
     timeElapsed = 0
-    isActive = true
+    hasStarted = true
+    isPaused = false
   }
 
   internal func pauseTiming() {
     updateTimer?.invalidate()
+    isPaused = true
   }
 
   internal func stopTiming() {
     updateTimer?.invalidate()
     timeElapsed = nil
     lastTime = nil
-    isActive = false
+    hasStarted = false
+    isPaused = false
   }
 
   internal func restartTiming() {
@@ -39,8 +43,12 @@ class FMStopwatch: UILabel {
   }
 
   internal func resumeTiming() {
+    guard isPaused == true else {
+      return
+    }
     updateTimer = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(self.updateTimeElapsed), userInfo: nil, repeats: true)
     lastTime = NSDate.timeIntervalSinceReferenceDate
+    isPaused = false
   }
 
   @objc private func updateTimeElapsed() {

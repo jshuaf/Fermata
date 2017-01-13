@@ -14,7 +14,7 @@ class SetupPracticeViewController: UIViewController {
   private var goalDurationLabels: [UILabel] = []
   private var selectedGoalDuration: String? {
     get {
-      let selectedLabel = goalDurationLabels.filter {$0.fontWeight == .Medium}.first
+      let selectedLabel = goalDurationLabels.filter { $0.fontWeight == .Medium }.first
       return selectedLabel?.text
     }
   }
@@ -32,25 +32,25 @@ class SetupPracticeViewController: UIViewController {
   }
 
   private func setupLabels() {
-    view.addLabel(style: LabelStyle.HeaderOne.Primary, x: 1, y: 0.59, text: "Ready to practice?")
-    view.addLabel(style: LabelStyle.Body.Primary, x: 1, y: 0.72, text: "Set a rough goal time for yourself.")
-    let startSessionButton = view.addButton(style: ButtonStyle.Long, x: 1, y: 1.53, text: "Start Practice Session")
+    view.addLabel(style: LabelStyle.HeaderOne.Primary(), x: 1, y: 0.59, text: "Ready to practice?")
+    view.addLabel(style: LabelStyle.Body.Primary(), x: 1, y: 0.72, text: "Set a rough goal time for yourself.")
+    let startSessionButton = view.addButton(style: ButtonStyle.Long(), x: 1, y: 1.53, text: "Start Practice Session")
     startSessionButton.addTarget(self, action: #selector(startPracticeSession), for: .touchUpInside)
 
     let goalDurationView = view.addView(x: 1, y: 1.07, w: 0.77, h: 0.18)
-    let quickLabel = goalDurationView.addLabel(style: LabelStyle.Body.Emphasis, x: 0.17, y: 0.16, text: "Quick")
-    goalDurationView.addLabel(style: LabelStyle.Body.Emphasis, alignLeft: quickLabel, y: 1, text: "Moderate")
-    goalDurationView.addLabel(style: LabelStyle.Body.Emphasis, alignLeft: quickLabel, y: 1.84, text: "Long")
+    let quickLabel = goalDurationView.addLabel(style: LabelStyle.Body.Emphasis(), x: 0.17, y: 0.16, text: "Quick")
+    goalDurationView.addLabel(style: LabelStyle.Body.Emphasis(), alignLeft: quickLabel, y: 1, text: "Moderate")
+    goalDurationView.addLabel(style: LabelStyle.Body.Emphasis(), alignLeft: quickLabel, y: 1.84, text: "Long")
 
-    let durationsFirstColumnLabel = goalDurationView.addLabel(style: LabelStyle.Body.Primary, x: 1.13, y: 1, text: "45:00")
+    let durationsFirstColumnLabel = goalDurationView.addLabel(style: LabelStyle.Body.Primary(), x: 1.13, y: 1, text: "45:00")
     goalDurationLabels.append(durationsFirstColumnLabel)
-    goalDurationLabels.append(goalDurationView.addLabel(style: LabelStyle.Body.Primary, alignRight: durationsFirstColumnLabel, y: 0.16, text: "15:00"))
-    goalDurationLabels.append(goalDurationView.addLabel(style: LabelStyle.Body.Primary, alignRight: durationsFirstColumnLabel, y: 1.84, text: "1:30:00"))
+    goalDurationLabels.append(goalDurationView.addLabel(style: LabelStyle.Body.Primary(), alignRight: durationsFirstColumnLabel, y: 0.16, text: "15:00"))
+    goalDurationLabels.append(goalDurationView.addLabel(style: LabelStyle.Body.Primary(), alignRight: durationsFirstColumnLabel, y: 1.84, text: "1:30:00"))
 
-    let durationsSecondColumnLabel = goalDurationView.addLabel(style: LabelStyle.Body.Primary, x: 1.84, y: 1, text: "60:00")
+    let durationsSecondColumnLabel = goalDurationView.addLabel(style: LabelStyle.Body.Primary(), x: 1.84, y: 1, text: "60:00")
     goalDurationLabels.append(durationsSecondColumnLabel)
-    goalDurationLabels.append(goalDurationView.addLabel(style: LabelStyle.Body.Primary, alignRight: durationsSecondColumnLabel, y: 0.16, text: "30:00"))
-    goalDurationLabels.append(goalDurationView.addLabel(style: LabelStyle.Body.Primary, alignRight: durationsSecondColumnLabel, y: 1.84, text: "2:00:00"))
+    goalDurationLabels.append(goalDurationView.addLabel(style: LabelStyle.Body.Primary(), alignRight: durationsSecondColumnLabel, y: 0.16, text: "30:00"))
+    goalDurationLabels.append(goalDurationView.addLabel(style: LabelStyle.Body.Primary(), alignRight: durationsSecondColumnLabel, y: 1.84, text: "2:00:00"))
 
     for goalDurationLabel in goalDurationLabels {
       goalDurationLabel.isUserInteractionEnabled = true

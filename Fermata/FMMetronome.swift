@@ -72,7 +72,7 @@ class Metronome: NSObject {
 
   func updateTempoFromInput() {
     let currentDate = Date().timeIntervalSince1970
-    tempoInputs = tempoInputs.filter({currentDate - $0 < 10.0})
+    tempoInputs = tempoInputs.filter({ currentDate - $0 < 10.0 })
 
     let recentTempoInputs = Array(tempoInputs.suffix(3))
     let timeBetweenInputs = recentTempoInputs.enumerated().map {(index, tempo) -> TimeInterval? in

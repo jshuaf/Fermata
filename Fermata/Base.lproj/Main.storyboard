@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -138,76 +137,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1933.5999999999999" y="859.52023988005999"/>
-        </scene>
-        <!--Practice-->
-        <scene sceneID="kzn-Em-4CP">
-            <objects>
-                <viewController id="mjY-sB-M5H" customClass="MetronomeViewController" customModule="Fermata" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="8P8-CZ-fkU"/>
-                        <viewControllerLayoutGuide type="bottom" id="uhL-Sx-V3O"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="314-by-bsf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Cu-Pu-9sM">
-                                <rect key="frame" x="96" y="303" width="34" height="30"/>
-                                <state key="normal" title="Start"/>
-                                <connections>
-                                    <action selector="startMetronome:" destination="mjY-sB-M5H" eventType="touchUpInside" id="k6U-Hg-jcX"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QB7-8C-0vw">
-                                <rect key="frame" x="250" y="303" width="32" height="30"/>
-                                <state key="normal" title="Stop"/>
-                                <connections>
-                                    <action selector="stopMetronome:" destination="mjY-sB-M5H" eventType="touchUpInside" id="Uzl-s2-329"/>
-                                </connections>
-                            </button>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="50" maxValue="300" translatesAutoresizingMaskIntoConstraints="NO" id="6UM-X9-li8">
-                                <rect key="frame" x="143" y="180" width="118" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="114" id="HEj-Yx-GhG"/>
-                                </constraints>
-                                <connections>
-                                    <action selector="changeMetronomeTempo:" destination="mjY-sB-M5H" eventType="valueChanged" id="ru8-G9-Nbu"/>
-                                </connections>
-                            </slider>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aPW-BM-pLy">
-                                <rect key="frame" x="164" y="425" width="46" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="46" id="qsr-i0-JRS"/>
-                                </constraints>
-                                <state key="normal" title="Input Tempo"/>
-                                <connections>
-                                    <action selector="inputTempo:" destination="mjY-sB-M5H" eventType="touchUpInside" id="qc7-P2-kc9"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="6Cu-Pu-9sM" firstAttribute="leading" secondItem="314-by-bsf" secondAttribute="leadingMargin" constant="80" id="36s-el-yCf"/>
-                            <constraint firstItem="aPW-BM-pLy" firstAttribute="centerX" secondItem="314-by-bsf" secondAttribute="centerX" id="3Ry-oY-1kw"/>
-                            <constraint firstItem="QB7-8C-0vw" firstAttribute="top" secondItem="6UM-X9-li8" secondAttribute="bottom" constant="93" id="7Xa-Vr-wZA"/>
-                            <constraint firstItem="6Cu-Pu-9sM" firstAttribute="baseline" secondItem="QB7-8C-0vw" secondAttribute="baseline" id="Euv-8W-Gxn"/>
-                            <constraint firstItem="6Cu-Pu-9sM" firstAttribute="top" secondItem="8P8-CZ-fkU" secondAttribute="bottom" constant="283" id="GGe-0F-OzW"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="QB7-8C-0vw" secondAttribute="trailing" constant="77" id="gR7-7V-Ad8"/>
-                            <constraint firstItem="uhL-Sx-V3O" firstAttribute="top" secondItem="aPW-BM-pLy" secondAttribute="bottom" constant="212" id="lKu-yz-tyi"/>
-                            <constraint firstItem="6UM-X9-li8" firstAttribute="leading" secondItem="314-by-bsf" secondAttribute="leading" constant="145" id="p7e-oc-bvY"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Practice" id="871-3Y-sh7"/>
-                    <connections>
-                        <outlet property="inputTempoButton" destination="aPW-BM-pLy" id="812-dK-Tk3"/>
-                        <outlet property="startMetronomeButton" destination="6Cu-Pu-9sM" id="Hzy-hr-f6r"/>
-                        <outlet property="stopMetronomeButton" destination="QB7-8C-0vw" id="Qhi-JP-IYC"/>
-                        <outlet property="tempoSlider" destination="6UM-X9-li8" id="RSo-Tp-tdp"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1eS-Gm-LYC" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1934" y="1630"/>
         </scene>
         <!--Journal-->
         <scene sceneID="Jbj-mj-k53">

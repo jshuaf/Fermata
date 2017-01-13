@@ -49,7 +49,7 @@ class LessonRecorderViewController: UIViewController {
     let mainMixer = AKMixer(mic)
     AudioKit.output = AKBooster(mainMixer, gain: 0)
 
-    self.plot = AKNodeOutputPlot.init(mainMixer, frame: waveformView.bounds)
+    self.plot = AKNodeOutputPlot(mainMixer, frame: waveformView.bounds)
     plot?.shouldMirror = true
     waveformView.addSubview(plot!)
     plot?.color = UIColor(hue: 0, saturation: 0, brightness: 0.22, alpha: 1)

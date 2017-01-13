@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE428A341E27F07B00C09825 /* Popover.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE428A331E27F07B00C09825 /* Popover.swift */; };
+		FE428A361E28727E00C09825 /* PracticeSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE428A351E28727E00C09825 /* PracticeSummaryViewController.swift */; };
+		FE4F2CAA1E2040EF00022227 /* FMProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4F2CA91E2040EF00022227 /* FMProgressBar.swift */; };
 		FE5ADED21DE65648004774CE /* Recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5ADED11DE65648004774CE /* Recording.swift */; };
 		FE5ADEDF1DE758F4004774CE /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE5ADEDD1DE758F4004774CE /* Realm.framework */; };
 		FE5ADEE01DE758F4004774CE /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FE5ADEDD1DE758F4004774CE /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -25,8 +28,7 @@
 		FE6BCE551DD9205100EB9724 /* FermataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6BCE541DD9205100EB9724 /* FermataTests.swift */; };
 		FE6BCE601DD9205100EB9724 /* FermataUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6BCE5F1DD9205100EB9724 /* FermataUITests.swift */; };
 		FE95DC0A1E04D75100144A65 /* wooden.wav in Resources */ = {isa = PBXBuildFile; fileRef = FE95DC091E04D75100144A65 /* wooden.wav */; };
-		FE95DC0C1E04D7B600144A65 /* MetronomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE95DC0B1E04D7B600144A65 /* MetronomeViewController.swift */; };
-		FE95DC0E1E04D80800144A65 /* Metronome.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE95DC0D1E04D80800144A65 /* Metronome.swift */; };
+		FE95DC0E1E04D80800144A65 /* FMMetronome.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE95DC0D1E04D80800144A65 /* FMMetronome.swift */; };
 		FE95DC101E05DC3400144A65 /* MetronomePreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE95DC0F1E05DC3400144A65 /* MetronomePreset.swift */; };
 		FE95DC121E05DCCC00144A65 /* Piece.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE95DC111E05DCCC00144A65 /* Piece.swift */; };
 		FE95DC181E05FC5700144A65 /* PracticeSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE95DC171E05FC5700144A65 /* PracticeSession.swift */; };
@@ -40,7 +42,6 @@
 		FEE905171E089B6E00FEFBDB /* SetupPracticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE905161E089B6E00FEFBDB /* SetupPracticeViewController.swift */; };
 		FEE9051A1E08A86000FEFBDB /* Typography.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE905191E08A86000FEFBDB /* Typography.swift */; };
 		FEE9051E1E0986E100FEFBDB /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE9051D1E0986E100FEFBDB /* Layout.swift */; };
-		FEE905221E09F04E00FEFBDB /* OptionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE905211E09F04E00FEFBDB /* OptionLabel.swift */; };
 		FEE905251E0A192100FEFBDB /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE905241E0A192100FEFBDB /* UIFont.swift */; };
 		FEE905271E0A194400FEFBDB /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE905261E0A194400FEFBDB /* UIView.swift */; };
 		FEE9052B1E0A27E200FEFBDB /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE9052A1E0A27E200FEFBDB /* Buttons.swift */; };
@@ -98,6 +99,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FE428A331E27F07B00C09825 /* Popover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Popover.swift; sourceTree = "<group>"; };
+		FE428A351E28727E00C09825 /* PracticeSummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PracticeSummaryViewController.swift; sourceTree = "<group>"; };
+		FE4F2CA91E2040EF00022227 /* FMProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMProgressBar.swift; sourceTree = "<group>"; };
 		FE5ADED11DE65648004774CE /* Recording.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recording.swift; sourceTree = "<group>"; };
 		FE5ADED41DE65672004774CE /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		FE5ADED61DE6567A004774CE /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
@@ -125,9 +129,8 @@
 		FE6BCE5B1DD9205100EB9724 /* FermataUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FermataUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE6BCE5F1DD9205100EB9724 /* FermataUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FermataUITests.swift; sourceTree = "<group>"; };
 		FE6BCE611DD9205100EB9724 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FE95DC091E04D75100144A65 /* wooden.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = wooden.wav; path = ../wooden.wav; sourceTree = "<group>"; };
-		FE95DC0B1E04D7B600144A65 /* MetronomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetronomeViewController.swift; sourceTree = "<group>"; };
-		FE95DC0D1E04D80800144A65 /* Metronome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Metronome.swift; sourceTree = "<group>"; };
+		FE95DC091E04D75100144A65 /* wooden.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wooden.wav; sourceTree = "<group>"; };
+		FE95DC0D1E04D80800144A65 /* FMMetronome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMMetronome.swift; sourceTree = "<group>"; };
 		FE95DC0F1E05DC3400144A65 /* MetronomePreset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetronomePreset.swift; sourceTree = "<group>"; };
 		FE95DC111E05DCCC00144A65 /* Piece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Piece.swift; sourceTree = "<group>"; };
 		FE95DC171E05FC5700144A65 /* PracticeSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PracticeSession.swift; sourceTree = "<group>"; };
@@ -141,7 +144,6 @@
 		FEE905161E089B6E00FEFBDB /* SetupPracticeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupPracticeViewController.swift; sourceTree = "<group>"; };
 		FEE905191E08A86000FEFBDB /* Typography.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Typography.swift; sourceTree = "<group>"; };
 		FEE9051D1E0986E100FEFBDB /* Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
-		FEE905211E09F04E00FEFBDB /* OptionLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionLabel.swift; sourceTree = "<group>"; };
 		FEE905241E0A192100FEFBDB /* UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		FEE905261E0A194400FEFBDB /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		FEE9052A1E0A27E200FEFBDB /* Buttons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
@@ -199,8 +201,11 @@
 			isa = PBXGroup;
 			children = (
 				FEEBB57D1DE1360900CA5651 /* FMStopwatch.swift */,
+				FE4F2CA91E2040EF00022227 /* FMProgressBar.swift */,
+				FE95DC0D1E04D80800144A65 /* FMMetronome.swift */,
+				FE428A331E27F07B00C09825 /* Popover.swift */,
 			);
-			name = Views;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		FE5ADED31DE6564D004774CE /* Models */ = {
@@ -212,7 +217,7 @@
 				FE95DC0F1E05DC3400144A65 /* MetronomePreset.swift */,
 				FE95DC111E05DCCC00144A65 /* Piece.swift */,
 			);
-			name = Models;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		FE621D1A1E17542D009E61F6 /* Table View Cells */ = {
@@ -224,7 +229,7 @@
 				FE647E4C1E1C4FCE00D496C3 /* CheckmarkTableViewCell.swift */,
 				FE621D1B1E1756DA009E61F6 /* ButtonTableViewCell.swift */,
 			);
-			name = "Table View Cells";
+			path = "Table View Cells";
 			sourceTree = "<group>";
 		};
 		FE6BCE301DD9205100EB9724 = {
@@ -257,14 +262,12 @@
 			isa = PBXGroup;
 			children = (
 				FE621D1A1E17542D009E61F6 /* Table View Cells */,
-				FEE905201E09F03500FEFBDB /* Labels */,
 				FE5ADED31DE6564D004774CE /* Models */,
 				FEEBB55F1DDE699900CA5651 /* Resources */,
 				FEE905231E0A18CE00FEFBDB /* Extensions */,
 				FEE905181E089C1100FEFBDB /* View Controllers */,
 				FE18DA581E1D88A00036ADBA /* Views */,
 				FE6BCE401DD9205100EB9724 /* Main.storyboard */,
-				FE95DC0D1E04D80800144A65 /* Metronome.swift */,
 				FE6BCE461DD9205100EB9724 /* Assets.xcassets */,
 				FE6BCE481DD9205100EB9724 /* LaunchScreen.storyboard */,
 				FE6BCE4B1DD9205100EB9724 /* Info.plist */,
@@ -318,15 +321,7 @@
 				FEEBB5741DDEB08C00CA5651 /* RecordingsListViewController.swift */,
 				FEEBB5781DDFD01300CA5651 /* FMTabBarController.swift */,
 			);
-			name = "View Controllers";
-			sourceTree = "<group>";
-		};
-		FEE905201E09F03500FEFBDB /* Labels */ = {
-			isa = PBXGroup;
-			children = (
-				FEE905211E09F04E00FEFBDB /* OptionLabel.swift */,
-			);
-			name = Labels;
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 		FEE905231E0A18CE00FEFBDB /* Extensions */ = {
@@ -336,7 +331,7 @@
 				FEE905241E0A192100FEFBDB /* UIFont.swift */,
 				FEE905261E0A194400FEFBDB /* UIView.swift */,
 			);
-			name = Extensions;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		FEE9052E1E0AD7F600FEFBDB /* Practice */ = {
@@ -347,9 +342,9 @@
 				FE647E521E1CA1D400D496C3 /* SelectPieceFromCategoryViewController.swift */,
 				FEC5C9E81E1B2A990018428E /* AddPieceViewController.swift */,
 				FEE9052F1E0AD81500FEFBDB /* PracticeSessionViewController.swift */,
-				FE95DC0B1E04D7B600144A65 /* MetronomeViewController.swift */,
+				FE428A351E28727E00C09825 /* PracticeSummaryViewController.swift */,
 			);
-			name = Practice;
+			path = Practice;
 			sourceTree = "<group>";
 		};
 		FEEBB55F1DDE699900CA5651 /* Resources */ = {
@@ -367,7 +362,7 @@
 				FEEBB5681DDE6A1800CA5651 /* Rubik-MediumItalic.ttf */,
 				FEEBB5691DDE6A1800CA5651 /* Rubik-Regular.ttf */,
 			);
-			name = Resources;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -567,7 +562,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE95DC0E1E04D80800144A65 /* Metronome.swift in Sources */,
+				FE95DC0E1E04D80800144A65 /* FMMetronome.swift in Sources */,
 				FEC5C9E91E1B2A990018428E /* AddPieceViewController.swift in Sources */,
 				FEEBB5791DDFD01300CA5651 /* FMTabBarController.swift in Sources */,
 				FEE905271E0A194400FEFBDB /* UIView.swift in Sources */,
@@ -578,14 +573,15 @@
 				FEB5A6EA1DDA73D100B02327 /* RecordingTableViewCell.swift in Sources */,
 				FEEBB5771DDF2FA200CA5651 /* Colors.swift in Sources */,
 				FE6BCE451DD9205100EB9724 /* Fermata.xcdatamodeld in Sources */,
+				FE4F2CAA1E2040EF00022227 /* FMProgressBar.swift in Sources */,
 				FE621D1C1E1756DA009E61F6 /* ButtonTableViewCell.swift in Sources */,
-				FE95DC0C1E04D7B600144A65 /* MetronomeViewController.swift in Sources */,
 				FEEBB57E1DE1360900CA5651 /* FMStopwatch.swift in Sources */,
 				FEE905171E089B6E00FEFBDB /* SetupPracticeViewController.swift in Sources */,
 				FE95DC121E05DCCC00144A65 /* Piece.swift in Sources */,
 				FE6BCE3D1DD9205100EB9724 /* AppDelegate.swift in Sources */,
 				FE647E4D1E1C4FCE00D496C3 /* CheckmarkTableViewCell.swift in Sources */,
 				FEEBB57C1DDFD18F00CA5651 /* LessonRecorderViewController.swift in Sources */,
+				FE428A341E27F07B00C09825 /* Popover.swift in Sources */,
 				FEE9052B1E0A27E200FEFBDB /* Buttons.swift in Sources */,
 				FEE9051E1E0986E100FEFBDB /* Layout.swift in Sources */,
 				FEE905321E0B132B00FEFBDB /* SelectPieceViewController.swift in Sources */,
@@ -594,10 +590,10 @@
 				FE5ADED21DE65648004774CE /* Recording.swift in Sources */,
 				FEE905251E0A192100FEFBDB /* UIFont.swift in Sources */,
 				FEE905301E0AD81500FEFBDB /* PracticeSessionViewController.swift in Sources */,
-				FEE905221E09F04E00FEFBDB /* OptionLabel.swift in Sources */,
 				FE647E531E1CA1D400D496C3 /* SelectPieceFromCategoryViewController.swift in Sources */,
 				FEE9051A1E08A86000FEFBDB /* Typography.swift in Sources */,
 				FE95DC1A1E06144A00144A65 /* PiecePractice.swift in Sources */,
+				FE428A361E28727E00C09825 /* PracticeSummaryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

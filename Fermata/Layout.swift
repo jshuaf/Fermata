@@ -11,9 +11,9 @@ import Cartography
 import UIKit
 
 extension UIView {
-  @discardableResult func addTextField(style: [String:Any], x: CGFloat, y: CGFloat) -> UITextField {
+  @discardableResult func addTextField(style: LabelStyleProtocol, x: CGFloat, y: CGFloat) -> UITextField {
     let textField = UITextField()
-    textField.setTextFieldStyle(LabelStyle.Body.Primary)
+    textField.setTextFieldStyle(style)
     self.addSubview(textField)
     constrain(textField) { textField in
       textField.centerX == textField.superview!.centerX * x
@@ -21,12 +21,18 @@ extension UIView {
     }
     return textField
   }
-  @discardableResult func addLabel(style: [String:Any], x: CGFloat, y: CGFloat, text: String = "", initialLabel: UILabel? = nil, isButton: Bool = false) -> UILabel {
+  @discardableResult func addLabel(style: LabelStyleProtocol, x: CGFloat, y: CGFloat, text: String = "", initialLabel: UILabel? = nil, isButton: Bool = false, maxWidth: CGFloat? = nil) -> UILabel {
     let label = UILabel.labelWithStyle(style, initialLabel: initialLabel)!
     label.text = text
     self.addSubview(label)
     if isButton {
       label.isUserInteractionEnabled = true
+    }
+    if ((maxWidth) != nil) {
+      constrain(label) { label in
+        label.width == label.superview!.width * maxWidth!
+      }
+      label.textAlignment = .center
     }
     constrain(label) { label in
       label.centerX == label.superview!.centerX * x
@@ -34,7 +40,7 @@ extension UIView {
     }
     return label
   }
-  @discardableResult func addLabel(style: [String:Any], alignLeft: UIView, y: CGFloat, text: String = "") -> UILabel {
+  @discardableResult func addLabel(style: LabelStyleProtocol, alignLeft: UIView, y: CGFloat, text: String = "") -> UILabel {
     let label = UILabel.labelWithStyle(style)!
     label.text = text
     self.addSubview(label)
@@ -44,7 +50,7 @@ extension UIView {
     }
     return label
   }
-  @discardableResult func addLabel(style: [String:Any], alignRight: UIView, y: CGFloat, text: String = "") -> UILabel {
+  @discardableResult func addLabel(style: LabelStyleProtocol, alignRight: UIView, y: CGFloat, text: String = "") -> UILabel {
     let label = UILabel.labelWithStyle(style)!
     label.text = text
     self.addSubview(label)
@@ -54,7 +60,7 @@ extension UIView {
     }
     return label
   }
-  @discardableResult func addLabel(style: [String:Any], rightOf: UIView, y: CGFloat, text: String) -> UILabel {
+  @discardableResult func addLabel(style: LabelStyleProtocol, rightOf: UIView, y: CGFloat, text: String) -> UILabel {
     let label = UILabel.labelWithStyle(style)!
     label.text = text
     self.addSubview(label)
@@ -64,7 +70,7 @@ extension UIView {
     }
     return label
   }
-  @discardableResult func addLabel(style: [String:Any], leftOf: UIView, y: CGFloat, text: String = "", initialLabel: UILabel? = nil) -> UILabel {
+  @discardableResult func addLabel(style: LabelStyleProtocol, leftOf: UIView, y: CGFloat, text: String = "", initialLabel: UILabel? = nil) -> UILabel {
     let label = UILabel.labelWithStyle(style, initialLabel: initialLabel)!
     label.text = text
     self.addSubview(label)
@@ -74,8 +80,7 @@ extension UIView {
     }
     return label
   }
-  @discardableResult func addView(x: CGFloat, y: CGFloat, w: CGFloat, h: CGFloat) -> UIView {
-    let view = UIView()
+  @discardableResult func addView(x: CGFloat, y: CGFloat, w: CGFloat, h: CGFloat, view: UIView = UIView()) -> UIView {
     self.addSubview(view)
     constrain(view) {view in
       view.centerX == view.superview!.centerX * x
@@ -109,25 +114,34 @@ extension UIView {
     return view
   }
 
-  @discardableResult func addButton(style: [String:Any], x: CGFloat, y: CGFloat, text: String) -> UIButton {
+  @discardableResult func addButton(style: ButtonStyleProtocol, x: CGFloat, y: CGFloat, text: String, target: Any? = nil, action: Selector? = nil) -> UIButton {
     let button = UIButton.buttonWithStyle(style)!
     button.setTitle(text, for: .normal)
 
     self.addSubview(button)
 
-    guard let w = style["width"] as? Double else {
-      return button
-    }
-    guard let h = style["height"] as? Double else {
-      return button
-    }
-    constrain(button) {button in
+    let root = button.rootSuperview
+
+    constrain(button, root) {button, root in
       button.centerX == button.superview!.centerX * x
       button.centerY == button.superview!.centerY * y
-      button.width == button.superview!.width * CGFloat(w)
-      button.height == button.superview!.height * CGFloat(h)
+      button.width == root.width * style.width
     }
-    button.layer.cornerRadius = button.superview!.frame.height * CGFloat(h) * 0.5
+
+    if (ButtonStyle.areEqual(style, ButtonStyle.Circle())) {
+      constrain(button, root) {button, root in
+        button.height == button.width
+      }
+    } else {
+      constrain(button, root) {button, root in
+        button.height == root.height * style.height
+      }
+    }
+
+    if (target != nil) && (action != nil) {
+      button.addTapEvent(target: target!, action: action!)
+    }
+
     return button
   }
 

@@ -42,6 +42,15 @@ import UIKit
 }
 
 extension UIView {
+  var rootSuperview: UIView {
+    get {
+      var currentView = self
+      while currentView.superview != nil {
+        currentView = currentView.superview!
+      }
+      return currentView
+    }
+  }
   func addTapEvent(target: Any?, action: Selector) {
     let gestureRecognizer = UITapGestureRecognizer(target: target, action: action)
     self.addGestureRecognizer(gestureRecognizer)

@@ -12,7 +12,7 @@ class CheckmarkTableViewCell: UITableViewCell {
   override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
     super.init(style: UITableViewCellStyle.default, reuseIdentifier: reuseIdentifier)
     selectionStyle = .none
-    textLabel!.setLabelStyle(LabelStyle.Body.Primary)
+    textLabel!.setLabelStyle(LabelStyle.Body.Primary())
     tintColor = UIColor.sunrise
   }
 

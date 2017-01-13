@@ -1,6 +1,18 @@
 excluded:
 - Carthage
 
+disabled_rules:
+- nesting
+
+opt_in_rules:
+- closure_spacing
+- conditional_returns_on_newline
+- empty_count
+- explicit_init
+- missing_docs
+- overridden_super_call
+- redundant_nil_coalesing
+
 line_length:
 - 200
 - 250

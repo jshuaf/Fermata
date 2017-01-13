@@ -17,4 +17,6 @@ extension UIColor {
 	@nonobjc static var grapefruit = UIColor(10, 63, 100)
 	@nonobjc static var cookie = UIColor(64, 48, 100)
   @nonobjc static var sunrise = UIColor(30, 64, 100)
+  @nonobjc static var air = UIColor(0, 0, 100, 90)
+  @nonobjc static var ghost = UIColor(0, 0, 100, 30)
 }
