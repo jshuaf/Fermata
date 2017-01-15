@@ -15,11 +15,22 @@ enum PopoverSize {
 }
 
 class Popover: UIView {
-  convenience init(size: PopoverSize) {
-    self.init()
+  private var size: PopoverSize
+
+  init(size: PopoverSize) {
+    self.size = size
+    super.init(frame: .zero)
     self.backgroundColor = UIColor.air
+  }
+
+  required init?(coder aDecoder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+
+  override func layoutSubviews() {
+    self.layer.cornerRadius = frame.width / 8.0
     var w = CGFloat(), h = CGFloat()
-    switch (size) {
+    switch size {
     case .Large:
       w = 0.85
       h = 0.76
@@ -28,11 +39,10 @@ class Popover: UIView {
     constrain(self) {view in
       view.width == view.superview!.width * w
       view.height == view.superview!.height * h
+      view.centerX == view.superview!.centerX
+      view.centerY == view.superview!.centerY
     }
-  }
 
-  override func layoutSubviews() {
-    self.layer.cornerRadius = frame.height / 3.0
   }
 
 }

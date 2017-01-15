@@ -27,6 +27,7 @@
 		FE6BCE4A1DD9205100EB9724 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE6BCE481DD9205100EB9724 /* LaunchScreen.storyboard */; };
 		FE6BCE551DD9205100EB9724 /* FermataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6BCE541DD9205100EB9724 /* FermataTests.swift */; };
 		FE6BCE601DD9205100EB9724 /* FermataUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6BCE5F1DD9205100EB9724 /* FermataUITests.swift */; };
+		FE6D30361E29CDC200239DF6 /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6D30351E29CDC200239DF6 /* NSDate.swift */; };
 		FE95DC0A1E04D75100144A65 /* wooden.wav in Resources */ = {isa = PBXBuildFile; fileRef = FE95DC091E04D75100144A65 /* wooden.wav */; };
 		FE95DC0E1E04D80800144A65 /* FMMetronome.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE95DC0D1E04D80800144A65 /* FMMetronome.swift */; };
 		FE95DC101E05DC3400144A65 /* MetronomePreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE95DC0F1E05DC3400144A65 /* MetronomePreset.swift */; };
@@ -64,6 +65,7 @@
 		FEEBB57A1DDFD0B600CA5651 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE6BCE401DD9205100EB9724 /* Main.storyboard */; };
 		FEEBB57C1DDFD18F00CA5651 /* LessonRecorderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEBB57B1DDFD18F00CA5651 /* LessonRecorderViewController.swift */; };
 		FEEBB57E1DE1360900CA5651 /* FMStopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEBB57D1DE1360900CA5651 /* FMStopwatch.swift */; };
+		FEF9E7A31E2AF54C009CE2BF /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF9E7A21E2AF54C009CE2BF /* Int.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +131,7 @@
 		FE6BCE5B1DD9205100EB9724 /* FermataUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FermataUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE6BCE5F1DD9205100EB9724 /* FermataUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FermataUITests.swift; sourceTree = "<group>"; };
 		FE6BCE611DD9205100EB9724 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE6D30351E29CDC200239DF6 /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDate.swift; sourceTree = "<group>"; };
 		FE95DC091E04D75100144A65 /* wooden.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wooden.wav; sourceTree = "<group>"; };
 		FE95DC0D1E04D80800144A65 /* FMMetronome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMMetronome.swift; sourceTree = "<group>"; };
 		FE95DC0F1E05DC3400144A65 /* MetronomePreset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetronomePreset.swift; sourceTree = "<group>"; };
@@ -165,6 +168,7 @@
 		FEEBB5781DDFD01300CA5651 /* FMTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMTabBarController.swift; sourceTree = "<group>"; };
 		FEEBB57B1DDFD18F00CA5651 /* LessonRecorderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonRecorderViewController.swift; sourceTree = "<group>"; };
 		FEEBB57D1DE1360900CA5651 /* FMStopwatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMStopwatch.swift; sourceTree = "<group>"; };
+		FEF9E7A21E2AF54C009CE2BF /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -330,6 +334,8 @@
 				FEB5A6E71DDA6A5500B02327 /* Helper.swift */,
 				FEE905241E0A192100FEFBDB /* UIFont.swift */,
 				FEE905261E0A194400FEFBDB /* UIView.swift */,
+				FE6D30351E29CDC200239DF6 /* NSDate.swift */,
+				FEF9E7A21E2AF54C009CE2BF /* Int.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -584,6 +590,8 @@
 				FE428A341E27F07B00C09825 /* Popover.swift in Sources */,
 				FEE9052B1E0A27E200FEFBDB /* Buttons.swift in Sources */,
 				FEE9051E1E0986E100FEFBDB /* Layout.swift in Sources */,
+				FE6D30361E29CDC200239DF6 /* NSDate.swift in Sources */,
+				FEF9E7A31E2AF54C009CE2BF /* Int.swift in Sources */,
 				FEE905321E0B132B00FEFBDB /* SelectPieceViewController.swift in Sources */,
 				FE95DC101E05DC3400144A65 /* MetronomePreset.swift in Sources */,
 				FEB5A6E81DDA6A5500B02327 /* Helper.swift in Sources */,

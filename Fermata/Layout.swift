@@ -28,7 +28,7 @@ extension UIView {
     if isButton {
       label.isUserInteractionEnabled = true
     }
-    if ((maxWidth) != nil) {
+    if maxWidth != nil {
       constrain(label) { label in
         label.width == label.superview!.width * maxWidth!
       }
@@ -115,7 +115,7 @@ extension UIView {
   }
 
   @discardableResult func addButton(style: ButtonStyleProtocol, x: CGFloat, y: CGFloat, text: String, target: Any? = nil, action: Selector? = nil) -> UIButton {
-    let button = UIButton.buttonWithStyle(style)!
+    let button = FMButton(style: style)
     button.setTitle(text, for: .normal)
 
     self.addSubview(button)
@@ -145,8 +145,31 @@ extension UIView {
     return button
   }
 
-  @discardableResult func addImageView(x: CGFloat, y: CGFloat, w: CGFloat, h: CGFloat, name: String, isButton: Bool = false) -> UIImageView {
-    let imageView = UIImageView(image: UIImage(named: name))
+  @discardableResult func addButton(style: ButtonWithIconStyleProtocol, x: CGFloat, y: CGFloat, text: String, iconName: String, target: Any? = nil, action: Selector? = nil) -> UIButton {
+    let button = FMButton(style: style)
+    button.setLabel(text: text)
+    button.setIconImage(name: iconName)
+
+    self.addSubview(button)
+
+    let root = button.rootSuperview
+
+    constrain(button, root) {button, root in
+      button.centerX == button.superview!.centerX * x
+      button.centerY == button.superview!.centerY * y
+      button.width == root.width * style.width
+      button.height == root.height * style.height
+    }
+
+    if (target != nil) && (action != nil) {
+      button.addTapEvent(target: target!, action: action!)
+    }
+
+    return button
+  }
+
+  @discardableResult func addImageView(x: CGFloat, y: CGFloat, w: CGFloat, h: CGFloat? = nil, name: String? = nil, isButton: Bool = false) -> UIImageView {
+    let imageView = name != nil ? UIImageView(image: UIImage(named: name!)) : UIImageView()
     if isButton {
       imageView.isUserInteractionEnabled = true
     }
@@ -155,7 +178,11 @@ extension UIView {
       imageView.centerX == imageView.superview!.centerX * x
       imageView.centerY == imageView.superview!.centerY * y
       imageView.width == imageView.superview!.width * w
-      imageView.height == imageView.superview!.height * h
+    }
+    if h != nil {
+      constrain(imageView) { imageView in
+        imageView.height == imageView.superview!.height * h!
+      }
     }
     return imageView
   }

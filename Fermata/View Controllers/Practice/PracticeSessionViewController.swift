@@ -162,7 +162,17 @@ class PracticeSessionViewController: UIViewController, PracticeSessionDelegate {
   }
 
   @objc private func endSession() {
-
+    let currentPieceDuration = currentPieceTimeLabel?.timeElapsed
+    do {
+      let realm = try Realm()
+      try realm.write {
+        currentPiecePractice?.duration.value = currentPieceDuration
+        practiceSession?.endTime = NSDate()
+      }
+    } catch {
+      print("\(error)")
+    }
+    present(PracticeSummaryViewController(practiceSessionDuration: (sessionProgressLabel?.timeElapsed)!), animated: true, completion: {})
   }
 
   private func selectPiece(title: String = "Select a Piece") {
