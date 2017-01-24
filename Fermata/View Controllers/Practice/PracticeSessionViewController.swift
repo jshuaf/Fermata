@@ -63,6 +63,7 @@ class PracticeSessionViewController: UIViewController, PracticeSessionDelegate {
   override internal func viewDidLoad() {
     super.viewDidLoad()
     self.navigationController?.isNavigationBarHidden = true
+    view.addGradient(UIColor.sunrise)
 
     setupBackground()
     setupPracticeSession()
@@ -94,9 +95,7 @@ class PracticeSessionViewController: UIViewController, PracticeSessionDelegate {
   }
 
   private func setupBackground() {
-    let backgroundGradient = [UIColor.grapefruit, UIColor.cookie].gradient()
-    backgroundGradient.frame = view.bounds
-    view.layer.insertSublayer(backgroundGradient, at: 0)
+    view.addGradient(UIColor.sunrise)
     let controlsView = view.addView(x: 1, y: 0.29, w: 1, h: 0.29)
     controlsView.backgroundColor = UIColor.ghost
   }

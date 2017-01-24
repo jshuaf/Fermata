@@ -19,7 +19,7 @@ class SelectPieceViewController: UIViewController, UITableViewDelegate, UITableV
 
   convenience init(title: String) {
     self.init()
-    self.title = title
+    self.navigationItem.title = title
   }
 
   override internal func viewDidAppear(_ animated: Bool) {
@@ -31,6 +31,7 @@ class SelectPieceViewController: UIViewController, UITableViewDelegate, UITableV
 
   override internal func viewDidLoad() {
     super.viewDidLoad()
+    view.addGradient(UIColor.sunrise)
 
     allPieces = getAllPieces()
     recentPieces = getRecentPieces()

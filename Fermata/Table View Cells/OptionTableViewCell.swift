@@ -19,7 +19,7 @@ class OptionTableViewCell: UITableViewCell {
     fatalError("init(coder:) has not been implemented")
   }
 
-  func setup(text: String) {
+  internal func setup(text: String) {
     self.textLabel?.text = text
   }
 

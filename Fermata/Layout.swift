@@ -5,6 +5,7 @@
 //  Created by jfang19 on 12/20/16.
 //  Copyright © 2016 joshuafang. All rights reserved.
 //
+//  swiftlint:disable line_length
 
 import Foundation
 import Cartography
@@ -15,13 +16,10 @@ extension UIView {
     let textField = UITextField()
     textField.setTextFieldStyle(style)
     self.addSubview(textField)
-    constrain(textField) { textField in
-      textField.centerX == textField.superview!.centerX * x
-      textField.centerY == textField.superview!.centerY * y
-    }
+    textField.addConstraints(x: x, y: y)
     return textField
   }
-  @discardableResult func addLabel(style: LabelStyleProtocol, x: CGFloat, y: CGFloat, text: String = "", initialLabel: UILabel? = nil, isButton: Bool = false, maxWidth: CGFloat? = nil) -> UILabel {
+  @discardableResult func addLabel(style: LabelStyleProtocol, x: CGFloat? = nil, alignLeft: UIView? = nil, alignRight: UIView? = nil, leftOf: UIView? = nil, rightOf: UIView? = nil, y: CGFloat, text: String = "", initialLabel: UILabel? = nil, isButton: Bool = false, maxWidth: CGFloat? = nil) -> UILabel {
     let label = UILabel.labelWithStyle(style, initialLabel: initialLabel)!
     label.text = text
     self.addSubview(label)
@@ -29,76 +27,14 @@ extension UIView {
       label.isUserInteractionEnabled = true
     }
     if maxWidth != nil {
-      constrain(label) { label in
-        label.width == label.superview!.width * maxWidth!
-      }
       label.textAlignment = .center
     }
-    constrain(label) { label in
-      label.centerX == label.superview!.centerX * x
-      label.centerY == label.superview!.centerY * y
-    }
+    label.addConstraints(x: x, alignLeft: alignLeft, alignRight: alignRight, leftOf: leftOf, rightOf: rightOf, y: y, w: maxWidth)
     return label
   }
-  @discardableResult func addLabel(style: LabelStyleProtocol, alignLeft: UIView, y: CGFloat, text: String = "") -> UILabel {
-    let label = UILabel.labelWithStyle(style)!
-    label.text = text
-    self.addSubview(label)
-    constrain(label, alignLeft) { label, alignLeft in
-      align(left: label, alignLeft)
-      label.centerY == label.superview!.centerY * y
-    }
-    return label
-  }
-  @discardableResult func addLabel(style: LabelStyleProtocol, alignRight: UIView, y: CGFloat, text: String = "") -> UILabel {
-    let label = UILabel.labelWithStyle(style)!
-    label.text = text
-    self.addSubview(label)
-    constrain(label, alignRight) { label, alignRight in
-      align(right: label, alignRight)
-      label.centerY == label.superview!.centerY * y
-    }
-    return label
-  }
-  @discardableResult func addLabel(style: LabelStyleProtocol, rightOf: UIView, y: CGFloat, text: String) -> UILabel {
-    let label = UILabel.labelWithStyle(style)!
-    label.text = text
-    self.addSubview(label)
-    constrain(label, rightOf) { label, rightOf in
-      label.left == rightOf.right
-      label.centerY == label.superview!.centerY * y
-    }
-    return label
-  }
-  @discardableResult func addLabel(style: LabelStyleProtocol, leftOf: UIView, y: CGFloat, text: String = "", initialLabel: UILabel? = nil) -> UILabel {
-    let label = UILabel.labelWithStyle(style, initialLabel: initialLabel)!
-    label.text = text
-    self.addSubview(label)
-    constrain(label, leftOf) { label, leftOf in
-      label.right == leftOf.left
-      label.centerY == label.superview!.centerY * y
-    }
-    return label
-  }
-  @discardableResult func addView(x: CGFloat, y: CGFloat, w: CGFloat, h: CGFloat, view: UIView = UIView()) -> UIView {
+  @discardableResult func addView(x: CGFloat? = nil, alignLeft: UIView? = nil, alignRight: UIView? = nil, y: CGFloat, w: CGFloat, h: CGFloat, view: UIView = UIView()) -> UIView {
     self.addSubview(view)
-    constrain(view) {view in
-      view.centerX == view.superview!.centerX * x
-      view.centerY == view.superview!.centerY * y
-      view.width == view.superview!.width * w
-      view.height == view.superview!.height * h
-    }
-    return view
-  }
-  @discardableResult func addView(alignLeft: UIView, y: CGFloat, w: CGFloat, h: CGFloat) -> UIView {
-    let view = UIView()
-    self.addSubview(view)
-    constrain(view, alignLeft) {view, alignLeft in
-      align(left: view, alignLeft)
-      view.centerY == view.superview!.centerY * y
-      view.width == view.superview!.width * w
-      view.height == view.superview!.height * h
-    }
+    view.addConstraints(x: x, alignLeft: alignLeft, alignRight: alignRight, y: y, w: w, h: h)
     return view
   }
 
@@ -174,16 +110,50 @@ extension UIView {
       imageView.isUserInteractionEnabled = true
     }
     self.addSubview(imageView)
-    constrain(imageView) { imageView in
-      imageView.centerX == imageView.superview!.centerX * x
-      imageView.centerY == imageView.superview!.centerY * y
-      imageView.width == imageView.superview!.width * w
-    }
-    if h != nil {
-      constrain(imageView) { imageView in
-        imageView.height == imageView.superview!.height * h!
+    imageView.addConstraints(x: x, y: y, w: w, h: h)
+    return imageView
+  }
+
+  func addConstraints(x: CGFloat? = nil, alignLeft: UIView? = nil, alignRight: UIView? = nil, leftOf: UIView? = nil, rightOf: UIView? = nil, y: CGFloat? = nil, w: CGFloat? = nil, h: CGFloat? = nil) {
+    if x != nil {
+      constrain(self) { view in
+        view.centerX == view.superview!.centerX * x!
       }
     }
-    return imageView
+    if y != nil {
+      constrain(self) { view in
+        view.centerY == view.superview!.centerY * y!
+      }
+    }
+    if w != nil {
+      constrain(self) { view in
+        view.width == view.superview!.width * w!
+      }
+    }
+    if h != nil {
+      constrain(self) { view in
+        view.height == view.superview!.height * h!
+      }
+    }
+    if alignLeft != nil {
+      constrain(self, alignLeft!) { view, left in
+        view.left == left.left
+      }
+    }
+    if alignRight != nil {
+      constrain(self, alignRight!) { view, right in
+        view.right == right.right
+      }
+    }
+    if leftOf != nil {
+      constrain(self, leftOf!) { view, leftOf in
+        view.right == leftOf.left
+      }
+    }
+    if rightOf != nil {
+      constrain(self, rightOf!) { view, rightOf in
+        view.left == rightOf.right
+      }
+    }
   }
 }

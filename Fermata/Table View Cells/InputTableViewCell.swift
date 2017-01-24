@@ -23,7 +23,7 @@ class InputTableViewCell: UITableViewCell {
     fatalError("init(coder:) has not been implemented")
   }
 
-  func setup(text: String, placeholder: String) {
+  internal func setup(text: String, placeholder: String) {
     self.textLabel?.text = text
     self.textField?.placeholder = placeholder
   }

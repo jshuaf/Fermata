@@ -11,11 +11,7 @@ import UIKit
 class RecordingTableViewCell: UITableViewCell {
 	var cellLabel: UILabel!
 
-	func setup(recording: Recording) {
-		cellLabel.text = recording.title
-	}
-
-	required init?(coder aDecoder: NSCoder) {
+  required init?(coder aDecoder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
 
@@ -31,10 +27,8 @@ class RecordingTableViewCell: UITableViewCell {
 		addSubview(cellLabel)
 	}
 
-	override func setSelected(_ selected: Bool, animated: Bool) {
-			super.setSelected(selected, animated: animated)
-
-			// Configure the view for the selected state
-	}
+  internal func setup(recording: Recording) {
+    cellLabel.text = recording.title
+  }
 
 }

@@ -16,7 +16,8 @@ class AddPieceViewController: UIViewController, UITableViewDelegate, UITableView
 
   override internal func viewDidLoad() {
     super.viewDidLoad()
-    self.title = "Add a Piece"
+    self.navigationItem.title = "Add a Piece"
+    view.addGradient(UIColor.sunrise)
 
     setupNavigationBar()
 

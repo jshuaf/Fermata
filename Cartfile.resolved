@@ -1,3 +1,4 @@
-github "audiokit/AudioKit" "v3.5"
+github "audiokit/AudioKit" "v3.5.1"
 github "robb/Cartography" "1.0.1"
 github "hyperoslo/Hue" "2.0.1"
+github "naoty/Timepiece" "1.1.0"

@@ -38,8 +38,7 @@ class LessonRecorderViewController: UIViewController {
     setupWaveformPlot()
 		AudioKit.start()
 
-    setupBackground()
-
+    view.addGradient(UIColor.sunrise)
     setupButtonGestures()
 	}
 
@@ -56,12 +55,6 @@ class LessonRecorderViewController: UIViewController {
     plot?.waveformLayer.lineWidth = 2.0
     plot?.backgroundColor = UIColor.clear
 
-  }
-
-  func setupBackground() {
-    let backgroundGradient = [UIColor.grapefruit, UIColor.cookie].gradient()
-    backgroundGradient.frame = view.bounds
-    view.layer.insertSublayer(backgroundGradient, at: 0)
   }
 
   func setupButtonGestures() {

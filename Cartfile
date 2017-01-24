@@ -1,4 +1,4 @@
 github "audiokit/AudioKit"
 github "robb/Cartography"
 github "hyperoslo/Hue"
-github "xmartlabs/Eureka" ~> 2.0.0
+github "naoty/Timepiece"

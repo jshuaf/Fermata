@@ -30,7 +30,8 @@ class SelectPieceFromCategoryViewController: UIViewController, UITableViewDelega
 
   override internal func viewDidLoad() {
     super.viewDidLoad()
-    self.title = category?.rawValue
+    self.navigationItem.title = category?.rawValue
+    view.addGradient(UIColor.sunrise)
 
     piecesInCategory = getPiecesInCategory()
 

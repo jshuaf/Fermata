@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,15 +17,44 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-    setupViewControllers()
+    patchModel()
+
+    window =  UIWindow(frame: UIScreen.main.bounds)
+    window?.makeKeyAndVisible()
+    window?.rootViewController = tabBarController()
 		return true
 	}
 
-  func setupViewControllers() {
-    let tabBarController = window?.rootViewController as? UITabBarController
-    var tabBarChildControllers = tabBarController?.childViewControllers
-    tabBarChildControllers?.append(SetupPracticeViewController())
-    tabBarController?.setViewControllers(tabBarChildControllers, animated: false)
+  internal func patchModel() {
+    do {
+      let realm = try Realm()
+      let practiceSessions = realm.objects(PracticeSession.self)
+      try realm.write {
+        practiceSessions.forEach({
+          if $0.endTime == nil {
+            realm.delete($0)
+          }
+        })
+      }
+    } catch {
+      print("\(error)")
+    }
+  }
+
+  func tabBarController() -> UITabBarController {
+    let tabBarController = UITabBarController()
+    tabBarController.tabBar.tintColor = .tangerine
+
+    let setupPracticeViewController = SetupPracticeViewController()
+    setupPracticeViewController.tabBarItem.image = UIImage(named: "Practice Icon")
+    setupPracticeViewController.tabBarItem.title = "Practice"
+
+    let journalNavigationController = UINavigationController(rootViewController: BrowseSessionsViewController())
+    journalNavigationController.tabBarItem.image = UIImage(named: "Journal Icon")
+    setupPracticeViewController.tabBarItem.title = "Journal"
+
+    tabBarController.setViewControllers([setupPracticeViewController, journalNavigationController], animated: false)
+    return tabBarController
   }
 
 	func applicationWillResignActive(_ application: UIApplication) {

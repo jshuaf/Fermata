@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE23AAF31E2F19C600131BB1 /* Timepiece.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE23AAF21E2F19C600131BB1 /* Timepiece.framework */; };
+		FE36EAAF1E30635500F5109F /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE36EAAE1E30635500F5109F /* Array.swift */; };
 		FE428A341E27F07B00C09825 /* Popover.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE428A331E27F07B00C09825 /* Popover.swift */; };
 		FE428A361E28727E00C09825 /* PracticeSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE428A351E28727E00C09825 /* PracticeSummaryViewController.swift */; };
 		FE4F2CAA1E2040EF00022227 /* FMProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4F2CA91E2040EF00022227 /* FMProgressBar.swift */; };
@@ -27,7 +29,7 @@
 		FE6BCE4A1DD9205100EB9724 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE6BCE481DD9205100EB9724 /* LaunchScreen.storyboard */; };
 		FE6BCE551DD9205100EB9724 /* FermataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6BCE541DD9205100EB9724 /* FermataTests.swift */; };
 		FE6BCE601DD9205100EB9724 /* FermataUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6BCE5F1DD9205100EB9724 /* FermataUITests.swift */; };
-		FE6D30361E29CDC200239DF6 /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6D30351E29CDC200239DF6 /* NSDate.swift */; };
+		FE6D30361E29CDC200239DF6 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6D30351E29CDC200239DF6 /* Date.swift */; };
 		FE95DC0A1E04D75100144A65 /* wooden.wav in Resources */ = {isa = PBXBuildFile; fileRef = FE95DC091E04D75100144A65 /* wooden.wav */; };
 		FE95DC0E1E04D80800144A65 /* FMMetronome.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE95DC0D1E04D80800144A65 /* FMMetronome.swift */; };
 		FE95DC101E05DC3400144A65 /* MetronomePreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE95DC0F1E05DC3400144A65 /* MetronomePreset.swift */; };
@@ -36,6 +38,8 @@
 		FE95DC1A1E06144A00144A65 /* PiecePractice.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE95DC191E06144A00144A65 /* PiecePractice.swift */; };
 		FEB5A6E81DDA6A5500B02327 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB5A6E71DDA6A5500B02327 /* Helper.swift */; };
 		FEB5A6EA1DDA73D100B02327 /* RecordingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB5A6E91DDA73D100B02327 /* RecordingTableViewCell.swift */; };
+		FEC202F01E2DA16000BF8D56 /* BrowseSessionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC202EF1E2DA16000BF8D56 /* BrowseSessionsViewController.swift */; };
+		FEC202F31E2DA97000BF8D56 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC202F21E2DA97000BF8D56 /* DetailTableViewCell.swift */; };
 		FEC5C9E91E1B2A990018428E /* AddPieceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC5C9E81E1B2A990018428E /* AddPieceViewController.swift */; };
 		FEC5C9EB1E1B2C020018428E /* InputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC5C9EA1E1B2C020018428E /* InputTableViewCell.swift */; };
 		FECBCAF11DDBDEA1001E1FE0 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = FECBCAF01DDBDEA1001E1FE0 /* Cartfile */; };
@@ -43,7 +47,6 @@
 		FEE905171E089B6E00FEFBDB /* SetupPracticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE905161E089B6E00FEFBDB /* SetupPracticeViewController.swift */; };
 		FEE9051A1E08A86000FEFBDB /* Typography.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE905191E08A86000FEFBDB /* Typography.swift */; };
 		FEE9051E1E0986E100FEFBDB /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE9051D1E0986E100FEFBDB /* Layout.swift */; };
-		FEE905251E0A192100FEFBDB /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE905241E0A192100FEFBDB /* UIFont.swift */; };
 		FEE905271E0A194400FEFBDB /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE905261E0A194400FEFBDB /* UIView.swift */; };
 		FEE9052B1E0A27E200FEFBDB /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE9052A1E0A27E200FEFBDB /* Buttons.swift */; };
 		FEE905301E0AD81500FEFBDB /* PracticeSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE9052F1E0AD81500FEFBDB /* PracticeSessionViewController.swift */; };
@@ -101,6 +104,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FE23AAF21E2F19C600131BB1 /* Timepiece.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Timepiece.framework; path = Carthage/Build/iOS/Timepiece.framework; sourceTree = "<group>"; };
+		FE36EAAE1E30635500F5109F /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		FE428A331E27F07B00C09825 /* Popover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Popover.swift; sourceTree = "<group>"; };
 		FE428A351E28727E00C09825 /* PracticeSummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PracticeSummaryViewController.swift; sourceTree = "<group>"; };
 		FE4F2CA91E2040EF00022227 /* FMProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMProgressBar.swift; sourceTree = "<group>"; };
@@ -131,7 +136,7 @@
 		FE6BCE5B1DD9205100EB9724 /* FermataUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FermataUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE6BCE5F1DD9205100EB9724 /* FermataUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FermataUITests.swift; sourceTree = "<group>"; };
 		FE6BCE611DD9205100EB9724 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FE6D30351E29CDC200239DF6 /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDate.swift; sourceTree = "<group>"; };
+		FE6D30351E29CDC200239DF6 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		FE95DC091E04D75100144A65 /* wooden.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wooden.wav; sourceTree = "<group>"; };
 		FE95DC0D1E04D80800144A65 /* FMMetronome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMMetronome.swift; sourceTree = "<group>"; };
 		FE95DC0F1E05DC3400144A65 /* MetronomePreset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetronomePreset.swift; sourceTree = "<group>"; };
@@ -140,6 +145,8 @@
 		FE95DC191E06144A00144A65 /* PiecePractice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PiecePractice.swift; sourceTree = "<group>"; };
 		FEB5A6E71DDA6A5500B02327 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		FEB5A6E91DDA73D100B02327 /* RecordingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingTableViewCell.swift; sourceTree = "<group>"; };
+		FEC202EF1E2DA16000BF8D56 /* BrowseSessionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BrowseSessionsViewController.swift; path = Journal/BrowseSessionsViewController.swift; sourceTree = "<group>"; };
+		FEC202F21E2DA97000BF8D56 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		FEC5C9E81E1B2A990018428E /* AddPieceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPieceViewController.swift; sourceTree = "<group>"; };
 		FEC5C9EA1E1B2C020018428E /* InputTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputTableViewCell.swift; sourceTree = "<group>"; };
 		FECBCAF01DDBDEA1001E1FE0 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
@@ -147,7 +154,6 @@
 		FEE905161E089B6E00FEFBDB /* SetupPracticeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupPracticeViewController.swift; sourceTree = "<group>"; };
 		FEE905191E08A86000FEFBDB /* Typography.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Typography.swift; sourceTree = "<group>"; };
 		FEE9051D1E0986E100FEFBDB /* Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
-		FEE905241E0A192100FEFBDB /* UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		FEE905261E0A194400FEFBDB /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		FEE9052A1E0A27E200FEFBDB /* Buttons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		FEE9052F1E0AD81500FEFBDB /* PracticeSessionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PracticeSessionViewController.swift; sourceTree = "<group>"; };
@@ -179,6 +185,7 @@
 				FE5ADEDF1DE758F4004774CE /* Realm.framework in Frameworks */,
 				FE5ADEE11DE758F4004774CE /* RealmSwift.framework in Frameworks */,
 				FEEBB55E1DDE1BC900CA5651 /* Hue.framework in Frameworks */,
+				FE23AAF31E2F19C600131BB1 /* Timepiece.framework in Frameworks */,
 				FE641F801DDCE77A00ED944B /* Cartography.framework in Frameworks */,
 				FECBCAF51DDBDF39001E1FE0 /* AudioKit.framework in Frameworks */,
 			);
@@ -232,6 +239,7 @@
 				FEC5C9EA1E1B2C020018428E /* InputTableViewCell.swift */,
 				FE647E4C1E1C4FCE00D496C3 /* CheckmarkTableViewCell.swift */,
 				FE621D1B1E1756DA009E61F6 /* ButtonTableViewCell.swift */,
+				FEC202F21E2DA97000BF8D56 /* DetailTableViewCell.swift */,
 			);
 			path = "Table View Cells";
 			sourceTree = "<group>";
@@ -303,9 +311,18 @@
 			path = FermataUITests;
 			sourceTree = "<group>";
 		};
+		FEC202F11E2DA16500BF8D56 /* Journal */ = {
+			isa = PBXGroup;
+			children = (
+				FEC202EF1E2DA16000BF8D56 /* BrowseSessionsViewController.swift */,
+			);
+			name = Journal;
+			sourceTree = "<group>";
+		};
 		FECBCAF31DDBDF35001E1FE0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FE23AAF21E2F19C600131BB1 /* Timepiece.framework */,
 				FE5ADED61DE6567A004774CE /* RealmSwift.framework */,
 				FE5ADED41DE65672004774CE /* Realm.framework */,
 				FEEBB55D1DDE1BC900CA5651 /* Hue.framework */,
@@ -320,6 +337,7 @@
 		FEE905181E089C1100FEFBDB /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FEC202F11E2DA16500BF8D56 /* Journal */,
 				FEE9052E1E0AD7F600FEFBDB /* Practice */,
 				FEEBB57B1DDFD18F00CA5651 /* LessonRecorderViewController.swift */,
 				FEEBB5741DDEB08C00CA5651 /* RecordingsListViewController.swift */,
@@ -332,10 +350,10 @@
 			isa = PBXGroup;
 			children = (
 				FEB5A6E71DDA6A5500B02327 /* Helper.swift */,
-				FEE905241E0A192100FEFBDB /* UIFont.swift */,
 				FEE905261E0A194400FEFBDB /* UIView.swift */,
-				FE6D30351E29CDC200239DF6 /* NSDate.swift */,
+				FE6D30351E29CDC200239DF6 /* Date.swift */,
 				FEF9E7A21E2AF54C009CE2BF /* Int.swift */,
+				FE36EAAE1E30635500F5109F /* Array.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -554,6 +572,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/AudioKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Cartography.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Hue.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Timepiece.framework",
 			);
 			outputPaths = (
 			);
@@ -577,6 +596,7 @@
 				FE95DC181E05FC5700144A65 /* PracticeSession.swift in Sources */,
 				FEC5C9EB1E1B2C020018428E /* InputTableViewCell.swift in Sources */,
 				FEB5A6EA1DDA73D100B02327 /* RecordingTableViewCell.swift in Sources */,
+				FE36EAAF1E30635500F5109F /* Array.swift in Sources */,
 				FEEBB5771DDF2FA200CA5651 /* Colors.swift in Sources */,
 				FE6BCE451DD9205100EB9724 /* Fermata.xcdatamodeld in Sources */,
 				FE4F2CAA1E2040EF00022227 /* FMProgressBar.swift in Sources */,
@@ -590,16 +610,17 @@
 				FE428A341E27F07B00C09825 /* Popover.swift in Sources */,
 				FEE9052B1E0A27E200FEFBDB /* Buttons.swift in Sources */,
 				FEE9051E1E0986E100FEFBDB /* Layout.swift in Sources */,
-				FE6D30361E29CDC200239DF6 /* NSDate.swift in Sources */,
+				FE6D30361E29CDC200239DF6 /* Date.swift in Sources */,
+				FEC202F31E2DA97000BF8D56 /* DetailTableViewCell.swift in Sources */,
 				FEF9E7A31E2AF54C009CE2BF /* Int.swift in Sources */,
 				FEE905321E0B132B00FEFBDB /* SelectPieceViewController.swift in Sources */,
 				FE95DC101E05DC3400144A65 /* MetronomePreset.swift in Sources */,
 				FEB5A6E81DDA6A5500B02327 /* Helper.swift in Sources */,
 				FE5ADED21DE65648004774CE /* Recording.swift in Sources */,
-				FEE905251E0A192100FEFBDB /* UIFont.swift in Sources */,
 				FEE905301E0AD81500FEFBDB /* PracticeSessionViewController.swift in Sources */,
 				FE647E531E1CA1D400D496C3 /* SelectPieceFromCategoryViewController.swift in Sources */,
 				FEE9051A1E08A86000FEFBDB /* Typography.swift in Sources */,
+				FEC202F01E2DA16000BF8D56 /* BrowseSessionsViewController.swift in Sources */,
 				FE95DC1A1E06144A00144A65 /* PiecePractice.swift in Sources */,
 				FE428A361E28727E00C09825 /* PracticeSummaryViewController.swift in Sources */,
 			);

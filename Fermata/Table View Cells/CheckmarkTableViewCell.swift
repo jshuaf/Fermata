@@ -13,25 +13,25 @@ class CheckmarkTableViewCell: UITableViewCell {
     super.init(style: UITableViewCellStyle.default, reuseIdentifier: reuseIdentifier)
     selectionStyle = .none
     textLabel!.setLabelStyle(LabelStyle.Body.Primary())
-    tintColor = UIColor.sunrise
+    tintColor = UIColor.tangerine
   }
 
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
 
-  func setup(text: String, checked: Bool) {
+  internal func setup(text: String, checked: Bool) {
     self.textLabel?.text = text
     if checked {
       accessoryType = .checkmark
     }
   }
 
-  func uncheck() {
+  internal func uncheck() {
     accessoryType = .none
   }
 
-  func check() {
+  internal func check() {
     accessoryType = .checkmark
   }
 

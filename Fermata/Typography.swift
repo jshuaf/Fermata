@@ -94,6 +94,13 @@ struct LabelStyle {
       internal let weight = FontWeight.Medium
     }
   }
+  struct Detail {
+    struct Light: LabelStyleProtocol {
+      internal let color = UIColor.white
+      internal let size: CGFloat = 13
+      internal let weight = FontWeight.Regular
+    }
+  }
   static func areEqual(_ a: LabelStyleProtocol, _ b: LabelStyleProtocol) -> Bool {
     return (
       a.color == b.color &&
@@ -131,5 +138,16 @@ extension UITextField {
   func setTextFieldStyle(_ style: LabelStyleProtocol) {
     self.textColor = style.color
     self.font = UIFont(name: "Rubik-\(style.weight)", size: style.size)
+  }
+}
+
+extension UIFont {
+  var textAttribute: [AnyHashable: Any] {
+    get {
+      return [ NSFontAttributeName: self ]
+    }
+  }
+  static func fontWithStyle(_ style: LabelStyleProtocol) -> UIFont {
+    return UIFont(name: "Rubik-\(style.weight)", size: style.size)!
   }
 }

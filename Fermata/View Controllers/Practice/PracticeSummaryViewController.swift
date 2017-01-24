@@ -42,7 +42,7 @@ class PracticeSummaryViewController: UIViewController {
     super.viewDidLoad()
 
     fetchPracticeSessions()
-    setupBackground()
+    view.addGradient(UIColor.sunrise)
     setupPopover()
     setupWeekStats()
     setupSessionDuration()
@@ -51,16 +51,10 @@ class PracticeSummaryViewController: UIViewController {
   private func fetchPracticeSessions() {
     do {
       let realm = try Realm()
-      weekPracticeSessions = realm.objects(PracticeSession.self).filter("endTime >= %@", Date.firstDateOfWeek())
+      weekPracticeSessions = realm.objects(PracticeSession.self).filter("endTime >= %@", Date().firstDateOfWeek)
     } catch {
       print("\(error)")
     }
-  }
-
-  private func setupBackground() {
-    let backgroundGradient = [UIColor.grapefruit, UIColor.cookie].gradient()
-    backgroundGradient.frame = view.bounds
-    view.layer.insertSublayer(backgroundGradient, at: 0)
   }
 
   private func setupPopover() {
@@ -85,6 +79,7 @@ class PracticeSummaryViewController: UIViewController {
   }
 
   @objc private func dismissSummary() {
-    present(FMTabBarController(), animated: true, completion: nil)
+    let appDelegate = UIApplication.shared.delegate as? AppDelegate
+    present((appDelegate?.tabBarController())!, animated: true, completion: nil)
   }
 }

@@ -21,14 +21,8 @@ class SetupPracticeViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     self.title = "Start Practice"
-    setupBackground()
+    view.addGradient(UIColor.sunrise)
     setupLabels()
-  }
-
-  private func setupBackground() {
-    let backgroundGradient = [UIColor.grapefruit, UIColor.cookie].gradient()
-    backgroundGradient.frame = view.bounds
-    view.layer.insertSublayer(backgroundGradient, at: 0)
   }
 
   private func setupLabels() {
