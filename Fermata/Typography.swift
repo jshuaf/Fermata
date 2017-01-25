@@ -93,10 +93,15 @@ struct LabelStyle {
       internal let size: CGFloat = 17
       internal let weight = FontWeight.Medium
     }
+    struct AccentOne: LabelStyleProtocol {
+      internal let color = UIColor.tangerine
+      internal let size: CGFloat = 17
+      internal let weight = FontWeight.Regular
+    }
   }
   struct Detail {
     struct Light: LabelStyleProtocol {
-      internal let color = UIColor.white
+      internal let color = UIColor.rock
       internal let size: CGFloat = 13
       internal let weight = FontWeight.Regular
     }
@@ -132,6 +137,16 @@ extension UILabel {
     self.textColor = style.color
     self.font = UIFont(name: "Rubik-\(style.weight)", size: style.size)
   }
+
+  var attributedString: [String:Any] {
+    get {
+      return [
+        NSFontAttributeName: self.font,
+        NSForegroundColorAttributeName: self.textColor
+      ]
+    }
+  }
+
 }
 
 extension UITextField {
@@ -142,7 +157,7 @@ extension UITextField {
 }
 
 extension UIFont {
-  var textAttribute: [AnyHashable: Any] {
+  var textAttribute: [String: Any] {
     get {
       return [ NSFontAttributeName: self ]
     }

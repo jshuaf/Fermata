@@ -12,6 +12,7 @@
 		FE428A341E27F07B00C09825 /* Popover.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE428A331E27F07B00C09825 /* Popover.swift */; };
 		FE428A361E28727E00C09825 /* PracticeSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE428A351E28727E00C09825 /* PracticeSummaryViewController.swift */; };
 		FE4F2CAA1E2040EF00022227 /* FMProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4F2CA91E2040EF00022227 /* FMProgressBar.swift */; };
+		FE597E151E385080004CA535 /* ViewSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE597E141E385080004CA535 /* ViewSessionViewController.swift */; };
 		FE5ADED21DE65648004774CE /* Recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5ADED11DE65648004774CE /* Recording.swift */; };
 		FE5ADEDF1DE758F4004774CE /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE5ADEDD1DE758F4004774CE /* Realm.framework */; };
 		FE5ADEE01DE758F4004774CE /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FE5ADEDD1DE758F4004774CE /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -109,6 +110,7 @@
 		FE428A331E27F07B00C09825 /* Popover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Popover.swift; sourceTree = "<group>"; };
 		FE428A351E28727E00C09825 /* PracticeSummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PracticeSummaryViewController.swift; sourceTree = "<group>"; };
 		FE4F2CA91E2040EF00022227 /* FMProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMProgressBar.swift; sourceTree = "<group>"; };
+		FE597E141E385080004CA535 /* ViewSessionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewSessionViewController.swift; sourceTree = "<group>"; };
 		FE5ADED11DE65648004774CE /* Recording.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recording.swift; sourceTree = "<group>"; };
 		FE5ADED41DE65672004774CE /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		FE5ADED61DE6567A004774CE /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
@@ -315,6 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				FEC202EF1E2DA16000BF8D56 /* BrowseSessionsViewController.swift */,
+				FE597E141E385080004CA535 /* ViewSessionViewController.swift */,
 			);
 			name = Journal;
 			sourceTree = "<group>";
@@ -599,6 +602,7 @@
 				FE36EAAF1E30635500F5109F /* Array.swift in Sources */,
 				FEEBB5771DDF2FA200CA5651 /* Colors.swift in Sources */,
 				FE6BCE451DD9205100EB9724 /* Fermata.xcdatamodeld in Sources */,
+				FE597E151E385080004CA535 /* ViewSessionViewController.swift in Sources */,
 				FE4F2CAA1E2040EF00022227 /* FMProgressBar.swift in Sources */,
 				FE621D1C1E1756DA009E61F6 /* ButtonTableViewCell.swift in Sources */,
 				FEEBB57E1DE1360900CA5651 /* FMStopwatch.swift in Sources */,

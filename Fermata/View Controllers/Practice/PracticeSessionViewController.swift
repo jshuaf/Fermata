@@ -222,10 +222,10 @@ class PracticeSessionViewController: UIViewController, PracticeSessionDelegate {
   private func setPiecePractice() {
     do {
       let realm = try Realm()
-      let piecePracticeData: [String:Any?] = ["piece": currentPiece!, "position": practiceSession?.piecesPracticed.count]
+      let piecePracticeData: [String:Any?] = ["piece": currentPiece!, "position": practiceSession?.piecesPracticed.count, "practiceSession": practiceSession]
       currentPiecePractice = PiecePractice(value: piecePracticeData)
       try realm.write {
-        practiceSession?.piecesPracticed.append(currentPiecePractice!)
+        realm.add(currentPiecePractice!)
       }
     } catch {
       print("\(error)")

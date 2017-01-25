@@ -40,13 +40,19 @@ class BrowseSessionsViewController: UIViewController, UITableViewDelegate, UITab
   }
 
   private func setupTableView() {
-    tableView = view.addTableView(x: 1, y: 1.02, w: 1, h: 0.83)
+    tableView = view.addTableView(x: 1, y: 0.9, w: 1, h: 0.83)
     tableView?.delegate = self
     tableView?.dataSource = self
+    tableView?.rowHeight = 86.0
     tableView?.register(DetailTableViewCell.self, forCellReuseIdentifier: "practiceSession")
+
+    let refreshControl = UIRefreshControl()
+    refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+    refreshControl.addTarget(self, action: #selector(self.fetchPracticeSessions), for: .valueChanged)
+    tableView?.refreshControl = refreshControl
   }
 
-  private func fetchPracticeSessions() {
+  @objc private func fetchPracticeSessions(sender: Any? = nil) {
     do {
       let realm = try Realm()
       let practiceSessions = realm.objects(PracticeSession.self)
@@ -56,24 +62,30 @@ class BrowseSessionsViewController: UIViewController, UITableViewDelegate, UITab
     } catch {
       print("\(error)")
     }
+    tableView?.refreshControl?.endRefreshing()
   }
 
   internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "practiceSession") as? DetailTableViewCell
-    var practiceSession: PracticeSession?
-    switch sessionRangeControl?.selectedSegmentIndex {
-    case 0?:
-      practiceSession = thisWeekSessions[indexPath.row]
-    case 1?:
-      practiceSession = thisMonthSessions[(thisMonthSessions.keys.sorted()[indexPath.section])]![indexPath.row]
-    case 2?:
-      practiceSession = allTimeSessions[(allTimeSessions.keys.sorted()[indexPath.section])]![indexPath.row]
-    default: break
+    let practiceSession = self.practiceSession(for: indexPath)
+    let date = (practiceSession.endTime as? Date)?.dateString(in: .medium)
+    let primaryPieceName = practiceSession.primaryPiece.name
+    let secondaryPieceDetail = practiceSession.piecesPracticed.count > 1 ? "+ \(practiceSession.piecesPracticed.count - 1) more..." : nil
+    cell?.setupTextLabels(titleText: date!, firstDetailText: primaryPieceName, secondDetailText: secondaryPieceDetail)
+
+    let accent: DetailTableViewCellAccent
+    let minutes = Int(practiceSession.duration / 60)
+    switch practiceSession.duration {
+    case 0...30 * 60:
+      accent = .Small
+    case 30 * 60...75 * 60:
+      accent = .Medium
+    case 75 * 60 ..< Int.max:
+      accent = .Large
+    default: accent = .Small
     }
-    let date = (practiceSession?.endTime as? Date)?.dateString(in: .medium)
-    let primaryPieceName = practiceSession?.primaryPiece.name
-    let secondaryPieceDetail = practiceSession!.piecesPracticed.count > 1 ? "+ \(practiceSession!.piecesPracticed.count - 1) more..." : nil
-    cell?.setupTextLabels(titleText: date!, firstDetailText: primaryPieceName!, secondDetailText: secondaryPieceDetail)
+
+    cell?.setupLeftBadge(accent: accent, mainText: String(minutes), detailText: "min")
     return cell!
   }
 
@@ -95,4 +107,22 @@ class BrowseSessionsViewController: UIViewController, UITableViewDelegate, UITab
     }
   }
 
+  internal func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let selectedSession = practiceSession(for: indexPath)
+    _ = self.navigationController?.pushViewController(ViewSessionViewController(session: selectedSession), animated: true)
+  }
+
+  private func practiceSession(for indexPath: IndexPath) -> PracticeSession {
+    let practiceSession: PracticeSession
+    switch sessionRangeControl?.selectedSegmentIndex {
+    case 0?:
+      practiceSession = thisWeekSessions[indexPath.row]
+    case 1?:
+      practiceSession = thisMonthSessions[(thisMonthSessions.keys.sorted()[indexPath.section])]![indexPath.row]
+    case 2?:
+      practiceSession = allTimeSessions[(allTimeSessions.keys.sorted()[indexPath.section])]![indexPath.row]
+    default: practiceSession = thisWeekSessions[indexPath.row]
+    }
+    return practiceSession
+  }
 }

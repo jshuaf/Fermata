@@ -18,12 +18,9 @@ class PracticeSummaryViewController: UIViewController {
       guard weekPracticeSessions != nil else {
         return nil
       }
-      let calendar = NSCalendar.current
       var total = 0
       for practiceSession in weekPracticeSessions! {
-        let start = practiceSession.startTime as? Date
-        let end = practiceSession.endTime as? Date
-        total += calendar.dateComponents(Set([Calendar.Component.second]), from: start!, to: end!).second!
+        total += practiceSession.duration
       }
       return TimeInterval(total)
     }

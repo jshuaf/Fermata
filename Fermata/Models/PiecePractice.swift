@@ -13,5 +13,5 @@ class PiecePractice: Object {
   dynamic var piece: Piece?
   let duration = RealmOptional<Double>()
   let position = RealmOptional<Int>()
-  let practiceSession = LinkingObjects(fromType: PracticeSession.self, property: "piecesPracticed")
+  dynamic var practiceSession: PracticeSession?
 }

@@ -2,3 +2,4 @@ github "audiokit/AudioKit"
 github "robb/Cartography"
 github "hyperoslo/Hue"
 github "naoty/Timepiece"
+github "danielgindi/Charts" ~> 3.0.1

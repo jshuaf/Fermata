@@ -32,9 +32,9 @@ extension UIView {
     label.addConstraints(x: x, alignLeft: alignLeft, alignRight: alignRight, leftOf: leftOf, rightOf: rightOf, y: y, w: maxWidth)
     return label
   }
-  @discardableResult func addView(x: CGFloat? = nil, alignLeft: UIView? = nil, alignRight: UIView? = nil, y: CGFloat, w: CGFloat, h: CGFloat, view: UIView = UIView()) -> UIView {
+  @discardableResult func addView(x: CGFloat? = nil, alignLeft: UIView? = nil, alignRight: UIView? = nil, y: CGFloat? = nil, w: CGFloat? = nil, h: CGFloat? = nil, whRatio: CGFloat? = nil, view: UIView = UIView()) -> UIView {
     self.addSubview(view)
-    view.addConstraints(x: x, alignLeft: alignLeft, alignRight: alignRight, y: y, w: w, h: h)
+    view.addConstraints(x: x, alignLeft: alignLeft, alignRight: alignRight, y: y, w: w, h: h, whRatio: whRatio)
     return view
   }
 
@@ -104,17 +104,21 @@ extension UIView {
     return button
   }
 
-  @discardableResult func addImageView(x: CGFloat, y: CGFloat, w: CGFloat, h: CGFloat? = nil, name: String? = nil, isButton: Bool = false) -> UIImageView {
+  @discardableResult func addImageView(x: CGFloat, y: CGFloat, w: CGFloat, h: CGFloat? = nil, name: String? = nil, isButton: Bool = false, color: UIColor? = nil) -> UIImageView {
     let imageView = name != nil ? UIImageView(image: UIImage(named: name!)) : UIImageView()
     if isButton {
       imageView.isUserInteractionEnabled = true
+    }
+    if color != nil {
+      imageView.image = imageView.image!.withRenderingMode(.alwaysTemplate)
+      imageView.tintColor = color
     }
     self.addSubview(imageView)
     imageView.addConstraints(x: x, y: y, w: w, h: h)
     return imageView
   }
 
-  func addConstraints(x: CGFloat? = nil, alignLeft: UIView? = nil, alignRight: UIView? = nil, leftOf: UIView? = nil, rightOf: UIView? = nil, y: CGFloat? = nil, w: CGFloat? = nil, h: CGFloat? = nil) {
+  func addConstraints(x: CGFloat? = nil, alignLeft: UIView? = nil, alignRight: UIView? = nil, leftOf: UIView? = nil, rightOf: UIView? = nil, y: CGFloat? = nil, w: CGFloat? = nil, h: CGFloat? = nil, whRatio: CGFloat? = nil) {
     if x != nil {
       constrain(self) { view in
         view.centerX == view.superview!.centerX * x!
@@ -153,6 +157,11 @@ extension UIView {
     if rightOf != nil {
       constrain(self, rightOf!) { view, rightOf in
         view.left == rightOf.right
+      }
+    }
+    if whRatio != nil {
+      constrain(self) { view in
+        view.height == view.width * whRatio!
       }
     }
   }
